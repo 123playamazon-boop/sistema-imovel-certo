@@ -195,8 +195,8 @@ const QUESTIONS = [
   {
     key: 'purpose',
     msg: 'Estamos entendendo seu objetivo',
-    title: 'O que você busca?',
-    sub: 'Vamos começar pelo essencial.',
+    title: 'Por que você quer um imóvel nos EUA?',
+    sub: 'A resposta certa muda tudo no resto do diagnóstico.',
     type: 'options',
     cols: 2,
     options: [
@@ -209,8 +209,8 @@ const QUESTIONS = [
   {
     key: 'lifestyle',
     msg: 'Analisando seu estilo de vida',
-    title: 'Qual ambiente combina com você?',
-    sub: 'Escolha o cenário que mais ressoa com a vida que você quer.',
+    title: 'Qual lugar você se imagina acordando?',
+    sub: 'Escolha o cenário que mais ressoa com a vida que você quer construir.',
     type: 'lifestyle',
     options: [
       { value: 'urban', bg: 'urban', text: 'Urbano vibrante', sub: 'Brickell, downtown' },
@@ -223,8 +223,8 @@ const QUESTIONS = [
   {
     key: 'budget',
     msg: 'Calculando faixas compatíveis',
-    title: 'Qual o ticket aproximado?',
-    sub: 'Preço do imóvel, em dólar. O sistema vai filtrar regiões compatíveis.',
+    title: 'Quanto você tem disponível pra entrar?',
+    sub: 'Preço total do imóvel em dólar. Banco americano financia até 70%, então cash de entrada é o que define seu ticket real.',
     type: 'options',
     cols: 2,
     options: [
@@ -237,8 +237,8 @@ const QUESTIONS = [
   {
     key: 'kids',
     msg: 'Avaliando perfil familiar',
-    title: 'Como é sua família?',
-    sub: 'Isso muda muito a recomendação de região e escola.',
+    title: 'Quem vai morar ou usar o imóvel com você?',
+    sub: 'Isso muda completamente qual school zone e qual perímetro de segurança importam.',
     type: 'options',
     cols: 2,
     options: [
@@ -251,8 +251,8 @@ const QUESTIONS = [
   {
     key: 'timeline',
     msg: 'Cruzando regiões compatíveis',
-    title: 'Quando você pretende decidir?',
-    sub: 'Última pergunta. Em seguida o sistema processa seu match.',
+    title: 'Quando essa decisão tem que estar fechada?',
+    sub: 'Última pergunta. A janela da Lei 14.754 fecha em setembro de 2026 — quem decide antes pega regime atual.',
     type: 'options',
     cols: 2,
     options: [
@@ -894,7 +894,7 @@ function renderConsultoria(matches) {
       </div>
 
       <div class="consultoria-disqualifier">
-        <strong>Aviso direto, sem rodeio:</strong> essa consultoria é pra quem tem cash mínimo de US$ 300 mil disponível e seriamente vai decidir nos próximos 12 meses. Se você ainda está no "vou começar a pesquisar" ou cash abaixo disso, fica com o resultado grátis aí em cima — sem ressentimento. Sério. US$ 500 vira justo quando vira jogada real, não estudo.
+        <strong>Aviso direto, sem rodeio:</strong> essa consultoria é pra quem tem cash mínimo de US$ 300 mil disponível e seriamente vai decidir nos próximos 12 meses. <strong>Se você ainda está só pesquisando ou cash abaixo disso — não compra agora. Sério.</strong> US$ 500 vira justo quando vira jogada real, não estudo. Fica com o resultado grátis aí em cima. Sem ressentimento.
       </div>
     </div>
   `;

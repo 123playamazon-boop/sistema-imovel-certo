@@ -3,8 +3,8 @@
 // Quiz one-per-screen · Premium animations · Cinematic loading
 // =============================================================
 
-// WhatsApp do André — TROCAR pelo número real (formato internacional sem espaços/símbolos)
-const WHATSAPP_PHONE = '13055550123';
+// WhatsApp do André Cunha Lima · +1 (305) 684-9224
+const WHATSAPP_PHONE = '13056849224';
 const WHATSAPP_URL = (msg) => `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(msg)}`;
 
 // Stripe payment link da assessoria 30min — TROCAR pelo link real do Bruno

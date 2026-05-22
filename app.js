@@ -16,15 +16,17 @@ let currentQ = 0;
 let answers = {};
 let bodyScrollY = 0;
 
-// Load regions + listings (imóveis reais do site do André)
-fetch('regions.json')
+// Load regions + listings (imóveis reais do site do André).
+// Cache-bust com versão — bump quando trocar estrutura do JSON pra invalidar cache do browser.
+const DATA_VERSION = '2026052301';
+fetch('regions.json?v=' + DATA_VERSION, { cache: 'no-cache' })
   .then(r => r.json())
   .then(data => { REGIONS = data; })
   .catch(err => console.error('[Sistema] Falha ao carregar regions.json:', err));
 
-fetch('listings.json')
+fetch('listings.json?v=' + DATA_VERSION, { cache: 'no-cache' })
   .then(r => r.json())
-  .then(data => { LISTINGS = data; })
+  .then(data => { LISTINGS = data; console.log('[Sistema] listings carregados:', Object.keys(LISTINGS)); })
   .catch(err => console.warn('[Sistema] listings.json não carregou:', err));
 
 // Pega 6 imóveis (2 entry + 2 mid + 2 premium) — escala de preço completa pra cada user.

@@ -1,0 +1,9 @@
+COMANDOS PRA RODAR NO TERMINAL — fix do quiz
+
+cd "/Users/brunosilva/Downloads/heritage_signal_deploy/miami-ia"
+git add app.js
+git commit -m "Fix: quiz nao abria pois .differentiator/.celebs/.concierge bloqueavam viewport"
+git push
+
+Vercel detecta o push e re-deploya automaticamente em ~30s.
+Depois disso, recarrega a URL e o botao Comecar agora vai abrir o quiz direto.

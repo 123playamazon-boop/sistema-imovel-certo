@@ -3,6 +3,10 @@
 // Quiz one-per-screen · Premium animations · Cinematic loading
 // =============================================================
 
+// WhatsApp do André — TROCAR pelo número real (formato internacional sem espaços/símbolos)
+const WHATSAPP_PHONE = '13055550123';
+const WHATSAPP_URL = (msg) => `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(msg)}`;
+
 let REGIONS = [];
 let currentQ = 0;
 let answers = {};
@@ -143,13 +147,21 @@ const QUESTIONS = [
 // =============================================================
 // FLOW CONTROL
 // =============================================================
-function startFlow() {
-  // Bloqueia scroll do body, abre quiz fullscreen
+function lockBody() {
+  // overflow:hidden é mais seguro que position:fixed pra mobile/iOS Safari
+  // (position:fixed quebra inputs dentro de fullscreen overlays)
   bodyScrollY = window.scrollY;
-  document.body.style.position = 'fixed';
-  document.body.style.top = `-${bodyScrollY}px`;
-  document.body.style.width = '100%';
+  document.body.style.overflow = 'hidden';
+  document.documentElement.style.overflow = 'hidden';
+}
 
+function unlockBody() {
+  document.body.style.overflow = '';
+  document.documentElement.style.overflow = '';
+}
+
+function startFlow() {
+  lockBody();
   document.getElementById('quiz').setAttribute('aria-hidden', 'false');
   document.querySelector('.quiz-section').classList.add('active');
   currentQ = 0;
@@ -161,10 +173,7 @@ function startFlow() {
 function closeFlow() {
   document.querySelector('.quiz-section').classList.remove('active');
   document.getElementById('quiz').setAttribute('aria-hidden', 'true');
-  // Restaura scroll
-  document.body.style.position = '';
-  document.body.style.top = '';
-  document.body.style.width = '';
+  unlockBody();
   window.scrollTo(0, bodyScrollY);
 }
 
@@ -339,8 +348,7 @@ function showResults() {
   document.getElementById('loading').setAttribute('aria-hidden', 'true');
   document.getElementById('results').setAttribute('aria-hidden', 'false');
   document.getElementById('results').classList.add('active');
-  // Mantém body lock — results é fullscreen overlay. Scroll fica interno.
-  // Garante que o overlay inicia rolado pro topo:
+  // Body permanece com overflow:hidden — inputs funcionam normalmente nesse modo.
   setTimeout(() => {
     const rs = document.getElementById('results');
     if (rs) rs.scrollTop = 0;
@@ -353,7 +361,9 @@ function showResults() {
     matches: matches.map(m => ({ id: m.id, name: m.name, score: m.matchScore }))
   });
 
-  document.getElementById('regionsGrid').innerHTML = matches.map((r, idx) => `
+  document.getElementById('regionsGrid').innerHTML = matches.map((r, idx) => {
+    const waMsg = `Olá André! Acabei de fazer o diagnóstico no Sistema Imóvel Certo™ e ${r.name} apareceu como ${r.matchScore}% match pro meu perfil. Quero entender mais sobre essa região.`;
+    return `
     <article class="region-card">
       <div class="region-img" style="background-image:url('${r.image}')">
         <div class="region-rank">${String(idx + 1).padStart(2, '0')}</div>
@@ -388,13 +398,26 @@ function showResults() {
             <strong>Perfil investidor:</strong> ${r.investor_profile}<br><br>
             <strong>Perfil família:</strong> ${r.family_profile}
           </p>
+          <div class="region-highlights">
+            ${r.highlights.map(h => `<span class="region-highlight">${h}</span>`).join('')}
+          </div>
         </div>
-        <div class="region-highlights">
-          ${r.highlights.map(h => `<span class="region-highlight">${h}</span>`).join('')}
-        </div>
+        <a class="region-wa" href="${WHATSAPP_URL(waMsg)}" target="_blank" rel="noopener" onclick="fbqTrack('RegionWhatsApp', {region: '${r.id}'})">
+          <span class="region-wa-ico">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+          </span>
+          <span class="region-wa-text">
+            <span class="region-wa-title">Falar com André sobre ${r.name}</span>
+            <span class="region-wa-sub">Resposta em até 24h · WhatsApp</span>
+          </span>
+          <span class="region-wa-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+        </a>
       </div>
     </article>
-  `).join('');
+  `;
+  }).join('');
 
   fbqTrack('ResultsShown', { matchCount: matches.length });
 }
@@ -424,6 +447,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('results').setAttribute('aria-hidden', 'true');
         document.getElementById('thanks').setAttribute('aria-hidden', 'false');
         document.getElementById('thanks').classList.add('active');
+        unlockBody();
         window.scrollTo({ top: 0, behavior: 'smooth' });
         fbqTrack('Lead');
       } else {
@@ -456,6 +480,17 @@ document.addEventListener('keydown', (e) => {
     closeFlow();
   }
 });
+
+// =============================================================
+// WHATSAPP FAB
+// =============================================================
+(function setupFab(){
+  const fab = document.getElementById('waFab');
+  if (!fab) return;
+  const defaultMsg = 'Olá André! Vi o Sistema Imóvel Certo™ e gostaria de conversar sobre imóveis em Miami.';
+  fab.href = WHATSAPP_URL(defaultMsg);
+  fab.addEventListener('click', () => fbqTrack('WhatsAppFAB'));
+})();
 
 // Expose
 window.startFlow = startFlow;

@@ -588,95 +588,140 @@ document.addEventListener('keydown', (e) => {
 })();
 
 // =============================================================
-// CONSULTORIA $150 — Oferta no results page (Amanda copy)
+// CONSULTORIA $500 / 1h — Mapa da Compra Certa™ (Amanda copy)
 // =============================================================
 function renderConsultoria(matches) {
   const target = document.getElementById('consultoriaSlot');
   if (!target) return;
-  const topRegion = matches[0] ? matches[0].name : 'a região certa';
+  const topRegion = matches[0] ? matches[0].name : 'sua região #1';
   target.innerHTML = `
     <div class="consultoria-card">
       <div class="consultoria-tag">
         <span class="consultoria-tag-dot"></span>
-        Oferta de quem viu o resultado
+        Mapa da Compra Certa™ · 1:1 com André
       </div>
+
       <h3 class="consultoria-title">
-        30 minutos com André<br>
-        pra evitar <em>o erro de US$ 80 mil</em>.
+        60 minutos com André Cunha Lima.<br>
+        <em>O preço de não perder US$ 80 mil</em><br>
+        comprando a região errada.
       </h3>
+
       <p class="consultoria-lead">
-        Brasileiro comum compra a região errada em Miami e descobre 2 anos depois — quando vai vender. Diferença média entre região-match e região-empurrada: <strong>US$ 80 mil a US$ 880 mil</strong>. Antes de assinar qualquer reserva, fala 30 minutos com quem fechou 142 famílias brasileiras nessa rota.
+        Você acabou de ver suas 3 regiões. Agora vem a parte que destrói brasileiro: <strong>escolher o prédio errado dentro da região certa</strong>, abrir <strong>LLC errada</strong>, pegar <strong>financiamento com taxa 1,5% acima do mercado</strong>, ou descobrir 6 meses depois que <strong>o condomínio proíbe short-term rental</strong> — exatamente o que você comprou pra fazer.
       </p>
+      <p class="consultoria-lead">
+        Cada um desses erros custa entre <strong>US$ 80 mil e US$ 880 mil</strong>. Eu vi acontecer 17 vezes nos últimos 4 anos com brasileiros que decidiram sozinhos. <strong>1 hora comigo no Zoom evita os 5 erros de uma vez.</strong>
+      </p>
+
+      <div class="consultoria-includes-label">O que sai dessa 1 hora</div>
 
       <div class="consultoria-grid">
         <div class="consultoria-cell">
-          <span class="consultoria-cell-ico">🎯</span>
+          <span class="consultoria-cell-num">01</span>
           <div>
-            <div class="consultoria-cell-title">Diagnóstico aprofundado</div>
-            <div class="consultoria-cell-sub">Aplicado ao seu ticket, sua família e ${topRegion} (sua região #1).</div>
+            <div class="consultoria-cell-title">Auditoria das suas 3 regiões aplicada AO VIVO</div>
+            <div class="consultoria-cell-sub">Olho seu ticket, sua família, seu objetivo, e te aponto QUAL das três é a sua jogada definitiva (com números aplicados, não vago) — começando por ${topRegion}.</div>
           </div>
         </div>
+
         <div class="consultoria-cell">
-          <span class="consultoria-cell-ico">🏦</span>
+          <span class="consultoria-cell-num">02</span>
           <div>
-            <div class="consultoria-cell-title">Estrutura LLC + Foreign National</div>
-            <div class="consultoria-cell-sub">Banco, LLC, taxa, sucessão. Sem jargão.</div>
+            <div class="consultoria-cell-title">Estratégia tributária + sucessória</div>
+            <div class="consultoria-cell-sub">LLC ou CPF pro seu caso. Florida vs Delaware. Como blindar pros seus filhos pagando quase zero de inventário americano. Calculado, não genérico.</div>
           </div>
         </div>
+
         <div class="consultoria-cell">
-          <span class="consultoria-cell-ico">📍</span>
+          <span class="consultoria-cell-num">03</span>
           <div>
-            <div class="consultoria-cell-title">3-5 prédios reais sugeridos</div>
-            <div class="consultoria-cell-sub">Dentro do perímetro certo. Com link MLS.</div>
+            <div class="consultoria-cell-title">Financiamento Foreign National real</div>
+            <div class="consultoria-cell-sub">Wells Fargo, City National, Truist — qual banco aprova pro seu perfil, em quantos dias, taxa esperada hoje, parcela mensal aplicada ao seu ticket. Apresentação direta a 1-2 bankers parceiros.</div>
           </div>
         </div>
+
         <div class="consultoria-cell">
-          <span class="consultoria-cell-ico">⚖️</span>
+          <span class="consultoria-cell-num">04</span>
           <div>
-            <div class="consultoria-cell-title">Erros que custam US$ 200K+</div>
-            <div class="consultoria-cell-sub">CPF errado, prédio que proíbe rental, LLC errada. Você sai sabendo evitar.</div>
+            <div class="consultoria-cell-title">5 a 8 prédios curados, na sua região-match</div>
+            <div class="consultoria-cell-sub">Não MLS scrape. Curadoria pessoal: short-term rental liberado, school zone certa, comissão de developer, valorização histórica. Com link, planta e preço.</div>
           </div>
         </div>
+
+        <div class="consultoria-cell">
+          <span class="consultoria-cell-num">05</span>
+          <div>
+            <div class="consultoria-cell-title">Os 5 erros que custam US$ 200K-880K</div>
+            <div class="consultoria-cell-sub">CPF próprio em vez de LLC. Prédio que proíbe rental. Delaware sem foreign LLC em FL. Zoning futuro negativo. Developer que atrasa 14 meses. Você sai sabendo o nome de cada armadilha — e como evitar.</div>
+          </div>
+        </div>
+
+        <div class="consultoria-cell">
+          <span class="consultoria-cell-num">06</span>
+          <div>
+            <div class="consultoria-cell-title">Plano de 90 dias até closing</div>
+            <div class="consultoria-cell-sub">Cronograma impresso no seu email no fim da call. Dia 1 → closing. Documentos, prazos, contas pra abrir, ITIN, mortgage application. Sem "depois eu mando".</div>
+          </div>
+        </div>
+
+        <div class="consultoria-cell">
+          <span class="consultoria-cell-num">07</span>
+          <div>
+            <div class="consultoria-cell-title">Acesso à esteira completa</div>
+            <div class="consultoria-cell-sub">Contador americano especialista em non-resident alien. Advogado tributário BR-EUA. Gestor brasileiro de short-term rental. Concierge de escola. Decorador. Você não vai construir essa rede sozinho.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="consultoria-promise">
+        <span class="consultoria-promise-label">Promessa direta:</span>
+        Você sai da call de 1 hora sabendo <strong>exatamente</strong>: qual região vai comprar, qual ticket cabe no seu cash, qual banco vai te financiar, qual LLC abrir, e em quantos dias você fecha. Plano impresso no email no fim da call. <em>Sem "vou pensar". Sem "depois eu mando".</em>
       </div>
 
       <div class="consultoria-price-row">
         <div class="consultoria-price">
           <span class="consultoria-price-currency">US$</span>
-          <span class="consultoria-price-value">150</span>
-          <span class="consultoria-price-unit">/ 30 min</span>
+          <span class="consultoria-price-value">500</span>
+          <span class="consultoria-price-unit">/ 60 min · 1:1</span>
         </div>
         <div class="consultoria-anchor">
-          Reembolsado integralmente<br>se você fechar com o André.
+          <strong>Crédito 100% reembolsado</strong> no closing<br>
+          se você fechar imóvel comigo nos próximos 12 meses.
         </div>
       </div>
 
       <div class="consultoria-roi">
         <span class="consultoria-roi-strike">US$ 80.000 a US$ 880.000</span>
-        <span class="consultoria-roi-text">é o prejuízo médio de quem comprou a região errada. <strong>US$ 150 é o que custa não cometer esse erro.</strong></span>
+        <span class="consultoria-roi-text">é o prejuízo médio documentado de brasileiros que decidiram sozinhos. <strong>US$ 500 é o preço de evitar esse erro.</strong> ROI mínimo: <strong>160×</strong>. Real.</span>
       </div>
 
-      <a class="consultoria-cta" href="${STRIPE_CONSULTORIA_URL}" target="_blank" rel="noopener" onclick="fbqTrack('ConsultoriaCheckout',{region:'${matches[0] ? matches[0].id : 'unknown'}'})">
-        Reservar minha consultoria · US$ 150
+      <a class="consultoria-cta" href="${STRIPE_CONSULTORIA_URL}" target="_blank" rel="noopener" onclick="fbqTrack('ConsultoriaCheckout',{region:'${matches[0] ? matches[0].id : 'unknown'}',price:500})">
+        Reservar minha consultoria · US$ 500
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </a>
 
       <div class="consultoria-trust">
         <div class="consultoria-trust-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          Após pagamento, você recebe email pra agendar o melhor horário
+          Após pagamento, email automático com link de agendamento (escolhe seu horário)
         </div>
         <div class="consultoria-trust-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          Pagamento seguro via Stripe (cartão internacional ok)
+          Stripe seguro · cartão internacional ok · pagamento único
         </div>
         <div class="consultoria-trust-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          Zoom em PT-BR · André Cunha Lima, Realtor® Miami-Dade
+          Zoom 1:1 em PT-BR · 9 anos Miami-Dade · 142 famílias fechadas
+        </div>
+        <div class="consultoria-trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Reembolso total se você não sair da call com plano executável
         </div>
       </div>
 
       <div class="consultoria-disqualifier">
-        Aviso direto: se você ainda não tem cash mínimo de US$ 150 mil pra entrar e não pretende decidir nos próximos 12 meses, essa consultoria não é pra você. E tá tudo bem — segue o resultado grátis aí em cima.
+        <strong>Aviso direto, sem rodeio:</strong> essa consultoria é pra quem tem cash mínimo de US$ 300 mil disponível e seriamente vai decidir nos próximos 12 meses. Se você ainda está no "vou começar a pesquisar" ou cash abaixo disso, fica com o resultado grátis aí em cima — sem ressentimento. Sério. US$ 500 vira justo quando vira jogada real, não estudo.
       </div>
     </div>
   `;

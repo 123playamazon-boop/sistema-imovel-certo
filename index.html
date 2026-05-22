@@ -219,21 +219,21 @@ a{color:inherit;text-decoration:none}
 .quiz-option:hover .quiz-option-arrow{opacity:1;transform:translateX(0);color:var(--gold)}
 .quiz-option-arrow svg{width:18px;height:18px}
 
-/* Quiz lifestyle cards (visual, with bg image) */
-.quiz-lifestyle{padding:0;background:var(--white);border:1px solid var(--line);border-radius:18px;overflow:hidden;text-align:left;transition:all var(--t-med) var(--ease);aspect-ratio:1/1;position:relative;display:block}
-.quiz-lifestyle::before{content:'';position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity var(--t-med) var(--ease)}
-.quiz-lifestyle::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.1) 0%,rgba(10,10,10,.62) 100%);opacity:0;transition:opacity var(--t-med) var(--ease)}
-.quiz-lifestyle:hover{transform:translateY(-2px);box-shadow:0 18px 40px rgba(0,0,0,.12);border-color:var(--gold-line)}
-.quiz-lifestyle:hover::before,.quiz-lifestyle:hover::after{opacity:1}
+/* Quiz lifestyle cards (visual, with bg image always visible) */
+.quiz-lifestyle{padding:0;background:var(--ink);border:1px solid var(--line);border-radius:18px;overflow:hidden;text-align:left;transition:all var(--t-med) var(--ease);aspect-ratio:1/1;position:relative;display:block}
+.quiz-lifestyle::before{content:'';position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .8s var(--ease)}
+.quiz-lifestyle::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.15) 0%,rgba(10,10,10,.45) 55%,rgba(10,10,10,.82) 100%);transition:background var(--t-med) var(--ease)}
+.quiz-lifestyle:hover{transform:translateY(-3px);box-shadow:0 22px 48px rgba(0,0,0,.22);border-color:var(--gold-line)}
+.quiz-lifestyle:hover::before{transform:scale(1.06)}
+.quiz-lifestyle:hover::after{background:linear-gradient(180deg,rgba(10,10,10,.1) 0%,rgba(10,10,10,.3) 55%,rgba(184,158,104,.55) 100%)}
 .quiz-lifestyle[data-bg="beach"]::before{background-image:url('img/03_lifestyle_beach.jpg')}
 .quiz-lifestyle[data-bg="urban"]::before{background-image:url('img/04_lifestyle_urban.jpg')}
 .quiz-lifestyle[data-bg="family"]::before{background-image:url('img/05_lifestyle_family.jpg')}
 .quiz-lifestyle[data-bg="luxury"]::before{background-image:url('img/06_lifestyle_luxury.jpg')}
 .quiz-lifestyle[data-bg="calm"]::before{background-image:url('img/07_lifestyle_calm.jpg')}
-.quiz-lifestyle-content{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:28px;z-index:2;color:var(--ink);transition:color var(--t-med) var(--ease)}
-.quiz-lifestyle:hover .quiz-lifestyle-content{color:#fff}
+.quiz-lifestyle-content{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:28px;z-index:2;color:#fff;text-shadow:0 2px 16px rgba(0,0,0,.45)}
 .quiz-lifestyle-text{font-family:var(--serif);font-size:22px;font-weight:500;margin-bottom:6px;letter-spacing:-.005em;line-height:1.2}
-.quiz-lifestyle-sub{font-size:13px;opacity:.7;font-weight:400}
+.quiz-lifestyle-sub{font-size:13px;opacity:.85;font-weight:400}
 
 /* ============================
    CAPTURE GATE — pre-results form
@@ -398,11 +398,19 @@ a{color:inherit;text-decoration:none}
 .consultoria-title em{font-style:italic;color:var(--gold)}
 .consultoria-lead{font-size:16px;line-height:1.65;color:rgba(255,255,255,.78);margin-bottom:36px;max-width:62ch;font-weight:300;position:relative;z-index:1}
 .consultoria-lead strong{color:#fff;font-weight:600}
-.consultoria-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.08);border-radius:14px;overflow:hidden;margin-bottom:36px;position:relative;z-index:1}
-.consultoria-cell{background:rgba(255,255,255,.02);padding:22px 24px;display:flex;align-items:flex-start;gap:14px}
+.consultoria-includes-label{font-size:11px;color:var(--gold);text-transform:uppercase;letter-spacing:.18em;font-weight:600;margin-bottom:18px;position:relative;z-index:1;display:block}
+.consultoria-grid{display:grid;grid-template-columns:1fr;gap:1px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.08);border-radius:14px;overflow:hidden;margin-bottom:32px;position:relative;z-index:1}
+.consultoria-cell{background:rgba(255,255,255,.02);padding:22px 24px;display:flex;align-items:flex-start;gap:18px;transition:background var(--t-fast) var(--ease)}
+.consultoria-cell:hover{background:rgba(184,158,104,.04)}
+.consultoria-cell-num{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--gold);flex-shrink:0;width:42px;line-height:1.3;font-weight:500}
 .consultoria-cell-ico{font-size:22px;flex-shrink:0;width:38px;height:38px;border-radius:10px;background:rgba(184,158,104,.12);display:flex;align-items:center;justify-content:center;border:1px solid rgba(184,158,104,.24)}
-.consultoria-cell-title{font-size:14px;font-weight:600;color:#fff;margin-bottom:3px;letter-spacing:-.005em}
-.consultoria-cell-sub{font-size:13px;color:rgba(255,255,255,.62);line-height:1.5;font-weight:300}
+.consultoria-cell-title{font-size:15px;font-weight:600;color:#fff;margin-bottom:5px;letter-spacing:-.005em;line-height:1.35}
+.consultoria-cell-sub{font-size:13.5px;color:rgba(255,255,255,.66);line-height:1.6;font-weight:300}
+
+.consultoria-promise{padding:22px 26px;background:linear-gradient(135deg,rgba(184,158,104,.12) 0%,rgba(184,158,104,.04) 100%);border:1px solid rgba(184,158,104,.32);border-radius:14px;margin-bottom:32px;font-size:14.5px;line-height:1.65;color:rgba(255,255,255,.88);font-weight:300;position:relative;z-index:1}
+.consultoria-promise-label{display:block;font-size:11px;color:var(--gold);text-transform:uppercase;letter-spacing:.18em;font-weight:700;margin-bottom:8px}
+.consultoria-promise strong{color:#fff;font-weight:600}
+.consultoria-promise em{font-family:var(--serif);font-style:italic;color:var(--gold);font-weight:400;font-size:15px}
 .consultoria-price-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;padding:24px 0;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:24px;position:relative;z-index:1}
 .consultoria-price{display:flex;align-items:baseline;gap:4px;color:#fff}
 .consultoria-price-currency{font-size:18px;font-weight:500;color:var(--gold);align-self:flex-start;padding-top:8px}

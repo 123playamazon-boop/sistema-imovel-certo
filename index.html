@@ -95,6 +95,13 @@ a{color:inherit;text-decoration:none}
 @keyframes fade{from{opacity:0}to{opacity:1}}
 @keyframes pulse-glow{0%,100%{box-shadow:0 0 0 0 rgba(184,158,104,.5)}50%{box-shadow:0 0 0 20px rgba(184,158,104,0)}}
 
+/* Live counter — social proof */
+.live-counter{display:inline-flex;align-items:center;gap:10px;padding:8px 16px;border:1px solid rgba(255,255,255,.18);border-radius:100px;font-size:12px;color:rgba(255,255,255,.84);font-weight:500;letter-spacing:-.005em;background:rgba(0,0,0,.22);backdrop-filter:blur(10px);margin-top:28px;animation:rise 1.4s var(--ease-out) 1s both}
+.live-counter-dot{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 12px rgba(34,197,94,.7);position:relative;flex-shrink:0}
+.live-counter-dot::before{content:'';position:absolute;inset:-4px;border-radius:50%;border:2px solid rgba(34,197,94,.5);animation:live-pulse 2s ease-out infinite}
+.live-counter-num{color:#fff;font-weight:700;font-variant-numeric:tabular-nums;transition:color .3s ease}
+@keyframes live-pulse{0%{transform:scale(.7);opacity:1}100%{transform:scale(1.6);opacity:0}}
+
 /* Scroll indicator */
 .hero-scroll{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);z-index:2;color:rgba(255,255,255,.5);font-size:11px;letter-spacing:.2em;text-transform:uppercase;animation:rise 1.4s var(--ease-out) 1.2s both,float 2.4s ease-in-out infinite 2s}
 @keyframes float{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(6px)}}
@@ -291,22 +298,52 @@ a{color:inherit;text-decoration:none}
 .results-hero p{font-size:17px;line-height:1.65;color:var(--slate);font-weight:300}
 
 .results-list{max-width:1240px;margin:0 auto;padding:0 40px;display:flex;flex-direction:column;gap:48px}
-.region-card{background:var(--white);border-radius:24px;overflow:hidden;display:grid;grid-template-columns:1.1fr 1fr;border:1px solid var(--line);box-shadow:0 8px 40px rgba(0,0,0,.04);transition:all var(--t-med) var(--ease)}
+.region-card{background:var(--white);border-radius:24px;overflow:hidden;border:1px solid var(--line);box-shadow:0 8px 40px rgba(0,0,0,.04);transition:all var(--t-med) var(--ease)}
 .region-card:hover{box-shadow:0 32px 80px rgba(0,0,0,.08);transform:translateY(-4px)}
-.region-img{position:relative;background-size:cover;background-position:center;min-height:480px}
+.region-img{position:relative;background-size:cover;background-position:center;min-height:380px;aspect-ratio:16/9}
 .region-img::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.1) 0%,rgba(10,10,10,.55) 100%)}
 .region-rank{position:absolute;top:28px;left:28px;width:48px;height:48px;border-radius:14px;background:rgba(10,10,10,.72);backdrop-filter:blur(14px);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-style:italic;font-size:22px;z-index:2;border:1px solid rgba(255,255,255,.12)}
 .region-match{position:absolute;top:28px;right:28px;padding:8px 14px;background:rgba(184,158,104,.94);backdrop-filter:blur(14px);color:#fff;border-radius:100px;font-size:12px;font-weight:600;letter-spacing:.04em;z-index:2}
 .region-overlay-text{position:absolute;bottom:28px;left:28px;right:28px;color:#fff;z-index:2}
 .region-overlay-text h3{font-family:var(--serif);font-size:34px;font-weight:500;letter-spacing:-.01em;line-height:1.1;margin-bottom:6px}
 .region-overlay-text span{font-size:13px;opacity:.8;letter-spacing:.06em;text-transform:uppercase;font-weight:500}
-.region-body{padding:44px;display:flex;flex-direction:column;justify-content:space-between}
-.region-tagline{font-family:var(--serif);font-style:italic;font-size:20px;line-height:1.4;color:var(--ink);margin-bottom:28px;font-weight:400;letter-spacing:-.005em}
-.region-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-bottom:28px}
-.region-stat{padding:18px;background:var(--white)}
-.region-stat-label{font-size:11px;color:var(--mute);text-transform:uppercase;letter-spacing:.08em;font-weight:500;margin-bottom:4px}
-.region-stat-value{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--ink);font-weight:500;letter-spacing:-.005em}
-.region-profile{font-size:14px;line-height:1.6;color:var(--slate);font-weight:400;margin-bottom:24px}
+.region-body{padding:48px 52px;display:flex;flex-direction:column;gap:36px}
+.region-body-top{display:flex;flex-direction:column;gap:24px}
+.region-tagline{font-family:var(--serif);font-style:italic;font-size:22px;line-height:1.4;color:var(--ink);font-weight:400;letter-spacing:-.005em}
+.region-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.region-stat{padding:20px;background:var(--white)}
+.region-stat-label{font-size:11px;color:var(--mute);text-transform:uppercase;letter-spacing:.08em;font-weight:500;margin-bottom:6px}
+.region-stat-value{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--ink);font-weight:500;letter-spacing:-.005em;line-height:1.1}
+
+/* Identity (Amanda copy block) */
+.region-identity{padding:32px;background:linear-gradient(135deg,rgba(184,158,104,.06) 0%,transparent 100%);border-left:3px solid var(--gold);border-radius:0 14px 14px 0}
+.region-identity-label{font-size:11px;color:var(--gold);text-transform:uppercase;letter-spacing:.16em;font-weight:600;margin-bottom:12px}
+.region-identity-text{font-family:var(--serif);font-size:18px;line-height:1.62;color:var(--ink);font-weight:400;letter-spacing:-.005em}
+.region-landmark{display:inline-flex;align-items:center;gap:8px;margin-top:16px;font-size:13px;color:var(--slate);font-weight:500;font-family:var(--sans);letter-spacing:-.005em}
+.region-landmark svg{width:14px;height:14px;color:var(--gold)}
+
+/* Generic block */
+.region-block{display:flex;flex-direction:column;gap:14px}
+.region-block-label{font-size:11px;color:var(--mute);text-transform:uppercase;letter-spacing:.16em;font-weight:600}
+
+/* Lifestyle moments */
+.region-moments{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+.region-moment{padding:14px 18px 14px 38px;background:var(--paper);border-radius:10px;font-size:14.5px;color:var(--ink);line-height:1.5;font-weight:400;position:relative;font-family:var(--serif);font-style:italic}
+.region-moment::before{content:'';position:absolute;left:18px;top:50%;transform:translateY(-50%);width:6px;height:6px;border-radius:50%;background:var(--gold)}
+
+/* POIs (dining/groceries/schools) */
+.region-pois{display:grid;gap:10px}
+.region-poi{padding:14px 18px;background:var(--paper);border-radius:10px;border:1px solid transparent;transition:border-color var(--t-fast) var(--ease)}
+.region-poi:hover{border-color:var(--gold-line);background:var(--white)}
+.region-poi-name{font-size:14.5px;font-weight:600;color:var(--ink);margin-bottom:4px;letter-spacing:-.005em;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.region-poi-tag{font-size:11px;font-weight:500;color:var(--gold);text-transform:uppercase;letter-spacing:.06em;background:var(--gold-soft);padding:3px 8px;border-radius:6px}
+.region-poi-note{font-size:13px;color:var(--slate);line-height:1.5;font-weight:300}
+
+/* Buildings */
+.region-buildings{display:flex;flex-wrap:wrap;gap:6px}
+.region-building{padding:8px 14px;background:var(--ink);color:#fff;border-radius:100px;font-size:12px;font-weight:500;letter-spacing:-.005em}
+
+.region-profile{font-size:14px;line-height:1.7;color:var(--slate);font-weight:400;padding:20px 24px;background:var(--cream);border-radius:12px}
 .region-profile strong{color:var(--ink);font-weight:600}
 .region-highlights{display:flex;flex-wrap:wrap;gap:6px;margin-top:20px}
 .region-highlight{padding:6px 12px;background:var(--paper);border-radius:100px;font-size:12px;color:var(--ink);font-weight:500;letter-spacing:-.005em}
@@ -497,15 +534,25 @@ a{color:inherit;text-decoration:none}
   .results-hero h1{font-size:clamp(28px,7vw,38px)}
   .results-hero p{font-size:15px}
   .results-list{padding:0 20px;gap:32px}
-  .region-card{grid-template-columns:1fr}
-  .region-img{min-height:280px}
+  .region-img{min-height:240px;aspect-ratio:16/10}
   .region-overlay-text h3{font-size:26px}
   .region-rank{top:18px;left:18px;width:42px;height:42px;font-size:18px}
   .region-match{top:18px;right:18px}
-  .region-body{padding:32px 28px}
-  .region-tagline{font-size:17px;margin-bottom:22px}
+  .region-body{padding:32px 24px;gap:28px}
+  .region-body-top{gap:18px}
+  .region-tagline{font-size:18px}
+  .region-stats{grid-template-columns:repeat(2,1fr)}
   .region-stat{padding:14px}
-  .region-stat-value{font-size:17px}
+  .region-stat-value{font-size:18px}
+  .region-identity{padding:22px}
+  .region-identity-text{font-size:16px}
+  .region-moment{font-size:14px;padding:12px 14px 12px 32px}
+  .region-moment::before{left:14px}
+  .region-poi{padding:12px 14px}
+  .region-poi-name{font-size:14px}
+  .region-poi-note{font-size:12.5px}
+  .region-building{font-size:11px;padding:6px 12px}
+  .region-profile{padding:16px 18px;font-size:13.5px}
   .results-capture{padding:0 20px;margin-top:80px}
   .capture-card{padding:48px 28px}
   .capture-card h3{font-size:26px}
@@ -598,6 +645,10 @@ a{color:inherit;text-decoration:none}
       <span class="hero-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Sem compromisso</span>
       <span class="hero-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Resultado personalizado</span>
       <span class="hero-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Moradia ou investimento em dólar</span>
+    </div>
+    <div class="live-counter" id="liveCounter" aria-live="polite">
+      <span class="live-counter-dot"></span>
+      <span><span class="live-counter-num" id="liveCounterNum">247</span> brasileiros descobrindo seu perfil agora</span>
     </div>
   </div>
   <div class="hero-scroll">Role para descobrir</div>

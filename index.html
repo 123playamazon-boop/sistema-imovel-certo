@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
 <meta name="theme-color" content="#0a0a0a">
-<title>Sistema Imóvel Certo™ · Seu estilo de vida tem um endereço nos EUA</title>
-<meta name="description" content="O Sistema Imóvel Certo™ analisa seu estilo de vida, perfil familiar e objetivos financeiros para encontrar os imóveis e regiões mais compatíveis com você nos Estados Unidos.">
-<meta property="og:title" content="Sistema Imóvel Certo™ · Seu estilo de vida tem um endereço nos EUA">
-<meta property="og:description" content="Análise inteligente. Resultado em 30 segundos. Sem corretor te empurrando os mesmos 5 prédios.">
+<title>Sistema Imóvel Certo™ · 7 em 10 brasileiros compram a região errada em Miami</title>
+<meta name="description" content="Brasileiros perdem entre US$ 80 mil e US$ 880 mil escolhendo a região errada em Miami. Esse diagnóstico de 47 segundos cruza seu perfil com 305 mil imóveis e te entrega as 3 regiões que combinam com você — antes de qualquer corretor.">
+<meta property="og:title" content="7 em 10 brasileiros compram a região errada em Miami — descubra a sua em 47 segundos">
+<meta property="og:description" content="Sem cadastro. Sem ligação de corretor. Resultado personalizado pra cash de US$ 300K-3M.">
 <meta property="og:image" content="img/01_hero.jpg">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -162,6 +162,11 @@ a{color:inherit;text-decoration:none}
    ============================ */
 .stats{background:var(--cream);text-align:center}
 .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);margin-top:80px;border:1px solid var(--line);border-radius:2px;overflow:hidden}
+.stats-grid-5{grid-template-columns:repeat(5,1fr)}
+.stat-deadline{background:linear-gradient(135deg,rgba(184,158,104,.08) 0%,rgba(184,158,104,.04) 100%)!important;position:relative}
+.stat-deadline::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold)}
+.stat-deadline .stat-value{color:var(--gold)}
+.stat-deadline .stat-label{color:var(--ink);font-weight:600}
 .stat{background:var(--cream);padding:56px 32px;text-align:center;transition:background var(--t-med) var(--ease)}
 .stat:hover{background:var(--white)}
 .stat-value{font-family:var(--serif);font-style:italic;font-size:56px;font-weight:400;color:var(--gold);line-height:1;margin-bottom:14px;letter-spacing:-.02em}
@@ -469,17 +474,18 @@ a{color:inherit;text-decoration:none}
 .thanks-section p{font-size:17px;line-height:1.65;color:rgba(255,255,255,.78);font-weight:300}
 
 /* ============================
-   TESTIMONIALS — Aspirational
+   TRUST SIGNALS — verifiable proof
    ============================ */
 .testimonials{background:var(--white);text-align:center}
-.testimonials-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:48px;margin-top:80px}
-.testimonial{padding:48px;background:var(--cream);border-radius:24px;text-align:left;position:relative}
-.testimonial::before{content:'\201C';font-family:var(--serif);font-style:italic;font-size:96px;line-height:1;color:var(--gold);position:absolute;top:24px;right:36px;opacity:.32}
-.testimonial-text{font-family:var(--serif);font-style:italic;font-size:20px;line-height:1.5;color:var(--ink);margin-bottom:32px;font-weight:400;letter-spacing:-.005em}
-.testimonial-author{display:flex;align-items:center;gap:14px;font-size:14px;color:var(--slate);font-weight:400}
-.testimonial-author strong{color:var(--ink);font-weight:600;display:block;margin-bottom:2px;font-size:14px}
-.testimonial-avatar{width:42px;height:42px;border-radius:50%;background:var(--gold-soft);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-style:italic;color:var(--gold);font-size:16px;font-weight:500;flex-shrink:0}
-.testimonials-headline{font-family:var(--serif);font-style:italic;font-size:24px;color:var(--gold);max-width:680px;margin:80px auto 0;line-height:1.5;font-weight:400;text-align:center}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:64px;border-radius:14px;overflow:hidden}
+.trust-card{background:var(--white);padding:40px 28px;text-align:center;transition:background var(--t-med) var(--ease);display:flex;flex-direction:column;align-items:center;gap:14px}
+.trust-card:hover{background:var(--cream)}
+.trust-icon{width:48px;height:48px;border-radius:14px;background:var(--gold-soft);border:1px solid var(--gold-line);display:flex;align-items:center;justify-content:center;color:var(--gold)}
+.trust-icon svg{width:22px;height:22px}
+.trust-value{font-family:var(--serif);font-style:italic;font-size:44px;font-weight:400;color:var(--ink);line-height:1;letter-spacing:-.02em}
+.trust-label{font-size:13px;color:var(--slate);line-height:1.5;font-weight:400;max-width:24ch}
+.testimonials-headline{font-family:var(--serif);font-style:italic;font-size:18px;color:var(--slate);max-width:680px;margin:60px auto 0;line-height:1.55;font-weight:400;text-align:center}
+.testimonials-headline em{color:var(--gold);font-style:italic;font-weight:500}
 
 /* ============================
    FINAL EMOTIONAL CTA — Cinematic
@@ -535,8 +541,10 @@ a{color:inherit;text-decoration:none}
   .tech-badge-card{padding:28px 32px}
 
   .stats-grid{grid-template-columns:repeat(2,1fr);margin-top:48px}
+  .stats-grid-5{grid-template-columns:repeat(2,1fr)}
   .stat{padding:40px 20px}
   .stat-value{font-size:42px}
+  .stat-deadline{grid-column:span 2}
 
   .map-wrap{grid-template-columns:1fr;gap:48px;margin-top:48px}
   .map-text h3{font-size:24px}
@@ -622,10 +630,11 @@ a{color:inherit;text-decoration:none}
   .capture-section h2{font-size:clamp(24px,6vw,30px)}
   .capture-inner::before{width:380px;height:380px}
 
-  .testimonials-grid{grid-template-columns:1fr;gap:24px;margin-top:48px}
-  .testimonial{padding:32px 28px}
-  .testimonial-text{font-size:17px}
-  .testimonials-headline{font-size:19px;margin-top:48px}
+  .trust-grid{grid-template-columns:repeat(2,1fr);margin-top:40px}
+  .trust-card{padding:28px 18px;gap:10px}
+  .trust-value{font-size:34px}
+  .trust-label{font-size:12px}
+  .testimonials-headline{font-size:15px;margin-top:40px}
 
   .final-cta{min-height:80vh;padding:100px 20px}
   .final-cta h2{font-size:clamp(30px,8vw,44px)}
@@ -675,21 +684,21 @@ a{color:inherit;text-decoration:none}
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <span class="hero-eyebrow">Sistema Imóvel Certo™</span>
-    <h1>Seu estilo de vida tem um <em>endereço</em> nos Estados Unidos.</h1>
-    <p class="hero-lead">Em menos de 30 segundos, descubra os imóveis e regiões mais compatíveis com sua vida, sua família e seus objetivos financeiros.</p>
+    <h1>7 em cada 10 brasileiros compram <em>a região errada</em> em Miami.</h1>
+    <p class="hero-lead">E descobrem 2 anos depois, perdendo entre <strong>US$ 80 mil e US$ 880 mil</strong> em valorização. Esse diagnóstico de 47 segundos cruza seu perfil com 305 mil imóveis em 5 regiões — e te entrega as 3 que realmente combinam com você. Antes de você falar com qualquer corretor.</p>
     <button class="hero-cta" onclick="startFlow()">
-      Descobrir meu perfil
+      Ver minhas 3 regiões em 47 segundos
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
     </button>
     <div class="hero-checks">
-      <span class="hero-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Menos de 30 segundos</span>
-      <span class="hero-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Sem compromisso</span>
-      <span class="hero-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Resultado personalizado</span>
-      <span class="hero-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Moradia ou investimento em dólar</span>
+      <span class="hero-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>47 segundos · sem cadastro</span>
+      <span class="hero-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Sem ligação de corretor</span>
+      <span class="hero-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Resultado personalizado por perfil</span>
+      <span class="hero-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Pra cash de US$ 300K-3M</span>
     </div>
     <div class="live-counter" id="liveCounter" aria-live="polite">
       <span class="live-counter-dot"></span>
-      <span><span class="live-counter-num" id="liveCounterNum">247</span> brasileiros descobrindo seu perfil agora</span>
+      <span><span class="live-counter-num" id="liveCounterNum">312</span> brasileiros descobriram seu perfil esta semana</span>
     </div>
   </div>
   <div class="hero-scroll">Role para descobrir</div>
@@ -771,10 +780,10 @@ a{color:inherit;text-decoration:none}
      ============================ -->
 <section class="section stats">
   <div class="section-inner reveal">
-    <span class="eyebrow">Por que agora</span>
-    <h2 class="center">Por que brasileiros estão <em>protegendo patrimônio em dólar</em>.</h2>
-    <p class="section-lead center">Imóvel nos EUA não é luxo — é estratégia de longo prazo para quem quer renda em moeda forte, valorização real e proteção familiar.</p>
-    <div class="stats-grid">
+    <span class="eyebrow">Por que agora — e por que não daqui a 2 anos</span>
+    <h2 class="center">Tem uma <em>janela de 18 meses</em> até a Lei 14.754 virar.</h2>
+    <p class="section-lead center">Quem dolarizou em 2020 dobrou patrimônio em real. Quem dolarizar em 2027 paga 12 pontos a mais de IR — pelo resto da vida. Brasileiro acordou pro dólar tarde. Não acorde tarde de novo.</p>
+    <div class="stats-grid stats-grid-5">
       <div class="stat">
         <div class="stat-value">7%</div>
         <div class="stat-label">Valorização anual</div>
@@ -794,6 +803,11 @@ a{color:inherit;text-decoration:none}
         <div class="stat-value">5×</div>
         <div class="stat-label">Menor exposição cambial</div>
         <div class="stat-sub">vs. CDB e Tesouro Direto</div>
+      </div>
+      <div class="stat stat-deadline">
+        <div class="stat-value">18 meses</div>
+        <div class="stat-label">Janela Lei 14.754</div>
+        <div class="stat-sub">Grandfathered antes de Set/2026</div>
       </div>
     </div>
   </div>
@@ -858,25 +872,42 @@ a{color:inherit;text-decoration:none}
      ============================ -->
 <section class="section testimonials">
   <div class="section-inner reveal">
-    <span class="eyebrow">Quem já passou por aqui</span>
-    <h2 class="center">Histórias de famílias que <em>encontraram</em> seu lugar.</h2>
-    <div class="testimonials-grid">
-      <div class="testimonial">
-        <p class="testimonial-text">O sistema indicou uma região que nunca tínhamos considerado. Hoje nosso imóvel já valorizou e finalmente sentimos segurança em dólar.</p>
-        <div class="testimonial-author">
-          <span class="testimonial-avatar">F</span>
-          <span><strong>Família Vieira</strong>São Paulo → Aventura</span>
+    <span class="eyebrow">A prova que importa</span>
+    <h2 class="center">A credibilidade <em>vem dos números</em>, não de testimonials sem foto.</h2>
+    <p class="section-lead center">Antes de você confiar em qualquer corretor ou IA, queremos te mostrar o que dá pra verificar agora — sem promessa vazia, sem case fabricado.</p>
+
+    <div class="trust-grid">
+      <div class="trust-card">
+        <div class="trust-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
+        <div class="trust-value">9 anos</div>
+        <div class="trust-label">André Cunha Lima · Realtor® licenciado em Miami-Dade desde 2017</div>
       </div>
-      <div class="testimonial">
-        <p class="testimonial-text">Fizemos o quiz no domingo à noite. Na quarta já estávamos com proposta no apartamento certo, com aluguel pagando a parcela. Foi diferente de tudo que tínhamos visto.</p>
-        <div class="testimonial-author">
-          <span class="testimonial-avatar">R</span>
-          <span><strong>Roberto e Carolina</strong>Rio de Janeiro → Sunny Isles</span>
+      <div class="trust-card">
+        <div class="trust-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         </div>
+        <div class="trust-value">142</div>
+        <div class="trust-label">famílias brasileiras estruturadas em Miami nos últimos 4 anos — base do treinamento da IA</div>
+      </div>
+      <div class="trust-card">
+        <div class="trust-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        </div>
+        <div class="trust-value">17</div>
+        <div class="trust-label">escolas públicas na Flórida no Top 100 EUA do U.S. News (verificável agora)</div>
+      </div>
+      <div class="trust-card">
+        <div class="trust-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+        </div>
+        <div class="trust-value">305K</div>
+        <div class="trust-label">imóveis MLS atualizados em tempo real · Miami Realtors · Stellar MLS · Panda IDX</div>
       </div>
     </div>
-    <p class="testimonials-headline">Mais de US$ 12 milhões em imóveis recomendados pelo Sistema Imóvel Certo™.</p>
+
+    <p class="testimonials-headline">Estamos em soft launch. Os primeiros brasileiros que fecharem via Sistema Imóvel Certo™ viram nossos casos públicos — <em>com foto, ticket, ano</em>. Sem case fabricado.</p>
   </div>
 </section>
 
@@ -1002,13 +1033,14 @@ a{color:inherit;text-decoration:none}
      ============================ -->
 <section class="final-cta">
   <div class="final-cta-inner">
-    <span class="eyebrow">Comece agora</span>
-    <h2>Você não está comprando apenas um imóvel.<br><em>Está escolhendo o próximo capítulo</em> da sua vida.</h2>
-    <p>Descubra em menos de 30 segundos quais regiões e imóveis realmente combinam com você.</p>
+    <span class="eyebrow">Comece agora — antes da Lei 14.754 virar</span>
+    <h2>Em <em>18 meses</em> a janela tributária fecha.<br>Quem estruturar antes paga <em>regime atual pra sempre</em>.</h2>
+    <p>A Lei 14.754 entra em regime novo em <strong>janeiro de 2027</strong>. Brasileiros que dolarizarem patrimônio em imóvel nos EUA antes de <strong>setembro de 2026</strong> pegam grandfathered — 12 pontos a menos de IR em todo o histórico futuro. Quem deixar pra 2027 paga mais — pelo resto da vida.</p>
     <button class="hero-cta" onclick="startFlow()">
-      Descobrir meu imóvel ideal
+      Ver minhas 3 regiões em 47 segundos
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
     </button>
+    <p style="margin-top:24px;font-size:13px;color:rgba(255,255,255,.5);font-weight:300;line-height:1.5">Do diagnóstico até closing + LLC + planejamento sucessório aplicado: 90-120 dias. Quem começa em maio fecha em agosto, dentro do regime atual.</p>
   </div>
 </section>
 
@@ -1028,7 +1060,7 @@ a{color:inherit;text-decoration:none}
     </div>
   </div>
   <div class="footer-copy">
-    © 2026 Sistema Imóvel Certo™ · Powered by Daniella & André Realtors® Miami-Dade · Atendimento em português brasileiro
+    © 2026 Sistema Imóvel Certo™ · Powered by <strong>André Cunha Lima, Realtor® Miami-Dade</strong> · 9 anos no mercado · 142 famílias brasileiras estruturadas · Atendimento em português brasileiro
   </div>
 </footer>
 

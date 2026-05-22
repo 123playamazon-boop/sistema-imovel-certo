@@ -7,6 +7,9 @@
 const WHATSAPP_PHONE = '13055550123';
 const WHATSAPP_URL = (msg) => `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(msg)}`;
 
+// Stripe payment link da assessoria 30min — TROCAR pelo link real do Bruno
+const STRIPE_CONSULTORIA_URL = 'https://buy.stripe.com/REPLACE_WITH_REAL_LINK';
+
 let REGIONS = [];
 let currentQ = 0;
 let answers = {};
@@ -250,20 +253,34 @@ function selectOption(key, value) {
 }
 
 // =============================================================
-// LOADING — cinematic 5-step animation
+// CAPTURE GATE — pre-results
 // =============================================================
 function finishFlow() {
+  // Vai do quiz pra captura ANTES do loading/results
   document.querySelector('.quiz-section').classList.remove('active');
   document.getElementById('quiz').setAttribute('aria-hidden', 'true');
+  document.getElementById('capture').setAttribute('aria-hidden', 'false');
+  document.querySelector('.capture-section').classList.add('active');
+  setTimeout(() => {
+    const cs = document.querySelector('.capture-section');
+    if (cs) cs.scrollTop = 0;
+    // Auto-focus no primeiro campo
+    const firstInput = document.querySelector('#capture input[name="name"]');
+    if (firstInput) firstInput.focus();
+  }, 60);
+  fbqTrack('FlowCompleted');
+}
+
+function runLoadingAndShowResults() {
+  document.querySelector('.capture-section').classList.remove('active');
+  document.getElementById('capture').setAttribute('aria-hidden', 'true');
   document.getElementById('loading').setAttribute('aria-hidden', 'false');
   document.getElementById('loading').classList.add('active');
-  fbqTrack('FlowCompleted');
 
   const steps = document.querySelectorAll('.loading-step');
   steps.forEach(s => s.classList.remove('active', 'done'));
 
   let i = 0;
-  // Highlight cada step sequencialmente
   function nextStep() {
     if (i > 0) {
       steps[i - 1].classList.remove('active');
@@ -274,7 +291,6 @@ function finishFlow() {
       i++;
       setTimeout(nextStep, 1000);
     } else {
-      // Done
       setTimeout(showResults, 600);
     }
   }
@@ -356,10 +372,8 @@ function showResults() {
 
   const matches = getMatchedRegions();
 
-  document.getElementById('matchData').value = JSON.stringify({
-    answers: answers,
-    matches: matches.map(m => ({ id: m.id, name: m.name, score: m.matchScore }))
-  });
+  // Renderiza oferta de assessoria DEPOIS dos region cards
+  setTimeout(() => renderConsultoria(matches), 0);
 
   document.getElementById('regionsGrid').innerHTML = matches.map((r, idx) => {
     const waMsg = `Olá André! Acabei de fazer o diagnóstico no Sistema Imóvel Certo™ e ${r.name} apareceu como ${r.matchScore}% match pro meu perfil. Quero entender mais sobre essa região.`;
@@ -423,43 +437,64 @@ function showResults() {
 }
 
 // =============================================================
-// EMAIL CAPTURE
+// CAPTURE FORM SUBMIT — gate antes do results
 // =============================================================
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('captureForm');
   if (!form) return;
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
+    const errEl = document.getElementById('captureError');
+    if (errEl) errEl.classList.remove('show');
+
+    // Validação básica
+    const fd = new FormData(form);
+    const name = (fd.get('name') || '').toString().trim();
+    const email = (fd.get('email') || '').toString().trim();
+    const whatsapp = (fd.get('whatsapp') || '').toString().trim();
+    if (!name || !email.includes('@') || whatsapp.replace(/\D/g, '').length < 8) {
+      if (errEl) {
+        errEl.textContent = 'Confere se nome, email e WhatsApp estão completos.';
+        errEl.classList.add('show');
+      }
+      return;
+    }
+
+    // Calcula match ANTES de submit pra incluir no payload
+    const matches = getMatchedRegions();
+    const matchData = JSON.stringify({
+      answers: answers,
+      matches: matches.map(m => ({ id: m.id, name: m.name, score: m.matchScore }))
+    });
+    document.getElementById('matchData').value = matchData;
+    fd.set('match_data', matchData);
+
     const btn = form.querySelector('.capture-submit');
-    const originalText = btn.textContent;
-    btn.textContent = 'Enviando…';
+    const originalHTML = btn.innerHTML;
+    btn.innerHTML = 'Enviando…';
     btn.disabled = true;
 
-    const formData = new FormData(form);
-    try {
-      const response = await fetch(form.action, {
-        method: 'POST',
-        body: formData,
-        headers: { 'Accept': 'application/json' }
-      });
-      if (response.ok) {
-        document.getElementById('results').classList.remove('active');
-        document.getElementById('results').setAttribute('aria-hidden', 'true');
-        document.getElementById('thanks').setAttribute('aria-hidden', 'false');
-        document.getElementById('thanks').classList.add('active');
-        unlockBody();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-        fbqTrack('Lead');
-      } else {
-        btn.textContent = originalText;
-        btn.disabled = false;
-        alert('Não conseguimos enviar agora. Tenta de novo em alguns segundos.');
-      }
-    } catch (err) {
-      btn.textContent = originalText;
+    // Dispara loading IMEDIATAMENTE (UX percebe instantâneo)
+    // E envia pro Formspree em paralelo (background)
+    fetch(form.action, {
+      method: 'POST',
+      body: fd,
+      headers: { 'Accept': 'application/json' }
+    }).then(r => {
+      if (r.ok) fbqTrack('Lead', { name, email });
+      else console.warn('[Sistema] Formspree retornou erro:', r.status);
+    }).catch(err => {
+      console.warn('[Sistema] Falha de rede ao enviar lead:', err);
+    });
+
+    // UX: loading + results
+    runLoadingAndShowResults();
+
+    // Restaura botão (caso usuário volte de alguma forma)
+    setTimeout(() => {
+      btn.innerHTML = originalHTML;
       btn.disabled = false;
-      alert('Sem conexão. Verifica sua internet e tenta de novo.');
-    }
+    }, 2000);
   });
 });
 
@@ -491,6 +526,101 @@ document.addEventListener('keydown', (e) => {
   fab.href = WHATSAPP_URL(defaultMsg);
   fab.addEventListener('click', () => fbqTrack('WhatsAppFAB'));
 })();
+
+// =============================================================
+// CONSULTORIA $150 — Oferta no results page (Amanda copy)
+// =============================================================
+function renderConsultoria(matches) {
+  const target = document.getElementById('consultoriaSlot');
+  if (!target) return;
+  const topRegion = matches[0] ? matches[0].name : 'a região certa';
+  target.innerHTML = `
+    <div class="consultoria-card">
+      <div class="consultoria-tag">
+        <span class="consultoria-tag-dot"></span>
+        Oferta de quem viu o resultado
+      </div>
+      <h3 class="consultoria-title">
+        30 minutos com André<br>
+        pra evitar <em>o erro de US$ 80 mil</em>.
+      </h3>
+      <p class="consultoria-lead">
+        Brasileiro comum compra a região errada em Miami e descobre 2 anos depois — quando vai vender. Diferença média entre região-match e região-empurrada: <strong>US$ 80 mil a US$ 880 mil</strong>. Antes de assinar qualquer reserva, fala 30 minutos com quem fechou 142 famílias brasileiras nessa rota.
+      </p>
+
+      <div class="consultoria-grid">
+        <div class="consultoria-cell">
+          <span class="consultoria-cell-ico">🎯</span>
+          <div>
+            <div class="consultoria-cell-title">Diagnóstico aprofundado</div>
+            <div class="consultoria-cell-sub">Aplicado ao seu ticket, sua família e ${topRegion} (sua região #1).</div>
+          </div>
+        </div>
+        <div class="consultoria-cell">
+          <span class="consultoria-cell-ico">🏦</span>
+          <div>
+            <div class="consultoria-cell-title">Estrutura LLC + Foreign National</div>
+            <div class="consultoria-cell-sub">Banco, LLC, taxa, sucessão. Sem jargão.</div>
+          </div>
+        </div>
+        <div class="consultoria-cell">
+          <span class="consultoria-cell-ico">📍</span>
+          <div>
+            <div class="consultoria-cell-title">3-5 prédios reais sugeridos</div>
+            <div class="consultoria-cell-sub">Dentro do perímetro certo. Com link MLS.</div>
+          </div>
+        </div>
+        <div class="consultoria-cell">
+          <span class="consultoria-cell-ico">⚖️</span>
+          <div>
+            <div class="consultoria-cell-title">Erros que custam US$ 200K+</div>
+            <div class="consultoria-cell-sub">CPF errado, prédio que proíbe rental, LLC errada. Você sai sabendo evitar.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="consultoria-price-row">
+        <div class="consultoria-price">
+          <span class="consultoria-price-currency">US$</span>
+          <span class="consultoria-price-value">150</span>
+          <span class="consultoria-price-unit">/ 30 min</span>
+        </div>
+        <div class="consultoria-anchor">
+          Reembolsado integralmente<br>se você fechar com o André.
+        </div>
+      </div>
+
+      <div class="consultoria-roi">
+        <span class="consultoria-roi-strike">US$ 80.000 a US$ 880.000</span>
+        <span class="consultoria-roi-text">é o prejuízo médio de quem comprou a região errada. <strong>US$ 150 é o que custa não cometer esse erro.</strong></span>
+      </div>
+
+      <a class="consultoria-cta" href="${STRIPE_CONSULTORIA_URL}" target="_blank" rel="noopener" onclick="fbqTrack('ConsultoriaCheckout',{region:'${matches[0] ? matches[0].id : 'unknown'}'})">
+        Reservar minha consultoria · US$ 150
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+
+      <div class="consultoria-trust">
+        <div class="consultoria-trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Após pagamento, você recebe email pra agendar o melhor horário
+        </div>
+        <div class="consultoria-trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Pagamento seguro via Stripe (cartão internacional ok)
+        </div>
+        <div class="consultoria-trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Zoom em PT-BR · André Cunha Lima, Realtor® Miami-Dade
+        </div>
+      </div>
+
+      <div class="consultoria-disqualifier">
+        Aviso direto: se você ainda não tem cash mínimo de US$ 150 mil pra entrar e não pretende decidir nos próximos 12 meses, essa consultoria não é pra você. E tá tudo bem — segue o resultado grátis aí em cima.
+      </div>
+    </div>
+  `;
+}
 
 // Expose
 window.startFlow = startFlow;

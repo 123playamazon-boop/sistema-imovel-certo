@@ -229,6 +229,33 @@ a{color:inherit;text-decoration:none}
 .quiz-lifestyle-sub{font-size:13px;opacity:.7;font-weight:400}
 
 /* ============================
+   CAPTURE GATE — pre-results form
+   ============================ */
+.capture-section{display:none;position:fixed;inset:0;z-index:92;background:var(--ink);color:#fff;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:80px 24px;animation:fade var(--t-med) var(--ease)}
+.capture-section.active{display:flex;align-items:center;justify-content:center}
+.capture-inner{max-width:540px;width:100%;position:relative;text-align:center}
+.capture-inner::before{content:'';position:absolute;top:-160px;left:50%;transform:translateX(-50%);width:520px;height:520px;background:radial-gradient(circle,rgba(184,158,104,.18) 0%,transparent 60%);pointer-events:none}
+.capture-mark{width:56px;height:56px;border-radius:16px;background:linear-gradient(135deg,var(--gold) 0%,#d4b885 100%);display:flex;align-items:center;justify-content:center;margin:0 auto 28px;box-shadow:0 0 40px rgba(184,158,104,.4);position:relative;z-index:1}
+.capture-mark svg{width:26px;height:26px;color:#fff}
+.capture-msg{font-size:11px;color:var(--gold);letter-spacing:.2em;text-transform:uppercase;font-weight:600;margin-bottom:18px;position:relative;z-index:1}
+.capture-section h2{font-family:var(--serif);font-weight:400;font-size:clamp(28px,4vw,40px);line-height:1.14;letter-spacing:-.015em;color:#fff;margin-bottom:14px;position:relative;z-index:1}
+.capture-section h2 em{font-style:italic;color:var(--gold)}
+.capture-section .capture-lead{font-size:15px;line-height:1.65;color:rgba(255,255,255,.7);margin-bottom:36px;font-weight:300;position:relative;z-index:1}
+.capture-form-pre{display:flex;flex-direction:column;gap:12px;position:relative;z-index:1;text-align:left}
+.capture-input{padding:18px 22px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:12px;color:#fff;font-size:16px;font-family:var(--sans);transition:all var(--t-fast) var(--ease);-webkit-appearance:none;appearance:none}
+.capture-input::placeholder{color:rgba(255,255,255,.42)}
+.capture-input:focus{outline:none;background:rgba(255,255,255,.1);border-color:var(--gold);box-shadow:0 0 0 3px rgba(184,158,104,.18)}
+.capture-submit{padding:18px 32px;background:#fff;color:var(--ink);border-radius:12px;font-size:15px;font-weight:600;cursor:pointer;transition:all var(--t-med) var(--ease);margin-top:8px;letter-spacing:-.005em;display:flex;align-items:center;justify-content:center;gap:10px}
+.capture-submit svg{width:18px;height:18px;transition:transform var(--t-fast) var(--ease)}
+.capture-submit:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 16px 40px rgba(255,255,255,.18)}
+.capture-submit:hover:not(:disabled) svg{transform:translateX(4px)}
+.capture-submit:disabled{opacity:.6;cursor:wait}
+.capture-fineprint{font-size:12px;color:rgba(255,255,255,.5);margin-top:18px;font-weight:300;position:relative;z-index:1;text-align:center}
+.capture-fineprint svg{width:11px;height:11px;color:var(--gold);vertical-align:-1px;margin-right:4px}
+.capture-error{color:#ff8a8a;font-size:13px;margin-top:8px;text-align:center;display:none}
+.capture-error.show{display:block}
+
+/* ============================
    LOADING — Cinematic full-screen
    ============================ */
 .loading-section{display:none;position:fixed;inset:0;z-index:95;background:var(--black);color:#fff;animation:fade var(--t-med) var(--ease)}
@@ -320,6 +347,43 @@ a{color:inherit;text-decoration:none}
 .capture-submit:disabled{opacity:.6;cursor:wait}
 .capture-fineprint{font-size:12px;color:rgba(255,255,255,.5);margin-top:16px;font-weight:300;position:relative;z-index:1}
 .results-disclaimer{max-width:880px;margin:80px auto 0;padding:0 40px 120px;font-size:13px;line-height:1.6;color:var(--mute);text-align:center;font-weight:300}
+
+/* ============================
+   CONSULTORIA $150 — Premium offer card
+   ============================ */
+.results-consultoria{max-width:920px;margin:120px auto 0;padding:0 40px}
+.consultoria-card{position:relative;background:linear-gradient(180deg,#0a0a0a 0%,#1a1a1a 100%);color:#fff;border-radius:28px;padding:64px 56px;overflow:hidden;border:1px solid rgba(184,158,104,.28)}
+.consultoria-card::before{content:'';position:absolute;top:-200px;right:-200px;width:560px;height:560px;background:radial-gradient(circle,rgba(184,158,104,.22) 0%,transparent 60%);pointer-events:none}
+.consultoria-card::after{content:'';position:absolute;bottom:-160px;left:-160px;width:420px;height:420px;background:radial-gradient(circle,rgba(184,158,104,.1) 0%,transparent 60%);pointer-events:none}
+.consultoria-tag{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;background:rgba(184,158,104,.16);border:1px solid rgba(184,158,104,.4);border-radius:100px;font-size:11px;font-weight:600;color:var(--gold);letter-spacing:.14em;text-transform:uppercase;margin-bottom:24px;position:relative;z-index:1}
+.consultoria-tag-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px var(--gold);animation:pulse-dot 2s ease-in-out infinite}
+.consultoria-title{font-family:var(--serif);font-weight:400;font-size:clamp(28px,3.8vw,42px);line-height:1.14;letter-spacing:-.014em;color:#fff;margin-bottom:18px;position:relative;z-index:1;max-width:22ch}
+.consultoria-title em{font-style:italic;color:var(--gold)}
+.consultoria-lead{font-size:16px;line-height:1.65;color:rgba(255,255,255,.78);margin-bottom:36px;max-width:62ch;font-weight:300;position:relative;z-index:1}
+.consultoria-lead strong{color:#fff;font-weight:600}
+.consultoria-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.08);border-radius:14px;overflow:hidden;margin-bottom:36px;position:relative;z-index:1}
+.consultoria-cell{background:rgba(255,255,255,.02);padding:22px 24px;display:flex;align-items:flex-start;gap:14px}
+.consultoria-cell-ico{font-size:22px;flex-shrink:0;width:38px;height:38px;border-radius:10px;background:rgba(184,158,104,.12);display:flex;align-items:center;justify-content:center;border:1px solid rgba(184,158,104,.24)}
+.consultoria-cell-title{font-size:14px;font-weight:600;color:#fff;margin-bottom:3px;letter-spacing:-.005em}
+.consultoria-cell-sub{font-size:13px;color:rgba(255,255,255,.62);line-height:1.5;font-weight:300}
+.consultoria-price-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;padding:24px 0;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:24px;position:relative;z-index:1}
+.consultoria-price{display:flex;align-items:baseline;gap:4px;color:#fff}
+.consultoria-price-currency{font-size:18px;font-weight:500;color:var(--gold);align-self:flex-start;padding-top:8px}
+.consultoria-price-value{font-family:var(--serif);font-weight:400;font-size:64px;line-height:1;letter-spacing:-.02em}
+.consultoria-price-unit{font-size:14px;color:rgba(255,255,255,.5);font-weight:400;margin-left:6px}
+.consultoria-anchor{font-size:13px;color:rgba(255,255,255,.7);line-height:1.5;font-weight:300;text-align:right}
+.consultoria-roi{padding:18px 22px;background:rgba(184,158,104,.08);border-left:3px solid var(--gold);border-radius:8px;margin-bottom:32px;position:relative;z-index:1}
+.consultoria-roi-strike{display:block;font-family:var(--serif);font-style:italic;font-size:18px;color:rgba(255,255,255,.45);text-decoration:line-through;margin-bottom:4px;letter-spacing:-.005em}
+.consultoria-roi-text{font-size:14px;line-height:1.55;color:rgba(255,255,255,.85);font-weight:300}
+.consultoria-roi-text strong{color:var(--gold);font-weight:600}
+.consultoria-cta{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;padding:22px 32px;background:linear-gradient(135deg,var(--gold) 0%,#d4b885 100%);color:#0a0a0a;border-radius:14px;font-size:16px;font-weight:600;letter-spacing:-.005em;text-decoration:none;transition:all var(--t-med) var(--ease);box-shadow:0 16px 40px rgba(184,158,104,.3);position:relative;z-index:1;margin-bottom:28px}
+.consultoria-cta:hover{transform:translateY(-2px);box-shadow:0 24px 60px rgba(184,158,104,.45)}
+.consultoria-cta svg{width:18px;height:18px;transition:transform var(--t-fast) var(--ease)}
+.consultoria-cta:hover svg{transform:translateX(4px)}
+.consultoria-trust{display:flex;flex-direction:column;gap:10px;margin-bottom:28px;position:relative;z-index:1}
+.consultoria-trust-item{display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(255,255,255,.7);font-weight:300}
+.consultoria-trust-item svg{width:13px;height:13px;color:var(--gold);flex-shrink:0}
+.consultoria-disqualifier{padding:16px 20px;background:rgba(255,255,255,.04);border-radius:10px;font-size:12px;color:rgba(255,255,255,.5);line-height:1.6;font-weight:300;font-style:italic;text-align:center;position:relative;z-index:1;border:1px dashed rgba(255,255,255,.1)}
 
 /* ============================
    THANKS
@@ -451,6 +515,22 @@ a{color:inherit;text-decoration:none}
   .wa-fab{width:54px;height:54px;bottom:18px;right:18px}
   .wa-fab svg{width:24px;height:24px}
   .wa-fab-label{display:none}
+
+  .results-consultoria{padding:0 20px;margin-top:72px}
+  .consultoria-card{padding:40px 28px;border-radius:22px}
+  .consultoria-title{font-size:clamp(24px,6vw,32px)}
+  .consultoria-lead{font-size:15px}
+  .consultoria-grid{grid-template-columns:1fr}
+  .consultoria-cell{padding:18px 20px}
+  .consultoria-price-row{flex-direction:column;align-items:flex-start;gap:10px}
+  .consultoria-price-value{font-size:52px}
+  .consultoria-anchor{text-align:left;font-size:12px}
+  .consultoria-cta{padding:18px 24px;font-size:15px}
+  .consultoria-trust-item{font-size:12px}
+
+  .capture-section{padding:60px 20px}
+  .capture-section h2{font-size:clamp(24px,6vw,30px)}
+  .capture-inner::before{width:380px;height:380px}
 
   .testimonials-grid{grid-template-columns:1fr;gap:24px;margin-top:48px}
   .testimonial{padding:32px 28px}
@@ -725,6 +805,58 @@ a{color:inherit;text-decoration:none}
 </section>
 
 <!-- ============================
+     CAPTURE GATE — pre-results
+     ============================ -->
+<section class="capture-section" id="capture" aria-hidden="true">
+  <div class="capture-inner">
+    <div class="capture-mark">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    <div class="capture-msg">Seu match está pronto</div>
+    <h2>Pra onde a gente <em>envia o resultado</em>?</h2>
+    <p class="capture-lead">Suas 3 regiões ideais + simulação de financiamento + prédios sugeridos. Sem corretor te empurrando — você no controle.</p>
+    <form class="capture-form-pre" id="captureForm" action="https://formspree.io/f/myzgnoeq" method="POST" novalidate>
+      <input type="hidden" id="matchData" name="match_data">
+      <input
+        type="text"
+        name="name"
+        class="capture-input"
+        placeholder="Seu nome completo"
+        autocomplete="name"
+        required
+      >
+      <input
+        type="email"
+        name="email"
+        class="capture-input"
+        placeholder="Seu melhor email"
+        autocomplete="email"
+        inputmode="email"
+        required
+      >
+      <input
+        type="tel"
+        name="whatsapp"
+        class="capture-input"
+        placeholder="WhatsApp com DDD · ex: 11 98765 4321"
+        autocomplete="tel"
+        inputmode="tel"
+        required
+      >
+      <button type="submit" class="capture-submit">
+        Ver minhas 3 regiões
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </button>
+      <p class="capture-error" id="captureError">Ops, conferi os campos e tenta de novo.</p>
+    </form>
+    <p class="capture-fineprint">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      Seus dados são confidenciais. Atendimento em PT-BR. Sem spam.
+    </p>
+  </div>
+</section>
+
+<!-- ============================
      LOADING — Cinematic
      ============================ -->
 <section class="loading-section" id="loading" aria-hidden="true">
@@ -755,21 +887,7 @@ a{color:inherit;text-decoration:none}
   </div>
   <div class="results-list" id="regionsGrid"></div>
 
-  <div class="results-capture">
-    <div class="capture-card">
-      <span class="eyebrow">Próximo passo</span>
-      <h3>Receba a análise completa por email.</h3>
-      <p>Inclui simulação de financiamento, prédios sugeridos por região e contato direto com a equipe Daniella & André Realtors®.</p>
-      <form class="capture-form" id="captureForm" action="https://formspree.io/f/myzgnoeq" method="POST">
-        <input type="hidden" id="matchData" name="match_data">
-        <input type="text" name="name" class="capture-input" placeholder="Seu nome completo" required>
-        <input type="email" name="email" class="capture-input" placeholder="Seu melhor email" required>
-        <input type="tel" name="whatsapp" class="capture-input" placeholder="WhatsApp (com DDD)" required>
-        <button type="submit" class="capture-submit">Receber análise completa</button>
-      </form>
-      <p class="capture-fineprint">Sem spam. Sem corretor te empurrando. Você no controle.</p>
-    </div>
-  </div>
+  <div class="results-consultoria" id="consultoriaSlot"></div>
 
   <p class="results-disclaimer">Sistema Imóvel Certo™ é uma ferramenta de orientação preliminar. Decisões de compra envolvem análise jurídica, tributária e financeira individualizada com profissionais licenciados.</p>
 </section>
@@ -783,7 +901,7 @@ a{color:inherit;text-decoration:none}
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
     </div>
     <h2>Recebido. <em>O próximo capítulo</em> começa agora.</h2>
-    <p>A análise completa chega no seu email em alguns minutos. André ou Daniella entram em contato pelo WhatsApp em até 24 horas — sem pressão, sem empurração.</p>
+    <p>A análise completa já está chegando no seu email. André ou Daniella entram em contato pelo WhatsApp em até 24 horas — sem pressão, sem empurração.</p>
   </div>
 </section>
 

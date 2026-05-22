@@ -59,11 +59,9 @@ a{color:inherit;text-decoration:none}
 .nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:22px 40px;display:flex;align-items:center;justify-content:space-between;transition:all var(--t-med) var(--ease);background:transparent}
 .nav.scrolled{background:rgba(255,255,255,.78);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border-bottom:1px solid var(--line);padding:14px 40px}
 .nav-brand{display:flex;align-items:center;flex-shrink:0}
-.nav-brand img{height:44px;width:auto;display:block;transition:opacity var(--t-fast) var(--ease)}
-.nav-brand .logo-light{display:block}
-.nav-brand .logo-dark{display:none}
-.nav.scrolled .nav-brand .logo-light{display:none}
-.nav.scrolled .nav-brand .logo-dark{display:block}
+.nav-brand img{height:54px;width:54px;display:block;border-radius:50%;transition:transform var(--t-fast) var(--ease),filter var(--t-fast) var(--ease)}
+.nav-brand:hover img{transform:scale(1.05)}
+.nav.scrolled .nav-brand img{filter:drop-shadow(0 2px 8px rgba(0,0,0,.12))}
 .nav-cta{padding:11px 22px;border:1px solid rgba(255,255,255,.4);border-radius:100px;font-size:13px;font-weight:500;letter-spacing:-.005em;color:var(--white);transition:all var(--t-med) var(--ease);background:rgba(255,255,255,.06);backdrop-filter:blur(10px)}
 .nav-cta:hover{background:#fff;color:var(--ink);border-color:#fff;transform:translateY(-1px)}
 .nav.scrolled .nav-cta{color:var(--ink);border-color:var(--ink);background:transparent}
@@ -152,8 +150,8 @@ a{color:inherit;text-decoration:none}
 .tech-visual::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,10,10,.4) 0%,transparent 50%,rgba(10,10,10,.5) 100%)}
 .tech-badge{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:2}
 .tech-badge-card{padding:36px 44px;background:rgba(10,10,10,.72);backdrop-filter:blur(24px);border:1px solid var(--gold-line);border-radius:18px;text-align:center;max-width:300px}
-.tech-badge-icon{display:flex;align-items:center;justify-content:center;margin:0 auto 18px;filter:drop-shadow(0 0 28px rgba(184,158,104,.55))}
-.tech-badge-icon img{height:72px;width:auto;display:block}
+.tech-badge-icon{display:flex;align-items:center;justify-content:center;margin:0 auto 22px;filter:drop-shadow(0 0 32px rgba(184,158,104,.55))}
+.tech-badge-icon img{height:140px;width:140px;display:block;border-radius:50%}
 .tech-badge-card h3{font-family:var(--serif);font-size:22px;font-weight:500;color:#fff;margin-bottom:6px;letter-spacing:-.005em}
 .tech-badge-card p{font-size:12px;color:rgba(255,255,255,.62);letter-spacing:.06em;text-transform:uppercase}
 
@@ -503,7 +501,7 @@ a{color:inherit;text-decoration:none}
 .footer{background:var(--white);border-top:1px solid var(--line);padding:64px 40px 48px}
 .footer-inner{max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:32px}
 .footer-brand{display:flex;align-items:center;flex-shrink:0}
-.footer-brand img{height:42px;width:auto;display:block}
+.footer-brand img{height:64px;width:64px;display:block;border-radius:50%}
 .footer-links{display:flex;gap:32px;flex-wrap:wrap}
 .footer-links a{font-size:13px;color:var(--slate);transition:color var(--t-fast) var(--ease);font-weight:400}
 .footer-links a:hover{color:var(--ink)}
@@ -513,11 +511,12 @@ a{color:inherit;text-decoration:none}
    MOBILE — App-like, thumb-friendly
    ============================ */
 @media (max-width:920px){
-  .nav{padding:14px 18px}
-  .nav.scrolled{padding:10px 18px}
-  .nav-brand img{height:38px}
+  .nav{padding:12px 18px}
+  .nav.scrolled{padding:9px 18px}
+  .nav-brand img{height:46px;width:46px}
   .nav-cta{padding:9px 16px;font-size:12px}
-  .footer-brand img{height:36px}
+  .footer-brand img{height:56px;width:56px}
+  .tech-badge-icon img{height:110px;width:110px}
   .hero{padding:100px 20px 60px;min-height:100vh}
   .hero-eyebrow{font-size:10px;padding:6px 14px;margin-bottom:24px}
   .hero h1{font-size:clamp(32px,8vw,46px)}
@@ -663,8 +662,7 @@ a{color:inherit;text-decoration:none}
      ============================ -->
 <nav class="nav" id="nav">
   <a class="nav-brand" href="/" aria-label="Sistema Imóvel Certo · Intelligent Real Estate">
-    <img class="logo-light" src="img/logo_nav.png?v=2" alt="Sistema Imóvel Certo">
-    <img class="logo-dark" src="img/logo_nav_dark.png?v=2" alt="">
+    <img src="img/logo_nav.png?v=3" alt="Sistema Imóvel Certo · Intelligent Real Estate">
   </a>
   <button class="nav-cta" onclick="startFlow()">Começar</button>
 </nav>
@@ -710,23 +708,23 @@ a{color:inherit;text-decoration:none}
 <section class="section how">
   <div class="section-inner reveal">
     <span class="eyebrow">Como funciona</span>
-    <h2 class="center">Inteligência aplicada para encontrar <em>o imóvel certo</em>.</h2>
-    <p class="section-lead center">Nada de listas infinitas ou ligações intrusivas. Você responde. A IA analisa. Você recebe.</p>
+    <h2 class="center">Nada de listas infinitas. Nada de <em>ligação de corretor empurrando prédio</em>.</h2>
+    <p class="section-lead center">Você responde 5 perguntas. A IA cruza 305 mil imóveis em 0,8 segundo. Você recebe as 3 regiões que combinam — em 47 segundos.</p>
     <div class="how-grid">
       <div class="how-step">
         <span class="how-step-num">01</span>
-        <h3>Você responde 5 perguntas</h3>
-        <p>Sobre seu estilo de vida, seu perfil familiar, seu orçamento e seu objetivo. Sem cadastro inicial. Sem compromisso.</p>
+        <h3>Você responde 5 perguntas em 47 segundos</h3>
+        <p>Objetivo, lifestyle, ticket, perfil familiar, prazo de decisão. <strong>Sem cadastro de email.</strong> Sem login. Sem cookies de tracking pesado. Você só dá email pra receber o resultado — depois.</p>
       </div>
       <div class="how-step">
         <span class="how-step-num">02</span>
-        <h3>A IA cruza 305 mil imóveis</h3>
-        <p>Em 5 regiões mapeadas dos Estados Unidos. Avalia compatibilidade de lifestyle, valorização histórica, perfil familiar e renda projetada.</p>
+        <h3>A IA cruza 305 mil imóveis em 0,8 segundo</h3>
+        <p>5 regiões mapeadas (Brickell, Aventura, Sunny Isles, Orlando, Tampa). Cruza 5 variáveis psicográficas + valorização histórica 2020-2025 + perfil familiar BR + cap rate Triplo Verão.</p>
       </div>
       <div class="how-step">
         <span class="how-step-num">03</span>
-        <h3>Você recebe 3 regiões ideais</h3>
-        <p>Com tudo que importa para sua decisão: valorização, ticket, renda mensal projetada e compatibilidade real com a sua vida.</p>
+        <h3>Você recebe 3 regiões + 6 imóveis curados</h3>
+        <p>Com valorização anual real, faixa de ticket por bucket (acessível, meio termo, premium), renda mensal projetada em dólar, e o <strong>"Por dentro"</strong> do bairro — escolas, mercados, restaurantes.</p>
       </div>
     </div>
   </div>
@@ -745,19 +743,19 @@ a{color:inherit;text-decoration:none}
       <div class="tech-features">
         <div class="tech-feat">
           <span class="tech-feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg></span>
-          <span class="tech-feat-text">Análise de estilo de vida e compatibilidade regional</span>
+          <span class="tech-feat-text"><strong>5 variáveis psicográficas</strong> cruzadas com 35 micro-perfis brasileiros</span>
         </div>
         <div class="tech-feat">
           <span class="tech-feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
-          <span class="tech-feat-text">Perfil familiar — escolas, comunidade e segurança</span>
+          <span class="tech-feat-text">Mapeamento das <strong>17 escolas públicas Top 100 EUA</strong> na Flórida (U.S. News)</span>
         </div>
         <div class="tech-feat">
           <span class="tech-feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
-          <span class="tech-feat-text">Perfil de investidor e renda projetada em dólar</span>
+          <span class="tech-feat-text"><strong>Cap rate Triplo Verão</strong>: snowbird + temporada BR + latina = US$ 2-9k/mês</span>
         </div>
         <div class="tech-feat">
           <span class="tech-feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></span>
-          <span class="tech-feat-text">Histórico de valorização por região e por tipo</span>
+          <span class="tech-feat-text"><strong>5 anos de dados reais de fechamentos</strong> — Aventura 7,5% · Brickell 9,2% · Sunny Isles 8,8% a.a.</span>
         </div>
       </div>
     </div>
@@ -765,10 +763,10 @@ a{color:inherit;text-decoration:none}
       <div class="tech-badge">
         <div class="tech-badge-card">
           <div class="tech-badge-icon">
-            <img src="img/logo_mark.png?v=2" alt="Sistema Imóvel Certo">
+            <img src="img/logo_mark.png?v=3" alt="Sistema Imóvel Certo · Intelligent Real Estate">
           </div>
-          <h3>Sistema Imóvel Certo™</h3>
-          <p>Intelligent Real Estate</p>
+          <h3>Algoritmo proprietário</h3>
+          <p>Treinado com 142 famílias brasileiras</p>
         </div>
       </div>
     </div>
@@ -1050,7 +1048,7 @@ a{color:inherit;text-decoration:none}
 <footer class="footer">
   <div class="footer-inner">
     <div class="footer-brand">
-      <img src="img/logo_nav_dark.png?v=2" alt="Sistema Imóvel Certo · Intelligent Real Estate">
+      <img src="img/logo_nav.png?v=3" alt="Sistema Imóvel Certo · Intelligent Real Estate">
     </div>
     <div class="footer-links">
       <a href="#" onclick="startFlow();return false">Fazer diagnóstico</a>

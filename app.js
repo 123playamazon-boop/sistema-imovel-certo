@@ -339,12 +339,12 @@ function showResults() {
   document.getElementById('loading').setAttribute('aria-hidden', 'true');
   document.getElementById('results').setAttribute('aria-hidden', 'false');
   document.getElementById('results').classList.add('active');
-
-  // Libera o scroll do body
-  document.body.style.position = '';
-  document.body.style.top = '';
-  document.body.style.width = '';
-  window.scrollTo(0, 0);
+  // Mantém body lock — results é fullscreen overlay. Scroll fica interno.
+  // Garante que o overlay inicia rolado pro topo:
+  setTimeout(() => {
+    const rs = document.getElementById('results');
+    if (rs) rs.scrollTop = 0;
+  }, 30);
 
   const matches = getMatchedRegions();
 

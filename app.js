@@ -27,17 +27,20 @@ fetch('listings.json')
   .then(data => { LISTINGS = data; })
   .catch(err => console.warn('[Sistema] listings.json não carregou:', err));
 
-// Pega 3 listings aleatórios pra uma região (cria sensação de match único)
-function getRandomListings(regionId, n = 3) {
+// Pega 1 imóvel de cada faixa (entry $700-800K, mid $1.5-2M, premium $5M+).
+// Cria escala visual de preço — não assusta o lead com 3 cards de US$ 10M+.
+function getRandomListings(regionId) {
   const region = LISTINGS[regionId];
-  if (!region || !region.sample || !region.sample.length) return [];
-  const pool = [...region.sample];
-  const out = [];
-  while (out.length < n && pool.length) {
-    const idx = Math.floor(Math.random() * pool.length);
-    out.push(pool.splice(idx, 1)[0]);
-  }
-  return out;
+  if (!region || !region.samples) return [];
+  const pickOne = (arr) => {
+    if (!arr || !arr.length) return null;
+    return arr[Math.floor(Math.random() * arr.length)];
+  };
+  return [
+    pickOne(region.samples.entry),
+    pickOne(region.samples.mid),
+    pickOne(region.samples.premium)
+  ].filter(Boolean);
 }
 
 // =============================================================
@@ -496,7 +499,7 @@ function showResults() {
         </div>
 
         ${(() => {
-          const listings = getRandomListings(r.id, 3);
+          const listings = getRandomListings(r.id);
           const listingsMeta = LISTINGS[r.id];
           if (!listings.length) {
             if (listingsMeta && listingsMeta.see_all_url) {
@@ -517,9 +520,13 @@ function showResults() {
           <div class="region-block">
             <div class="region-block-label">3 de ${total} imóveis disponíveis agora em ${r.name}</div>
             <div class="region-listings">
-              ${listings.map(l => `
-                <a class="region-listing" href="${seeAllUrl}" target="_blank" rel="noopener" onclick="fbqTrack('ListingClick',{region:'${r.id}',mls:'${l.mls}'})">
+              ${listings.map((l, idx) => {
+                const tier = ['Acessível', 'Meio termo', 'Premium'][idx] || '';
+                const tierClass = ['entry', 'mid', 'premium'][idx] || '';
+                return `
+                <a class="region-listing" href="${seeAllUrl}" target="_blank" rel="noopener" onclick="fbqTrack('ListingClick',{region:'${r.id}',mls:'${l.mls}',tier:'${tierClass}'})">
                   <div class="region-listing-img" style="background-image:url('${l.img}')">
+                    <span class="region-listing-tier region-listing-tier--${tierClass}">${tier}</span>
                     <span class="region-listing-mls">${l.mls}</span>
                   </div>
                   <div class="region-listing-body">
@@ -531,8 +538,8 @@ function showResults() {
                       ${l.sqft && l.sqft !== '0' ? `<span>${l.sqft} ft²</span>` : ''}
                     </div>
                   </div>
-                </a>
-              `).join('')}
+                </a>`;
+              }).join('')}
             </div>
             <a class="region-listings-cta" href="${seeAllUrl}" target="_blank" rel="noopener" onclick="fbqTrack('SeeAllListings',{region:'${r.id}'})">
               Ver todos os ${total} imóveis em ${r.name} →

@@ -75,13 +75,42 @@
     }
   },
   "orlando": {
-    "total_available": 0,
+    "total_available": 1464,
     "see_all_url": "https://www.andrecunhalima.com/for-sale/orlando",
-    "samples": {"entry": [], "mid": [], "premium": []}
+    "samples": {
+      "entry": [
+        {"mls":"O6405280","price":"$799K","condo":"Pepper Plantation","address":"2738 PEPPER LN, ORLANDO FL, 32812","beds":3,"baths":4,"sqft":"1,970","img":"https://dvvjkgh94f2v6.cloudfront.net/735d922b/789751180/83dcefb7.jpeg"},
+        {"mls":"G5111639","price":"$794,990","condo":"Laureate Park At Lake Nona","address":"9878 PEEBLES, ORLANDO FL, 32827","beds":4,"baths":3,"sqft":"2,176","img":"https://dvvjkgh94f2v6.cloudfront.net/735d922b/788915370/83dcefb7.jpeg"},
+        {"mls":"O6384095","price":"$785K","condo":"Laureate Park","address":"13833 BEHRING, ORLANDO FL, 32827","beds":4,"baths":4,"sqft":"3,003","img":"https://dvvjkgh94f2v6.cloudfront.net/735d922b/782573818/83dcefb7.jpeg"},
+        {"mls":"S5147291","price":"$785K","condo":"Randal Park Ph 5","address":"8042 CORKFIELD, ORLANDO FL, 32832","beds":4,"baths":3,"sqft":"2,418","img":"https://dvvjkgh94f2v6.cloudfront.net/735d922b/786867898/83dcefb7.jpeg"}
+      ],
+      "mid": [
+        {"mls":"O6366664","price":"$6,019,000","condo":"Lake Nona Estates","address":"10481 CROMWELL GROVE, ORLANDO FL, 32827","beds":6,"baths":7,"sqft":"6,019","img":"https://dvvjkgh94f2v6.cloudfront.net/735d922b/777015209/83dcefb7.jpeg"},
+        {"mls":"O6359516","price":"$5,995,000","condo":"Lake Nona Estates","address":"11035 CROMWELL GROVE, ORLANDO FL, 32827","beds":5,"baths":7,"sqft":"5,995","img":"https://dvvjkgh94f2v6.cloudfront.net/735d922b/775914123/83dcefb7.jpeg"}
+      ],
+      "premium": [
+        {"mls":"O6392916","price":"$9,495,000","condo":"Lake Nona Estates","address":"8506 LAKE NONA SHORE DR, ORLANDO FL, 32827","beds":6,"baths":8,"sqft":"8,257","img":"https://dvvjkgh94f2v6.cloudfront.net/735d922b/785522314/83dcefb7.jpeg"},
+        {"mls":"O6366659","price":"$6.75M","condo":"Lake Nona Estates","address":"9700 BLANDFORD, ORLANDO FL, 32827","beds":5,"baths":7,"sqft":"6,732","img":"https://dvvjkgh94f2v6.cloudfront.net/735d922b/777014353/83dcefb7.jpeg"},
+        {"mls":"O6366663","price":"$6.1M","condo":"Lake Nona Estates","address":"9671 BLANDFORD, ORLANDO FL, 32827","beds":5,"baths":5,"sqft":"5,969","img":"https://dvvjkgh94f2v6.cloudfront.net/735d922b/777015011/83dcefb7.jpeg"}
+      ]
+    }
   },
   "tampa": {
-    "total_available": 0,
+    "total_available": 1863,
     "see_all_url": "https://www.andrecunhalima.com/for-sale/tampa",
-    "samples": {"entry": [], "mid": [], "premium": []}
+    "samples": {
+      "entry": [
+        {"mls":"TB8508431","price":"$45.5M","condo":"Pendry Residences Tampa, Unit PH SOUTH","address":"111 S ASHLEY, TAMPA FL, 33602","beds":6,"baths":9,"sqft":"10,072","img":"https://dvvjkgh94f2v6.cloudfront.net/735d922b/790495874/83dcefb7.jpeg"},
+        {"mls":"TB8497912","price":"$21,999,000","condo":"Davis Islands Pb10 Pg52 To 57","address":"52 LADOGA, TAMPA FL, 33606","beds":8,"baths":15,"sqft":"18,568","img":"https://dvvjkgh94f2v6.cloudfront.net/735d922b/787676647/83dcefb7.jpeg"}
+      ],
+      "mid": [
+        {"mls":"TB8490217","price":"$17M","condo":"Davis Islands Pb10 Pg52 To 57","address":"214 BLANCA, TAMPA FL, 33606","beds":6,"baths":6,"sqft":"7,400","img":"https://dvvjkgh94f2v6.cloudfront.net/735d922b/785645571/83dcefb7.jpeg"},
+        {"mls":"TB8446032","price":"$14.75M","condo":"Davis Islands Rep Of Pt O","address":"82 MARTINIQUE, TAMPA FL, 33606","beds":5,"baths":10,"sqft":"9,646","img":"https://dvvjkgh94f2v6.cloudfront.net/735d922b/774568695/83dcefb7.jpeg"}
+      ],
+      "premium": [
+        {"mls":"TB8508431","price":"$45.5M","condo":"Pendry Residences Tampa, Unit PH SOUTH","address":"111 S ASHLEY, TAMPA FL, 33602","beds":6,"baths":9,"sqft":"10,072","img":"https://dvvjkgh94f2v6.cloudfront.net/735d922b/790495874/83dcefb7.jpeg"},
+        {"mls":"TB8490217","price":"$17M","condo":"Davis Islands Pb10 Pg52 To 57","address":"214 BLANCA, TAMPA FL, 33606","beds":6,"baths":6,"sqft":"7,400","img":"https://dvvjkgh94f2v6.cloudfront.net/735d922b/785645571/83dcefb7.jpeg"}
+      ]
+    }
   }
 }

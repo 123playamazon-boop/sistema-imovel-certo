@@ -11,15 +11,34 @@ const WHATSAPP_URL = (msg) => `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIC
 const STRIPE_CONSULTORIA_URL = 'https://buy.stripe.com/REPLACE_WITH_REAL_LINK';
 
 let REGIONS = [];
+let LISTINGS = {};
 let currentQ = 0;
 let answers = {};
 let bodyScrollY = 0;
 
-// Load regions
+// Load regions + listings (imóveis reais do site do André)
 fetch('regions.json')
   .then(r => r.json())
   .then(data => { REGIONS = data; })
   .catch(err => console.error('[Sistema] Falha ao carregar regions.json:', err));
+
+fetch('listings.json')
+  .then(r => r.json())
+  .then(data => { LISTINGS = data; })
+  .catch(err => console.warn('[Sistema] listings.json não carregou:', err));
+
+// Pega 3 listings aleatórios pra uma região (cria sensação de match único)
+function getRandomListings(regionId, n = 3) {
+  const region = LISTINGS[regionId];
+  if (!region || !region.sample || !region.sample.length) return [];
+  const pool = [...region.sample];
+  const out = [];
+  while (out.length < n && pool.length) {
+    const idx = Math.floor(Math.random() * pool.length);
+    out.push(pool.splice(idx, 1)[0]);
+  }
+  return out;
+}
 
 // =============================================================
 // HERO SLIDESHOW — cinematic crossfade
@@ -475,6 +494,51 @@ function showResults() {
           <strong>Perfil investidor:</strong> ${r.investor_profile}<br>
           <strong>Perfil família:</strong> ${r.family_profile}
         </div>
+
+        ${(() => {
+          const listings = getRandomListings(r.id, 3);
+          const listingsMeta = LISTINGS[r.id];
+          if (!listings.length) {
+            if (listingsMeta && listingsMeta.see_all_url) {
+              return `
+              <div class="region-block">
+                <div class="region-block-label">Imóveis disponíveis agora</div>
+                <a class="region-listings-cta-empty" href="${listingsMeta.see_all_url}" target="_blank" rel="noopener" onclick="fbqTrack('SeeAllListings',{region:'${r.id}'})">
+                  Ver imóveis em ${r.name} no site oficial do André
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+              </div>`;
+            }
+            return '';
+          }
+          const total = listingsMeta && listingsMeta.total_available ? listingsMeta.total_available.toLocaleString('pt-BR') : '';
+          const seeAllUrl = listingsMeta && listingsMeta.see_all_url ? listingsMeta.see_all_url : '#';
+          return `
+          <div class="region-block">
+            <div class="region-block-label">3 de ${total} imóveis disponíveis agora em ${r.name}</div>
+            <div class="region-listings">
+              ${listings.map(l => `
+                <a class="region-listing" href="${seeAllUrl}" target="_blank" rel="noopener" onclick="fbqTrack('ListingClick',{region:'${r.id}',mls:'${l.mls}'})">
+                  <div class="region-listing-img" style="background-image:url('${l.img}')">
+                    <span class="region-listing-mls">${l.mls}</span>
+                  </div>
+                  <div class="region-listing-body">
+                    <div class="region-listing-price">${l.price}</div>
+                    <div class="region-listing-condo">${l.condo}</div>
+                    <div class="region-listing-meta">
+                      ${l.beds ? `<span>${l.beds} quartos</span>` : ''}
+                      ${l.baths ? `<span>${l.baths} banheiros</span>` : ''}
+                      ${l.sqft && l.sqft !== '0' ? `<span>${l.sqft} ft²</span>` : ''}
+                    </div>
+                  </div>
+                </a>
+              `).join('')}
+            </div>
+            <a class="region-listings-cta" href="${seeAllUrl}" target="_blank" rel="noopener" onclick="fbqTrack('SeeAllListings',{region:'${r.id}'})">
+              Ver todos os ${total} imóveis em ${r.name} →
+            </a>
+          </div>`;
+        })()}
 
         <a class="region-wa" href="${WHATSAPP_URL(waMsg)}" target="_blank" rel="noopener" onclick="fbqTrack('RegionWhatsApp', {region: '${r.id}'})">
           <span class="region-wa-ico">

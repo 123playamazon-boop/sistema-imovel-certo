@@ -7,6 +7,94 @@
 const WHATSAPP_PHONE = '13056849224';
 const WHATSAPP_URL = (msg) => `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(msg)}`;
 
+// =============================================================
+// LEAD SUMMARY — formata respostas do quiz pra WhatsApp do André
+// =============================================================
+const ANSWER_LABELS = {
+  purpose: {
+    label: 'Objetivo',
+    values: {
+      live: '🏡 Morar com a família',
+      invest: '📈 Investir e gerar renda',
+      vacation: '🌴 Casa de férias',
+      protection: '🛡️ Proteger patrimônio'
+    }
+  },
+  lifestyle: {
+    label: 'Estilo de vida',
+    values: {
+      urban: '🏙️ Urbano vibrante (Brickell, downtown)',
+      beach: '🏖️ Pé na areia (Sunny Isles, Surfside)',
+      family: '👨‍👩‍👧 Família calma (Aventura, Coral Gables)',
+      luxury: '💎 Luxo discreto (Bal Harbour, Pinecrest)',
+      calm: '🌿 Vida tranquila (Tampa, Doral)'
+    }
+  },
+  budget: {
+    label: 'Ticket',
+    values: {
+      '150-300': 'US$ 150-300 mil',
+      '300-500': 'US$ 300-500 mil',
+      '500-1000': 'US$ 500K-1M',
+      '1000+': 'Acima de US$ 1M'
+    }
+  },
+  kids: {
+    label: 'Família',
+    values: {
+      yes_small: '👶 Filhos pequenos (0-12 anos)',
+      yes_teen: '🎓 Filhos adolescentes (13-18)',
+      no: '🥂 Sem filhos em casa',
+      planning: '🌱 Planejando ter'
+    }
+  },
+  timeline: {
+    label: 'Decisão',
+    values: {
+      now: '🚀 Pronto agora (próximos 90 dias)',
+      '6mo': '📅 Próximos 6 meses',
+      '12mo': '⏳ Próximos 12 meses',
+      research: '🔍 Apenas pesquisando'
+    }
+  }
+};
+
+function buildLeadSummary(specificRegion = null) {
+  if (!answers || !Object.keys(answers).length) {
+    return 'Olá André! Vi o Sistema Imóvel Certo™ e gostaria de tirar algumas dúvidas sobre imóveis em Miami — sem compromisso.';
+  }
+
+  const lines = ['Olá André! Acabei de fazer o diagnóstico no Sistema Imóvel Certo™.', ''];
+  lines.push('📋 *MEU PERFIL:*');
+  ['purpose', 'lifestyle', 'budget', 'kids', 'timeline'].forEach(key => {
+    const val = answers[key];
+    if (!val) return;
+    const spec = ANSWER_LABELS[key];
+    if (!spec) return;
+    const display = spec.values[val] || val;
+    lines.push(`• ${spec.label}: ${display}`);
+  });
+
+  // Match das 3 regiões (calcula no momento da chamada pra refletir state atual)
+  const matches = getMatchedRegions();
+  if (matches && matches.length) {
+    lines.push('');
+    lines.push('📍 *MINHAS 3 REGIÕES MATCH:*');
+    matches.forEach((m, idx) => {
+      lines.push(`${idx + 1}. ${m.name} — ${m.matchScore}% match`);
+    });
+  }
+
+  lines.push('');
+  if (specificRegion) {
+    lines.push(`Gostaria de conversar especificamente sobre *${specificRegion}* — orientação sem compromisso.`);
+  } else {
+    lines.push('Gostaria de orientação sobre as melhores opções pro meu perfil — sem compromisso.');
+  }
+
+  return lines.join('\n');
+}
+
 // Stripe payment link da assessoria 30min — TROCAR pelo link real do Bruno
 const STRIPE_CONSULTORIA_URL = 'https://buy.stripe.com/REPLACE_WITH_REAL_LINK';
 
@@ -405,7 +493,7 @@ function showResults() {
   setTimeout(() => renderConsultoria(matches), 0);
 
   document.getElementById('regionsGrid').innerHTML = matches.map((r, idx) => {
-    const waMsg = `Olá André! Acabei de fazer o diagnóstico no Sistema Imóvel Certo™ e ${r.name} apareceu como ${r.matchScore}% match pro meu perfil. Quero entender mais sobre essa região.`;
+    const waMsg = buildLeadSummary(r.name);
 
     const diningHTML = (r.dining || []).map(d => `
       <div class="region-poi">
@@ -658,14 +746,18 @@ document.addEventListener('keydown', (e) => {
 });
 
 // =============================================================
-// WHATSAPP FAB
+// WHATSAPP FAB — href atualiza dinamicamente conforme user avança no funnel
 // =============================================================
 (function setupFab(){
   const fab = document.getElementById('waFab');
   if (!fab) return;
-  const defaultMsg = 'Olá André! Vi o Sistema Imóvel Certo™ e gostaria de tirar algumas dúvidas sobre imóveis em Miami — sem compromisso.';
-  fab.href = WHATSAPP_URL(defaultMsg);
-  fab.addEventListener('click', () => fbqTrack('WhatsAppFAB'));
+  // href inicial: sem quiz preenchido = mensagem genérica
+  fab.href = WHATSAPP_URL(buildLeadSummary());
+  // No click, regenera mensagem com state atual (pega answers se já preenchidas no quiz)
+  fab.addEventListener('click', (e) => {
+    fab.href = WHATSAPP_URL(buildLeadSummary());
+    fbqTrack('WhatsAppFAB', { has_quiz: Object.keys(answers).length > 0 });
+  });
 })();
 
 // =============================================================

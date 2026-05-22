@@ -84,10 +84,18 @@ const QUESTIONS = [
 // ==============================================================
 function startFlow() {
   document.querySelector('.quiz-section').classList.add('active');
-  document.querySelectorAll('.section, .hero, .emotional, .footer, .testimonials').forEach(s => {
-    if (!s.classList.contains('quiz-section')) s.style.display = 'none';
+  // Esconde TUDO que NÃO seja parte do flow (quiz, loading, results, thanks).
+  // Robusto: pega todas as <section> e esconde as que não estão no flow.
+  document.querySelectorAll('section').forEach(s => {
+    if (!s.classList.contains('quiz-section') &&
+        !s.classList.contains('loading-section') &&
+        !s.classList.contains('results-section') &&
+        !s.classList.contains('thanks-section')) {
+      s.style.display = 'none';
+    }
   });
-  document.querySelector('.nav').style.display = 'none';
+  const nav = document.querySelector('.nav');
+  if (nav) nav.style.display = 'none';
   currentQ = 0;
   answers = {};
   renderQuestion();

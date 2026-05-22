@@ -18,7 +18,9 @@ node_modules/
 lu*.tmp
 
 # PNGs originais (ficam só os JPGs otimizados)
+# Bloqueia PNGs originais dos hero/region (substituidos por JPGs), libera logos
 img/*.png
+!img/logo_*.png
 
 # IDE
 .vscode/

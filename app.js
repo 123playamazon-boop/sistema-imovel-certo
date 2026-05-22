@@ -189,6 +189,37 @@ function getRandomListings(regionId) {
 })();
 
 // =============================================================
+// PREMIUM SVG ICONS — biblioteca minimalist stroke-based
+// Style: 24x24 viewBox, fill none, stroke currentColor 1.8, line caps round
+// =============================================================
+const ICON_BASE = 'viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"';
+const ICONS = {
+  // PURPOSE — 4 ícones
+  live: `<svg ${ICON_BASE}><path d="M3 11l9-8 9 8v10a2 2 0 0 1-2 2h-4v-7h-6v7H5a2 2 0 0 1-2-2z"/></svg>`,
+  invest: `<svg ${ICON_BASE}><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>`,
+  vacation: `<svg ${ICON_BASE}><path d="M2 21c5-2 8-7 10-13"/><path d="M22 21c-5-2-8-7-10-13"/><path d="M12 21V8"/><circle cx="12" cy="6" r="2"/><path d="M5 14c2-4 5-6 7-6s5 2 7 6"/></svg>`,
+  protection: `<svg ${ICON_BASE}><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>`,
+
+  // BUDGET — 4 ícones (escala de moeda)
+  budgetLow: `<svg ${ICON_BASE}><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>`,
+  budgetMid: `<svg ${ICON_BASE}><circle cx="8" cy="12" r="6"/><circle cx="16" cy="12" r="6"/></svg>`,
+  budgetHigh: `<svg ${ICON_BASE}><path d="M6 3v18"/><path d="M12 3v18"/><path d="M18 3v18"/><path d="M3 8h18"/><path d="M3 16h18"/></svg>`,
+  budgetPremium: `<svg ${ICON_BASE}><polygon points="6 3 18 3 22 9 12 22 2 9"/><line x1="12" y1="22" x2="12" y2="9"/><line x1="2" y1="9" x2="22" y2="9"/><line x1="6" y1="3" x2="12" y2="9"/><line x1="18" y1="3" x2="12" y2="9"/></svg>`,
+
+  // KIDS / FAMILY — 4 ícones
+  kidsSmall: `<svg ${ICON_BASE}><circle cx="12" cy="7" r="4"/><path d="M5 21v-2a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v2"/><path d="M9 11c0 1 1 2 3 2s3-1 3-2"/></svg>`,
+  kidsTeen: `<svg ${ICON_BASE}><path d="M22 10v6"/><path d="M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>`,
+  kidsNone: `<svg ${ICON_BASE}><path d="M8 21h8"/><path d="M12 21v-3"/><path d="M7 4h10l-1 8a4 4 0 0 1-8 0z"/></svg>`,
+  kidsPlanning: `<svg ${ICON_BASE}><path d="M12 22a7 7 0 0 0 7-7c0-2-1-4-3-5.5C14 8 14 7 14 6c0-2-1-3-2-4-1 1-2 2-2 4 0 1 0 2-2 3.5-2 1.5-3 3.5-3 5.5a7 7 0 0 0 7 7z"/></svg>`,
+
+  // TIMELINE — 4 ícones
+  timelineNow: `<svg ${ICON_BASE}><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/><circle cx="5" cy="12" r="2" fill="currentColor"/></svg>`,
+  timeline6mo: `<svg ${ICON_BASE}><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>`,
+  timeline12mo: `<svg ${ICON_BASE}><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`,
+  timelineResearch: `<svg ${ICON_BASE}><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>`
+};
+
+// =============================================================
 // QUESTIONS — 5 perguntas, premium UX
 // =============================================================
 const QUESTIONS = [
@@ -200,10 +231,10 @@ const QUESTIONS = [
     type: 'options',
     cols: 2,
     options: [
-      { value: 'live', icon: '🏡', text: 'Morar com a família', sub: 'Mudança definitiva ou parcial' },
-      { value: 'invest', icon: '📈', text: 'Investir e gerar renda', sub: 'Renda passiva em dólar' },
-      { value: 'vacation', icon: '🌴', text: 'Casa de férias', sub: 'Usar por temporada' },
-      { value: 'protection', icon: '🛡️', text: 'Proteger patrimônio', sub: 'Blindagem em moeda forte' }
+      { value: 'live', icon: ICONS.live, text: 'Morar com a família', sub: 'Mudança definitiva ou parcial' },
+      { value: 'invest', icon: ICONS.invest, text: 'Investir e gerar renda', sub: 'Renda passiva em dólar' },
+      { value: 'vacation', icon: ICONS.vacation, text: 'Casa de férias', sub: 'Usar por temporada' },
+      { value: 'protection', icon: ICONS.protection, text: 'Proteger patrimônio', sub: 'Blindagem em moeda forte' }
     ]
   },
   {
@@ -228,10 +259,10 @@ const QUESTIONS = [
     type: 'options',
     cols: 2,
     options: [
-      { value: '150-300', icon: '$', text: 'US$ 150-300 mil', sub: 'Studios e 1 quarto Edgewater, Aventura outskirts' },
-      { value: '300-500', icon: '$$', text: 'US$ 300-500 mil', sub: '1 quarto Aventura, Sunny Isles, Brickell' },
-      { value: '500-1000', icon: '$$$', text: 'US$ 500K-1M', sub: '2 quartos prime, Brickell vista, Sunny Isles' },
-      { value: '1000+', icon: '$$$$', text: 'Acima de US$ 1M', sub: 'Luxury alto padrão · Bal Harbour, penthouse' }
+      { value: '150-300', icon: ICONS.budgetLow, text: 'US$ 150-300 mil', sub: 'Studios e 1 quarto Edgewater, Aventura outskirts' },
+      { value: '300-500', icon: ICONS.budgetMid, text: 'US$ 300-500 mil', sub: '1 quarto Aventura, Sunny Isles, Brickell' },
+      { value: '500-1000', icon: ICONS.budgetHigh, text: 'US$ 500K-1M', sub: '2 quartos prime, Brickell vista, Sunny Isles' },
+      { value: '1000+', icon: ICONS.budgetPremium, text: 'Acima de US$ 1M', sub: 'Luxury alto padrão · Bal Harbour, penthouse' }
     ]
   },
   {
@@ -242,10 +273,10 @@ const QUESTIONS = [
     type: 'options',
     cols: 2,
     options: [
-      { value: 'yes_small', icon: '👶', text: 'Tenho filhos pequenos', sub: '0-12 anos · school zone importa' },
-      { value: 'yes_teen', icon: '🎓', text: 'Tenho filhos adolescentes', sub: '13-18 anos · ensino médio top' },
-      { value: 'no', icon: '🥂', text: 'Sem filhos em casa', sub: 'Casal, single ou filhos adultos' },
-      { value: 'planning', icon: '🌱', text: 'Planejando ter', sub: 'Pensando no futuro família' }
+      { value: 'yes_small', icon: ICONS.kidsSmall, text: 'Tenho filhos pequenos', sub: '0-12 anos · school zone importa' },
+      { value: 'yes_teen', icon: ICONS.kidsTeen, text: 'Tenho filhos adolescentes', sub: '13-18 anos · ensino médio top' },
+      { value: 'no', icon: ICONS.kidsNone, text: 'Sem filhos em casa', sub: 'Casal, single ou filhos adultos' },
+      { value: 'planning', icon: ICONS.kidsPlanning, text: 'Planejando ter', sub: 'Pensando no futuro família' }
     ]
   },
   {
@@ -256,10 +287,10 @@ const QUESTIONS = [
     type: 'options',
     cols: 2,
     options: [
-      { value: 'now', icon: '🚀', text: 'Estou pronto agora', sub: 'Decisão nos próximos 90 dias' },
-      { value: '6mo', icon: '📅', text: 'Próximos 6 meses', sub: 'Organizando estrutura financeira' },
-      { value: '12mo', icon: '⏳', text: 'Próximos 12 meses', sub: 'Planejando com calma' },
-      { value: 'research', icon: '🔍', text: 'Apenas pesquisando', sub: 'Quero entender opções' }
+      { value: 'now', icon: ICONS.timelineNow, text: 'Estou pronto agora', sub: 'Decisão nos próximos 90 dias' },
+      { value: '6mo', icon: ICONS.timeline6mo, text: 'Próximos 6 meses', sub: 'Organizando estrutura financeira' },
+      { value: '12mo', icon: ICONS.timeline12mo, text: 'Próximos 12 meses', sub: 'Planejando com calma' },
+      { value: 'research', icon: ICONS.timelineResearch, text: 'Apenas pesquisando', sub: 'Quero entender opções' }
     ]
   }
 ];

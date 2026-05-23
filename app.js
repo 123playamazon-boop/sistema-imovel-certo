@@ -729,6 +729,54 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('matchData').value = matchData;
     fd.set('match_data', matchData);
 
+    // Subject custom (Formspree usa _subject como assunto do email)
+    const firstName = name.split(' ')[0] || name;
+    const top1 = matches[0] ? matches[0].name : '';
+    const subject = `LEAD QUENTE - ${firstName} (${top1}) - Sistema Imovel Certo`;
+    const subjEl = document.getElementById('formSubject');
+    if (subjEl) subjEl.value = subject;
+    fd.set('_subject', subject);
+
+    // Reply-to = email do lead (pra responder direto do Gmail)
+    const replyEl = document.getElementById('formReplyTo');
+    if (replyEl) replyEl.value = email;
+    fd.set('_replyto', email);
+
+    // Lead summary formatado bonito pro corpo do email
+    const summaryLines = [
+      '====================================',
+      `NOVO LEAD: ${name}`,
+      '====================================',
+      '',
+      `Nome:     ${name}`,
+      `Email:    ${email}`,
+      `WhatsApp: ${whatsapp}`,
+      `Data:     ${new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' })} (Brasilia)`,
+      '',
+      '--- PERFIL DO QUIZ ---',
+    ];
+    Object.entries(answers || {}).forEach(([key, val]) => {
+      const spec = ANSWER_LABELS[key];
+      if (!spec) return;
+      const labelVal = (spec.values && spec.values[val]) || val;
+      summaryLines.push(`${spec.label}: ${labelVal}`);
+    });
+    summaryLines.push('');
+    summaryLines.push('--- 3 REGIOES COM MATCH ---');
+    matches.slice(0, 3).forEach((m, i) => {
+      summaryLines.push(`${i + 1}. ${m.name} - ${m.matchScore}% match`);
+    });
+    summaryLines.push('');
+    summaryLines.push('--- ACAO RECOMENDADA ---');
+    summaryLines.push(`WhatsApp direto: https://wa.me/${whatsapp.replace(/\D/g, '')}`);
+    summaryLines.push(`Responder email: ${email}`);
+    summaryLines.push('');
+    summaryLines.push('Sistema Imovel Certo - sistema-imovel-certo.vercel.app');
+    const leadSummary = summaryLines.join('\n');
+    const summaryEl = document.getElementById('leadSummary');
+    if (summaryEl) summaryEl.value = leadSummary;
+    fd.set('lead_summary', leadSummary);
+
     const btn = form.querySelector('.capture-submit');
     const originalHTML = btn.innerHTML;
     btn.innerHTML = 'Enviando…';

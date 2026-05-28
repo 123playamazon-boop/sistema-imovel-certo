@@ -555,7 +555,7 @@ function showResults() {
 
     return `
     <article class="region-card">
-      <div class="region-img" style="background-image:url('${r.image}')">
+      <div class="region-img" data-bg="${r.image}">
         <div class="region-rank">${String(idx + 1).padStart(2, '0')}</div>
         <div class="region-match">${r.matchScore}% match</div>
         <div class="region-overlay-text">
@@ -654,7 +654,7 @@ function showResults() {
                 const tierClass = tierClassByIdx[idx] || '';
                 return `
                 <a class="region-listing" href="${seeAllUrl}" target="_blank" rel="noopener" onclick="fbqTrack('ListingClick',{region:'${r.id}',mls:'${l.mls}',tier:'${tierClass}'})">
-                  <div class="region-listing-img" style="background-image:url('${l.img}')">
+                  <div class="region-listing-img" data-bg="${l.img}">
                     <span class="region-listing-tier region-listing-tier--${tierClass}">${tier}</span>
                     <span class="region-listing-mls">${l.mls}</span>
                   </div>
@@ -694,6 +694,54 @@ function showResults() {
   }).join('');
 
   fbqTrack('ResultsShown', { matchCount: matches.length });
+
+  // Lazy load das imagens de fundo (regiões + listings) — só carrega
+  // o que entra no viewport. Mobile economiza ~80% de bandwidth na 1ª tela.
+  hydrateLazyBackgrounds();
+}
+
+// =============================================================
+// LAZY BACKGROUNDS — IntersectionObserver pras imagens de fundo
+// (CSS background-image não tem loading=lazy nativo)
+// =============================================================
+let _bgObserver = null;
+function hydrateLazyBackgrounds() {
+  const targets = document.querySelectorAll('[data-bg]:not([data-bg-loaded])');
+  if (!targets.length) return;
+
+  // Fallback: browsers antigos (~0.5% do tráfego BR) carregam tudo de uma vez
+  if (typeof IntersectionObserver === 'undefined') {
+    targets.forEach(el => {
+      el.style.backgroundImage = `url('${el.dataset.bg}')`;
+      el.setAttribute('data-bg-loaded', '1');
+    });
+    return;
+  }
+
+  if (!_bgObserver) {
+    _bgObserver = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const url = el.dataset.bg;
+        if (!url) return;
+        // Pre-load via Image() pra disparar fade-in só quando download terminar
+        const img = new Image();
+        img.onload = () => {
+          el.style.backgroundImage = `url('${url}')`;
+          el.setAttribute('data-bg-loaded', '1');
+          el.classList.add('bg-loaded');
+        };
+        img.src = url;
+        obs.unobserve(el);
+      });
+    }, {
+      rootMargin: '200px 0px',  // começa a carregar 200px antes do viewport
+      threshold: 0.01
+    });
+  }
+
+  targets.forEach(el => _bgObserver.observe(el));
 }
 
 // =============================================================
@@ -795,6 +843,10 @@ document.addEventListener('DOMContentLoaded', () => {
       console.warn('[Sistema] Falha de rede ao enviar lead:', err);
     });
 
+    // Lead capturado — agora SIM libera o WhatsApp FAB (com perfil completo do quiz).
+    // Antes disso, FAB fica escondido pra todo lead chegar pro André já qualificado.
+    revealWhatsAppFab();
+
     // UX: loading + results
     runLoadingAndShowResults();
 
@@ -860,14 +912,47 @@ document.addEventListener('keydown', (e) => {
 });
 
 // =============================================================
-// WHATSAPP FAB — href atualiza dinamicamente conforme user avança no funnel
+// WHATSAPP FAB — escondido até lead submeter form
+//
+// Decisão estratégica: FAB invisível na landing/quiz protege o André de leads
+// que clicam WhatsApp sem ter o perfil do quiz preenchido. Todo lead que chega
+// no WhatsApp dele agora vem com match_data completo (3 regiões + ticket + objetivo).
+// Liberação acontece em revealWhatsAppFab(), chamado após fetch(formspree) iniciado.
 // =============================================================
+function revealWhatsAppFab() {
+  const fab = document.getElementById('waFab');
+  if (!fab) return;
+  fab.classList.add('is-visible');
+}
+
+// =============================================================
+// CONSULTORIA LINK — fonte única (Stripe → fallback mailto se placeholder)
+// Hierarquia consolidada: Results + Thanks apontam pro MESMO destino
+// e disparam o MESMO evento de tracking (ConsultoriaCheckout)
+// =============================================================
+function getConsultoriaCheckoutUrl() {
+  const isPlaceholder = !STRIPE_CONSULTORIA_URL || STRIPE_CONSULTORIA_URL.includes('REPLACE_WITH') || STRIPE_CONSULTORIA_URL.includes('TODO');
+  if (isPlaceholder) {
+    return 'mailto:contato@sistemaimovelcerto.com?subject=Quero%20a%20consultoria%20de%201h%20com%20Andr%C3%A9';
+  }
+  return STRIPE_CONSULTORIA_URL;
+}
+
+function bindThanksConsultoriaLink() {
+  const link = document.getElementById('thanksConsultoriaLink');
+  if (!link) return;
+  link.href = getConsultoriaCheckoutUrl();
+  link.addEventListener('click', () => {
+    fbqTrack('ConsultoriaCheckout', { source: 'thanks_page', price: 500 });
+  });
+}
+document.addEventListener('DOMContentLoaded', bindThanksConsultoriaLink);
+
 (function setupFab(){
   const fab = document.getElementById('waFab');
   if (!fab) return;
-  // href inicial: sem quiz preenchido = mensagem genérica
-  fab.href = WHATSAPP_URL(buildLeadSummary());
-  // No click, regenera mensagem com state atual (pega answers se já preenchidas no quiz)
+  // href inicial vazio — só configura quando user clica (já com quiz preenchido)
+  fab.href = '#';
   fab.addEventListener('click', (e) => {
     fab.href = WHATSAPP_URL(buildLeadSummary());
     fbqTrack('WhatsAppFAB', { has_quiz: Object.keys(answers).length > 0 });

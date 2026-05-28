@@ -13,7 +13,7 @@
 <meta property="og:locale" content="pt_BR">
 <meta property="og:title" content="7 em 10 brasileiros compram a região errada em Miami — descubra a sua em 47 segundos">
 <meta property="og:description" content="Sem cadastro. Sem ligação de corretor. Resultado personalizado pra cash de US$ 300K-3M.">
-<meta property="og:image" content="https://sistema-imovel-certo.vercel.app/img/01_hero.jpg">
+<meta property="og:image" content="https://sistema-imovel-certo.vercel.app/img/og-card.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Sistema Imóvel Certo — diagnóstico de 47 segundos pra brasileiros comprando em Miami">
@@ -21,7 +21,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="7 em 10 brasileiros compram a região errada em Miami">
 <meta name="twitter:description" content="Diagnóstico de 47 segundos cruza seu perfil com 305 mil imóveis em 5 regiões.">
-<meta name="twitter:image" content="https://sistema-imovel-certo.vercel.app/img/01_hero.jpg">
+<meta name="twitter:image" content="https://sistema-imovel-certo.vercel.app/img/og-card.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
@@ -322,7 +322,8 @@ a{color:inherit;text-decoration:none}
 .results-list{max-width:1240px;margin:0 auto;padding:0 40px;display:flex;flex-direction:column;gap:48px}
 .region-card{background:var(--white);border-radius:24px;overflow:hidden;border:1px solid var(--line);box-shadow:0 8px 40px rgba(0,0,0,.04);transition:all var(--t-med) var(--ease)}
 .region-card:hover{box-shadow:0 32px 80px rgba(0,0,0,.08);transform:translateY(-4px)}
-.region-img{position:relative;background-size:cover;background-position:center;min-height:380px;aspect-ratio:16/9}
+.region-img{position:relative;background-size:cover;background-position:center;min-height:380px;aspect-ratio:16/9;background-color:var(--paper);background-image:linear-gradient(135deg,rgba(184,158,104,.06) 0%,rgba(184,158,104,.02) 100%);transition:background-image .5s var(--ease-out)}
+.region-listing-img[data-bg]:not([data-bg-loaded]){background-image:linear-gradient(135deg,rgba(184,158,104,.06) 0%,rgba(184,158,104,.02) 100%)}
 .region-img::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.32) 0%,rgba(10,10,10,.75) 100%)}
 .region-rank{position:absolute;top:28px;left:28px;width:48px;height:48px;border-radius:14px;background:rgba(10,10,10,.72);backdrop-filter:blur(14px);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-style:italic;font-size:22px;z-index:2;border:1px solid rgba(255,255,255,.12)}
 .region-match{position:absolute;top:28px;right:28px;padding:8px 14px;background:rgba(184,158,104,.94);backdrop-filter:blur(14px);color:#fff;border-radius:100px;font-size:12px;font-weight:600;letter-spacing:.04em;z-index:2}
@@ -407,7 +408,8 @@ a{color:inherit;text-decoration:none}
 .region-wa:hover .region-wa-arrow{opacity:1;transform:translateX(4px)}
 
 /* Floating WhatsApp FAB */
-.wa-fab{position:fixed;bottom:24px;right:24px;z-index:80;width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,#25D366 0%,#1ebe57 100%);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;box-shadow:0 12px 32px rgba(37,211,102,.45);transition:all var(--t-med) var(--ease);animation:fab-pulse 2.4s ease-in-out infinite}
+.wa-fab{position:fixed;bottom:24px;right:24px;z-index:80;width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,#25D366 0%,#1ebe57 100%);display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;box-shadow:0 12px 32px rgba(37,211,102,.45);transition:all var(--t-med) var(--ease);animation:fab-pulse 2.4s ease-in-out infinite;opacity:0;visibility:hidden;transform:scale(.5) translateY(20px);pointer-events:none}
+.wa-fab.is-visible{opacity:1;visibility:visible;transform:scale(1) translateY(0);pointer-events:auto}
 .wa-fab:hover{transform:scale(1.08);box-shadow:0 20px 50px rgba(37,211,102,.6)}
 .wa-fab svg{width:28px;height:28px}
 .wa-fab-label{position:absolute;right:74px;top:50%;transform:translateY(-50%);background:#1a1a1a;color:#fff;padding:10px 16px;border-radius:10px;font-size:13px;font-weight:500;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .3s var(--ease)}
@@ -671,6 +673,42 @@ a{color:inherit;text-decoration:none}
 /* Subtle reveal on scroll */
 .reveal{opacity:0;transform:translateY(28px);transition:all var(--t-slow) var(--ease-out)}
 .reveal.in{opacity:1;transform:translateY(0)}
+
+/* ============================
+   FAQ — Voltagem Amanda (sem accordion, tudo aberto)
+   ============================ */
+.faq{padding:120px 24px;background:var(--cream);position:relative}
+.faq-inner{max-width:920px;margin:0 auto}
+.faq-header{text-align:center;margin-bottom:72px}
+.faq-header .eyebrow{display:inline-block;font-size:12px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.faq-header h2{font-family:var(--serif);font-weight:400;font-size:clamp(34px,4.6vw,54px);line-height:1.1;letter-spacing:-.02em;color:var(--ink);margin-bottom:18px}
+.faq-header h2 em{font-style:italic;color:var(--gold)}
+.faq-header p{font-size:17px;line-height:1.65;color:var(--slate);font-weight:300;max-width:620px;margin:0 auto}
+.faq-list{display:flex;flex-direction:column;gap:14px}
+.faq-item{padding:32px 36px;background:#fff;border:1px solid var(--line);border-radius:18px;transition:transform var(--t-med) var(--ease),box-shadow var(--t-med) var(--ease),border-color var(--t-med) var(--ease)}
+.faq-item:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(0,0,0,.04);border-color:var(--gold-line)}
+.faq-q{font-family:var(--serif);font-weight:500;font-size:clamp(20px,2.2vw,26px);line-height:1.25;letter-spacing:-.012em;color:var(--ink);margin-bottom:14px;display:flex;align-items:flex-start;gap:14px}
+.faq-q-mark{flex-shrink:0;width:28px;height:28px;border-radius:50%;background:var(--gold-soft);color:var(--gold);display:inline-flex;align-items:center;justify-content:center;font-family:var(--sans);font-weight:600;font-size:13px;margin-top:4px}
+.faq-a{font-size:16px;line-height:1.7;color:var(--slate);font-weight:400;padding-left:42px}
+.faq-a strong{color:var(--ink);font-weight:600}
+.faq-a em{font-style:italic;color:var(--gold);font-weight:500}
+.faq-cta-strip{margin-top:56px;padding:32px;background:linear-gradient(135deg,rgba(184,158,104,.08) 0%,rgba(184,158,104,.02) 100%);border:1px solid var(--gold-line);border-radius:20px;text-align:center}
+.faq-cta-strip p{font-size:17px;line-height:1.55;color:var(--ink);font-weight:400;margin-bottom:20px}
+.faq-cta-strip p strong{font-family:var(--serif);font-weight:500;font-style:italic;color:var(--gold)}
+.faq-cta-strip button{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;background:var(--ink);color:#fff;border-radius:100px;font-size:14px;font-weight:500;transition:all var(--t-med) var(--ease)}
+.faq-cta-strip button:hover{background:var(--gold);color:var(--ink);transform:translateY(-2px)}
+.faq-cta-strip button svg{width:14px;height:14px;transition:transform var(--t-med) var(--ease)}
+.faq-cta-strip button:hover svg{transform:translateX(3px)}
+
+@media (max-width:720px){
+  .faq{padding:80px 20px}
+  .faq-header{margin-bottom:48px}
+  .faq-item{padding:24px 22px}
+  .faq-q{font-size:19px;gap:10px}
+  .faq-q-mark{width:24px;height:24px;font-size:12px;margin-top:2px}
+  .faq-a{font-size:15px;padding-left:34px}
+  .faq-cta-strip{padding:24px 20px;margin-top:36px}
+}
 </style>
 
 <!-- ========================================================================
@@ -1089,6 +1127,60 @@ a{color:inherit;text-decoration:none}
 </section>
 
 <!-- ============================
+     FAQ — As 6 dúvidas que o brasileiro googla antes de submeter o form.
+     Sem accordion. Sem texto escondido. Objeção fica na mesa e o sistema responde.
+     ============================ -->
+<section class="faq" id="faq">
+  <div class="faq-inner">
+    <div class="faq-header reveal">
+      <span class="eyebrow">Antes de você duvidar</span>
+      <h2>As <em>6 perguntas</em> que o brasileiro googla<br>antes de comprar imóvel em Miami.</h2>
+      <p>Cada resposta tem número, prazo e fonte verificável. Sem promessa vazia, sem "fale com seu contador" como muleta.</p>
+    </div>
+
+    <div class="faq-list">
+      <article class="faq-item reveal">
+        <h3 class="faq-q"><span class="faq-q-mark">01</span>Dá pra comprar imóvel nos EUA sem cidadania, sem green card, sem visto?</h3>
+        <p class="faq-a">Dá. Brasileiro entra no closing com <strong>passaporte + ITIN</strong> (número de identificação fiscal que sai em 4-6 semanas direto no IRS) e financia até <strong>70% do valor</strong> via Foreign National Loan. Não precisa de SSN, não precisa de credit score americano, não precisa de visto de residência. <em>O americano que financia foi treinado pra isso — bancos como Inter&Co, City National e Ocean Bank têm mesa dedicada.</em></p>
+      </article>
+
+      <article class="faq-item reveal">
+        <h3 class="faq-q"><span class="faq-q-mark">02</span>O que é a Lei 14.754 e por que ela tá vencendo um relógio na sua cabeça?</h3>
+        <p class="faq-a">A Lei 14.754 muda o regime de tributação de bens fora do Brasil. Quem dolarizar patrimônio em imóvel nos EUA <strong>antes de setembro de 2026</strong> pega grandfathered — paga <strong>12 pontos a menos de IR</strong> no histórico futuro inteiro. Quem deixar pra 2027 paga o regime novo <em>pelo resto da vida</em>. Não é alarmismo: é janela tributária com data marcada.</p>
+      </article>
+
+      <article class="faq-item reveal">
+        <h3 class="faq-q"><span class="faq-q-mark">03</span>Como financiar sem credit score americano? E qual a taxa real em 2026?</h3>
+        <p class="faq-a">Foreign National Loan: <strong>até 70% LTV</strong>, prazo 15-30 anos, taxa <strong>7% a 8.5% a.a.</strong> em 2026. Brasileiro entra com 30-40% de cash, mostra extrato bancário de 2 anos, comprova renda — não precisa ter histórico de crédito americano. Cap rate Triplo Verão (snowbird + temporada BR + latina) gera <em>US$ 2-9 mil/mês em aluguel</em> que cobre parcela em muitos cenários.</p>
+      </article>
+
+      <article class="faq-item reveal">
+        <h3 class="faq-q"><span class="faq-q-mark">04</span>Qual região da Flórida combina com família brasileira HNW com filhos?</h3>
+        <p class="faq-a">Depende do que importa pra você. <strong>Aventura</strong> tem 12 mil famílias brasileiras e cinco escolas Top 100 EUA dentro de 15min. <strong>Coral Gables</strong> e <strong>Pinecrest</strong> entregam lote grande + escola privada americana. <strong>Brickell</strong> é jovem profissional vertical. <em>Escolher pelo nome que ouviu falar é o erro de 7 em 10. O diagnóstico cruza seu perfil específico com as 5 regiões em 47 segundos.</em></p>
+      </article>
+
+      <article class="faq-item reveal">
+        <h3 class="faq-q"><span class="faq-q-mark">05</span>Tem imposto bitributado? Vou pagar IR aqui E lá?</h3>
+        <p class="faq-a">Não. O <strong>Tratado Brasil-EUA</strong> evita bitributação: o que você pagar nos EUA é abatido do IR brasileiro. O imóvel precisa ser declarado no Brasil (Bens e Direitos no exterior) e o aluguel é tributado pela tabela progressiva. <em>Contador com compliance internacional é parte do pacote — não é coisa de Big Four com fee de US$ 50K, é R$ 8-15K/ano com escritório especializado em brasileiro nos EUA.</em></p>
+      </article>
+
+      <article class="faq-item reveal">
+        <h3 class="faq-q"><span class="faq-q-mark">06</span>O Sistema é grátis. A consultoria 1:1 com o André custa US$ 500. Por que esse preço?</h3>
+        <p class="faq-a">A consultoria é <strong>60 minutos com Realtor® licenciado na Flórida</strong> que já estruturou 142 famílias brasileiras. Sai do call com plano executável: 3 regiões filtradas pro seu perfil, 6 imóveis curados, projeção de cap rate, roteiro de closing 90-120 dias, contadores e advogados de imigração já indicados. <strong>US$ 500 é reembolsado integralmente no closing</strong> se você fechar imóvel com ele. <em>É filtro de seriedade — não vai pegar quem só queria "dar uma olhadinha".</em></p>
+      </article>
+    </div>
+
+    <div class="faq-cta-strip reveal">
+      <p>Toda dúvida que sobrou cabe no diagnóstico. <strong>47 segundos. Sem ligação de corretor.</strong></p>
+      <button onclick="startFlow()">
+        Ver minhas 3 regiões em 47 segundos
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================
      QUIZ — Premium one-question-per-screen
      ============================ -->
 <section class="quiz-section" id="quiz" aria-hidden="true">
@@ -1216,7 +1308,7 @@ a{color:inherit;text-decoration:none}
     <p>A análise completa chega no seu email em 30 segundos <span style="opacity:.7">(cheque caixa de entrada e promoções)</span>. André ou Daniella entram em contato pelo WhatsApp em até 1 hora — sem pressão, sem empurração.</p>
     <p style="margin-top:32px;padding:22px 24px;background:rgba(184,158,104,.08);border:1px solid rgba(184,158,104,.32);border-radius:14px;font-size:14px;line-height:1.6;color:rgba(255,255,255,.85);text-align:left;max-width:520px;margin-left:auto;margin-right:auto">
       <strong style="color:var(--gold);font-size:11px;letter-spacing:.16em;text-transform:uppercase;display:block;margin-bottom:8px">Próximo passo opcional</strong>
-      Se você quer acelerar e sair com plano executável <em>já amanhã</em>, a consultoria 1:1 de 60 minutos com o André custa <strong style="color:#fff">US$ 500</strong> — reembolsado integralmente no closing se você fechar imóvel com ele. <a href="mailto:contato@sistemaimovelcerto.com?subject=Quero%20a%20consultoria%20de%201h%20com%20Andr%C3%A9" style="color:var(--gold);text-decoration:underline;font-weight:600">Reservar agora →</a>
+      Se você quer acelerar e sair com plano executável <em>já amanhã</em>, a consultoria 1:1 de 60 minutos com o André custa <strong style="color:#fff">US$ 500</strong> — reembolsado integralmente no closing se você fechar imóvel com ele. <a id="thanksConsultoriaLink" href="#" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:underline;font-weight:600">Reservar agora →</a>
     </p>
   </div>
 </section>

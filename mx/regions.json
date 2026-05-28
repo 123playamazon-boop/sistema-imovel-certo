@@ -2,486 +2,481 @@
   {
     "id": "brickell",
     "name": "Brickell",
-    "state": "Miami, FL",
-    "tagline": "O coração financeiro de Miami",
+    "state": "MIAMI, FL",
     "image": "/img/08_region_brickell.jpg",
-    "appreciation": "9,2% a.a.",
-    "rental_income": "US$ 3.500 a US$ 6.500/mês",
+    "tagline": "El Polanco vertical de Miami",
+    "appreciation": "9.2% anual",
+    "rental_income": "US$ 3,500 a US$ 6,500/mes",
     "ticket_range": "US$ 400K — US$ 3M",
-    "investor_profile": "Profissional jovem, founder digital, investidor lifestyle",
-    "family_profile": "Casais sem filhos pequenos, vida urbana ativa",
+    "investor_profile": "Profesional joven, founder digital, inversionista lifestyle",
+    "family_profile": "Parejas sin hijos pequeños, vida urbana activa",
     "highlights": [
-      "Walking distance Mary Brickell Village",
-      "Restaurantes top mundiais",
-      "Vista Biscayne Bay",
-      "Short-term rental liberado em muitos prédios"
+      "Walking distance a Mary Brickell Village",
+      "Restaurantes top mundiales",
+      "Vista a Biscayne Bay",
+      "Brickell Metromover · cero auto necesario"
     ],
-    "lifestyle_score": {
-      "urban": 5,
-      "beach": 2,
-      "family": 2,
-      "luxury": 4,
-      "calm": 1
-    },
-    "purpose_score": {
-      "live": 4,
-      "invest": 5,
-      "vacation": 4,
-      "protection": 4,
-      "family_move": 2
-    },
-    "identity": "Brickell é a Manhattan tropical de Miami — torres de vidro, bancos privados, executivos brasileiros, e jantar de R$ 800 a três quadras do escritório. Você acorda vendo a Biscayne Bay, almoça com o sócio sem precisar pegar o carro, e dorme escutando o silêncio amortecido do 38º andar. É pra quem decidiu que tempo é luxo — e quer viver downtown sem perder uma hora no trânsito de Miami todo dia.",
+    "identity": "Brickell es el Manhattan tropical de Miami — torres de vidrio, bancos privados, ejecutivos mexicanos y argentinos, y cenas de US$ 200 al otro lado del Miami River. El HNW de CDMX y Monterrey que quería Polanco vertical encuentra exactamente eso aquí — pero con 0% state income tax y seguridad sin guardaespaldas. Caminable, vertical, sin política de zona escolar.",
     "landmark": "Mary Brickell Village · Brickell City Centre",
     "dining": [
       {
         "name": "Zuma Miami",
-        "cuisine": "Japonesa contemporânea",
-        "note": "Robata grill com vista pro Miami River — point de banker brasileiro fechando deal."
+        "cuisine": "Japonesa contemporánea",
+        "note": "Robata grill con vista al Miami River — punto del almuerzo y after-office del Brickell financiero."
       },
       {
         "name": "Amazónico Miami",
-        "cuisine": "Latin-Amazônica",
-        "note": "Três andares inspirados na floresta, jantar vira balada — o see-and-be-seen do momento."
+        "cuisine": "Latín-Amazónica",
+        "note": "Tres pisos inspirados en la selva, la cena se vuelve teatro ambiental. Reserva con 2 semanas."
       },
       {
         "name": "Casa Tua Cucina",
         "cuisine": "Italiana",
-        "note": "Cozinha aberta no Brickell City Centre, pasta fresca, vibe romântica e elegante."
+        "note": "Cocina abierta en Brickell City Centre, pasta fresca y carta de vinos refinada."
       }
     ],
     "groceries": [
       {
         "name": "Publix at Mary Brickell Village",
         "type": "Supermercado completo",
-        "note": "Walking distance da maioria dos prédios — abre 7 dias por semana."
+        "note": "Walking distance de la mayoría de los edificios — abre 7 días, gran variedad."
       },
       {
         "name": "Whole Foods Market Downtown",
-        "type": "Orgânicos & gourmet",
-        "note": "299 SE 3rd Street, poucos minutos de carro ou Metromover."
+        "type": "Orgánicos & gourmet",
+        "note": "299 SE 3rd Street, pocos minutos en auto o Metromover."
       },
       {
         "name": "Trader Joe's Brickell",
-        "type": "Especialidades & vinhos",
-        "note": "Loja nova no SW 8th Street, opção mais acessível pra rotina."
+        "type": "Especialidades & vinos",
+        "note": "Tienda nueva en SW 8th Street, opción más accesible para esenciales diarios."
       }
     ],
     "schools": [
       {
         "name": "Southside Preparatory Academy",
         "type": "Pública K-8",
-        "rank": "A-rated · atende a maior parte de Brickell, walking distance"
+        "rank": "A-rated · atiende gran parte de Brickell, walking distance."
       },
       {
         "name": "Riverside Elementary",
         "type": "Pública K-5",
-        "rank": "A-rated · opção pública próxima ao bairro"
+        "rank": "A-rated · opción pública cercana al barrio."
       },
       {
         "name": "Downtown Doral Charter Upper School",
         "type": "Charter pública",
-        "rank": "Top-rated · alternativa pra famílias que querem nota alta"
+        "rank": "Top-rated · alternativa para familias que buscan charter de alto rendimiento."
       }
     ],
     "lifestyle_moments": [
-      "Reunião no banco às 9h, almoço no Zuma às 12h — tudo no mesmo elevador",
-      "Happy hour na cobertura do prédio com a skyline acendendo de frente",
-      "Corrida no Brickell Key ao amanhecer, com os iates ancorados de fundo",
-      "Jantar de quinta no Amazónico que vira balada sem trocar de endereço",
-      "Brunch dominical no Casa Tua e Metromover até Bayside sem pegar carro"
+      "Reunión en el banco a las 9am, almuerzo en Zuma al mediodía — todo en el mismo elevador",
+      "Happy hour en el rooftop del edificio con el skyline encendiéndose en frente",
+      "Carrera al amanecer en Brickell Key con yates anclados al fondo",
+      "Viernes 5pm: happy hour en Mary Brickell Village sin mover el auto",
+      "Domingo en Casa Tua Cucina, brunch con vista a la bahía"
     ],
     "buildings": [
       "Echo Brickell",
       "Brickell Flatiron",
       "SLS Brickell Residences"
-    ]
+    ],
+    "lifestyle_score": {
+      "urban": 5,
+      "beach": 1,
+      "family": 1,
+      "luxury": 4,
+      "calm": 1
+    },
+    "purpose_score": {
+      "live": 4,
+      "invest": 5,
+      "vacation": 3,
+      "protection": 4
+    }
   },
   {
     "id": "aventura",
     "name": "Aventura",
-    "state": "Miami, FL",
-    "tagline": "A casa brasileira em Miami",
+    "state": "MIAMI, FL",
     "image": "/img/09_region_aventura.jpg",
-    "appreciation": "7,5% a.a.",
-    "rental_income": "US$ 2.800 a US$ 4.800/mês",
+    "tagline": "El hub de la familia latina HNW",
+    "appreciation": "7.5% anual",
+    "rental_income": "US$ 2,800 a US$ 4,800/mes",
     "ticket_range": "US$ 350K — US$ 2M",
-    "investor_profile": "Família que quer renda em dólar + base BR forte",
-    "family_profile": "Famílias com filhos · escolas públicas top 100 EUA",
+    "investor_profile": "Familia que busca renta en USD + comunidad latina establecida",
+    "family_profile": "Familias con hijos · escuelas públicas Top 100 EE. UU.",
     "highlights": [
-      "Aventura Mall + comunidade BR estabelecida",
-      "Aventura Waterways K-8 top ranking",
-      "Shopping, escolas, hospital em walking distance",
-      "30% dos moradores brasileiros"
+      "Aventura Mall + comunidad latina HNW establecida",
+      "Aventura Waterways K-8 en ranking top EE. UU.",
+      "Mall, escuelas, hospital en walking distance",
+      "12 minutos del aeropuerto FLL"
     ],
-    "lifestyle_score": {
-      "urban": 3,
-      "beach": 3,
-      "family": 5,
-      "luxury": 3,
-      "calm": 4
-    },
-    "purpose_score": {
-      "live": 5,
-      "invest": 4,
-      "vacation": 3,
-      "protection": 4,
-      "family_move": 5
-    },
-    "identity": "Aventura é onde a comunidade brasileira de alto patrimônio se estabeleceu — você acha padaria com pão de queijo na esquina, escola pública charter A+ que aceita seus filhos no mesmo dia que você assina o contrato do imóvel, e o maior shopping da Flórida a três minutos de carro. É o bairro pra família que chegou pra ficar — sem precisar reaprender o básico da vida.",
-    "landmark": "Aventura Mall · Aventura Circle (3,8 km walking path)",
+    "identity": "Aventura es donde la comunidad latina HNW se estableció — encuentras panadería con conchas, pediatras que hablan español, contadores brasileños y abogados argentinos en la misma esquina. El HNW mexicano que quiere comunidad latina establecida pero con escuelas top americanas — sin sacrificar ninguna — viene acá. Edificios verticales gated, seguridad full, walking distance a mall, hospital y escuelas.",
+    "landmark": "Aventura Mall · Aventura Circle (3.8 km walking path)",
     "dining": [
       {
         "name": "Fogo de Chão Aventura",
-        "cuisine": "Churrascaria brasileira",
-        "note": "O ponto de encontro da comunidade — você sente em casa no primeiro garfo."
+        "cuisine": "Churrascaría latinoamericana",
+        "note": "El punto de reunión de la comunidad — sientes Latinoamérica al entrar."
       },
       {
         "name": "Boteco do Manolo",
-        "cuisine": "Brasileira casual",
-        "note": "Boteco autêntico — feijoada de sábado, futebol na TV, sotaque carioca no balcão."
+        "cuisine": "Casual latina",
+        "note": "Boteco auténtico — feijoada del sábado, fútbol en la TV."
       },
       {
         "name": "The Grill on the Alley",
         "cuisine": "American steakhouse",
-        "note": "Dentro do Aventura Mall — fine dining clássico pros almoços de negócios."
+        "note": "Dentro de Aventura Mall — fine dining americano clásico para el post-shopping."
       }
     ],
     "groceries": [
       {
         "name": "Whole Foods Market Aventura",
-        "type": "Orgânicos & gourmet",
-        "note": "Aberto até tarde, parking gigante, walking distance dos prédios de Williams Island."
+        "type": "Orgánicos & gourmet",
+        "note": "Abierto hasta tarde, estacionamiento gigante, walking distance de la mayoría de los condos."
       },
       {
         "name": "Publix at Aventura",
         "type": "Supermercado completo",
-        "note": "Várias unidades no bairro — o staple da rotina."
+        "note": "Varias unidades en el barrio — el staple de la rutina."
       },
       {
         "name": "The Fresh Market Aventura",
         "type": "Premium gourmet",
-        "note": "Pra cortes especiais, queijos e vinhos importados."
+        "note": "Para cortes especiales, quesos y vinos importados."
       }
     ],
     "schools": [
       {
         "name": "Aventura City of Excellence School (ACES)",
         "type": "Charter pública K-8",
-        "rank": "A+ rated · Disputadíssima e gratuita pra residentes"
+        "rank": "A+ rated · muy competida y gratuita para residentes de Aventura."
       },
       {
         "name": "Don Soffer Aventura High School",
         "type": "Charter pública 9-12",
-        "rank": "A+ rated · Continua o trilho do ACES"
+        "rank": "A+ rated · continúa el camino de ACES."
       },
       {
         "name": "Krop Senior High School",
         "type": "Pública 9-12",
-        "rank": "Magnet program reconhecido · Atende boa parte de Aventura"
+        "rank": "Programa magnet reconocido · atiende buena parte de Aventura."
       }
     ],
     "lifestyle_moments": [
-      "Filho vai pro ACES de bicicleta — você abre o portão e olha de longe, em paz",
-      "Sábado de manhã: padaria brasileira, depois Aventura Mall sem entrar no carro",
-      "Caminhar 3,8 km no Aventura Circle ao pôr do sol escutando português dos vizinhos",
-      "Domingo de churrasco no condomínio com 6 famílias brasileiras",
-      "Reunião de pais da escola em português — você nem precisou se adaptar"
+      "Tu hijo va al ACES en bicicleta — abres el portón y miras de lejos, en paz",
+      "Sábado en la mañana: panadería latina, después Aventura Mall sin tocar el auto",
+      "Caminar 3.8 km en Aventura Circle al atardecer escuchando español de los vecinos",
+      "Almuerzo del sábado en el food hall del mall, los niños en el play area",
+      "Domingo en la piscina del Aventura Beach Club, la familia ya instalada"
     ],
     "buildings": [
       "Williams Island (2800 / 3000 / 7000 Island Blvd)",
       "Privé at Island Estates",
       "Porto Vita"
-    ]
-  },
-  {
-    "id": "sunny-isles",
-    "name": "Sunny Isles Beach",
-    "state": "Miami, FL",
-    "tagline": "Pé na areia, elite brasileira",
-    "image": "/img/10_region_sunny_isles.jpg",
-    "appreciation": "8,8% a.a.",
-    "rental_income": "US$ 4.000 a US$ 9.000/mês",
-    "ticket_range": "US$ 500K — US$ 12M",
-    "investor_profile": "Investidor premium · família alto patrimônio · short-term rental",
-    "family_profile": "Famílias com pé na areia · comunidade brasileira elite",
-    "highlights": [
-      "Pé na areia direto",
-      "Trump Towers, Porsche Design, Estates at Acqualina",
-      "Bal Harbour Shops próximo",
-      "Comunidade BR de alto patrimônio"
     ],
     "lifestyle_score": {
       "urban": 3,
-      "beach": 5,
-      "family": 4,
-      "luxury": 5,
+      "beach": 2,
+      "family": 5,
+      "luxury": 3,
       "calm": 3
     },
     "purpose_score": {
       "live": 5,
-      "invest": 5,
-      "vacation": 5,
-      "protection": 5,
-      "family_move": 4
-    },
-    "identity": "Sunny Isles é o pé-na-areia da elite brasileira — onde a varanda dá pro oceano, o elevador desce direto pro estacionamento, e o porteiro fala português. É pra quem comprou imóvel não pra morar todo dia, mas pra ter o melhor endereço quando vier. Você acorda com o som do mar a 80 metros, almoça em Bal Harbour sem precisar avisar segurança, e às 18h vê o céu mudar de azul pra dourado pela vidraça inteira do living.",
+      "invest": 3,
+      "vacation": 4,
+      "protection": 4
+    }
+  },
+  {
+    "id": "sunny-isles",
+    "name": "Sunny Isles Beach",
+    "state": "MIAMI, FL",
+    "image": "/img/10_region_sunny_isles.jpg",
+    "tagline": "Pie en la arena, élite latina internacional",
+    "appreciation": "8.8% anual",
+    "rental_income": "US$ 4,000 a US$ 9,000/mes",
+    "ticket_range": "US$ 500K — US$ 12M",
+    "investor_profile": "Inversionista premium · familia alto patrimonio · short-term rental",
+    "family_profile": "Familias con pie en la arena · comunidad latina élite",
+    "highlights": [
+      "Pie en la arena directo",
+      "Trump Towers, Porsche Design, Estates at Acqualina",
+      "Bal Harbour Shops cerca",
+      "8 minutos caminando al Atlántico desde la mayoría de edificios"
+    ],
+    "identity": "Sunny Isles es el pie-en-la-arena de la élite latina — donde el balcón da al océano, el elevador baja directo a la playa, y los fines de semana se sienten como Mónaco. El HNW mexicano que quiere playa pura sin la densidad urbana encuentra su match. Vida vertical, concierge full, valet en cada nivel, vista al océano como default.",
     "landmark": "Bal Harbour Shops · Acqualina Beachfront",
     "dining": [
       {
         "name": "Il Mulino New York",
         "cuisine": "Italiana fine dining",
-        "note": "No Acqualina Resort — clássico italiano cinco estrelas com vista pro oceano."
+        "note": "En el Acqualina Resort — italiano clásico de cinco estrellas."
       },
       {
         "name": "Carpaccio at Bal Harbour Shops",
         "cuisine": "Italiana lifestyle",
-        "note": "O almoço mais visto do mundo — celebridades, brasileiros, sacolas de Chanel."
+        "note": "El almuerzo más visto del mundo — celebridades, regulares, ambiente playero."
       },
       {
         "name": "Makoto Bal Harbour",
-        "cuisine": "Japonesa contemporânea",
-        "note": "Sushi premium e robata do Chef Makoto — point de business lunch."
+        "cuisine": "Japonesa contemporánea",
+        "note": "Sushi premium y robata del Chef Makoto — punto de las ladies-who-lunch de Bal Harbour."
       }
     ],
     "groceries": [
       {
         "name": "Publix at Sunny Isles",
         "type": "Supermercado completo",
-        "note": "Na Collins Avenue, walking distance dos prédios de praia."
+        "note": "En Collins Avenue, walking distance de edificios frente al mar."
       },
       {
         "name": "Whole Foods Market Bay Harbor",
-        "type": "Orgânicos & gourmet",
-        "note": "Poucos minutos — a varanda dá pros yachts ancorados na bay."
+        "type": "Orgánicos & gourmet",
+        "note": "Pocos minutos — el balcón da a los yates anclados."
       },
       {
         "name": "Epicure Gourmet Market Sunny Isles",
         "type": "Premium gourmet",
-        "note": "Pão fresco, queijos europeus, vinhos — o gourmet de bairro da elite."
+        "note": "Pan fresco, quesos europeos, vinos — el gourmet de Sunny Isles."
       }
     ],
     "schools": [
       {
         "name": "Norman S. Edelcup / Sunny Isles Beach K-8",
         "type": "Pública K-8",
-        "rank": "#47 de Florida no Niche · Top 20% do estado, gratuita"
+        "rank": "#47 de Florida en Niche · Top 20% del estado, gratuita."
       },
       {
         "name": "Alonzo and Tracy Mourning Senior High",
         "type": "Pública 9-12",
-        "rank": "High school da região, atende Sunny Isles"
+        "rank": "High school regional, atiende Sunny Isles."
       },
       {
         "name": "Ruth K. Broad Bay Harbor K-8",
         "type": "Pública K-8",
-        "rank": "A-rated · Opção próxima em Bay Harbor Islands"
+        "rank": "A-rated · opción cercana en Bay Harbor Islands."
       }
     ],
     "lifestyle_moments": [
-      "Caminhada matinal de 8 minutos até o mar — porteiro guarda sua toalha",
-      "Almoço no Bal Harbour Shops sem motorista, voltando com sacola da Hermès",
-      "Subir do estacionamento direto pro condo no elevador do Porsche Design Tower",
-      "Pôr do sol da varanda no 40º andar com o oceano inteiro de frente",
-      "Domingo: brunch no Carpaccio, depois iPad na praia com concierge servindo água"
+      "Caminata matutina de 8 minutos al mar — el portero guarda tu toalla",
+      "Almuerzo en Bal Harbour Shops sin chofer, regresando con bolsa de Hermès",
+      "Subir del estacionamiento directo al condo en el elevador del Porsche Design Tower",
+      "Sábado en el beach club: brisa del océano, banda en vivo, viendo el atardecer sobre el Atlántico",
+      "Caminata vespertina en Collins Avenue, vecindario ya familiar"
     ],
     "buildings": [
       "The Estates at Acqualina",
       "Porsche Design Tower",
       "Trump Towers Sunny Isles"
-    ]
+    ],
+    "lifestyle_score": {
+      "urban": 3,
+      "beach": 5,
+      "family": 3,
+      "luxury": 5,
+      "calm": 3
+    },
+    "purpose_score": {
+      "live": 4,
+      "invest": 4,
+      "vacation": 5,
+      "protection": 5
+    }
   },
   {
     "id": "orlando",
     "name": "Orlando",
-    "state": "FL",
-    "tagline": "Casa de férias + investimento Disney",
+    "state": "ORLANDO, FL",
     "image": "/img/11_region_orlando.jpg",
-    "appreciation": "5,8% a.a.",
-    "rental_income": "US$ 2.000 a US$ 3.800/mês",
+    "tagline": "Casa de vacaciones + ROI rental Disney",
+    "appreciation": "5.8% anual",
+    "rental_income": "US$ 2,000 a US$ 3,800/mes",
     "ticket_range": "US$ 250K — US$ 800K",
-    "investor_profile": "Casa de férias família + aluguel temporada turistas",
-    "family_profile": "Famílias com filhos pequenos · Disney lovers · férias regulares",
+    "investor_profile": "Casa de vacaciones familia + renta de temporada turistas",
+    "family_profile": "Familias con hijos pequeños · amantes de Disney · vacaciones regulares",
     "highlights": [
-      "Próximo aos parques Disney e Universal",
-      "Comunidade brasileira gigantesca",
-      "Casas com piscina + garagem em condomínio fechado",
-      "Ticket acessível pra classe média alta"
+      "Cerca de parques Disney y Universal",
+      "Demanda turística masiva todo el año",
+      "Casas con piscina + garage en gated community",
+      "Leyes de renta favorables al short-term"
     ],
-    "lifestyle_score": {
-      "urban": 2,
-      "beach": 1,
-      "family": 5,
-      "luxury": 3,
-      "calm": 4
-    },
-    "purpose_score": {
-      "live": 3,
-      "invest": 3,
-      "vacation": 5,
-      "protection": 3,
-      "family_move": 4
-    },
-    "identity": "Orlando — especificamente Dr. Phillips — é onde o brasileiro investidor compra: rendimento de aluguel de temporada perto da Disney, casa de família 15 minutos dos parques, e Restaurant Row na esquina. É pra quem quer combinar férias com renda dolarizada, e ainda dormir num bairro arborizado com piscina no quintal e o golfe do Bay Hill (onde Tiger Woods joga) a 10 minutos.",
+    "identity": "Orlando — específicamente Dr. Phillips — es donde la familia HNW mexicana invierte: rendimiento de renta vacacional que cubre HOA + property tax + extras mientras la familia está en CDMX o Monterrey. Casa con piscina y garage en gated community, donde pasas las vacaciones en familia y haces Airbnb el resto del año.",
     "landmark": "Restaurant Row (Sand Lake Road) · Disney Springs",
     "dining": [
       {
         "name": "Norman's at the Ritz-Carlton Orlando",
         "cuisine": "New World fine dining",
-        "note": "AAA Five Diamond, do chef Norman Van Aken — destino de jantar de aniversário."
+        "note": "AAA Five Diamond, del chef Norman Van Aken — destino gastronómico."
       },
       {
         "name": "Big Fin Seafood Kitchen",
-        "cuisine": "Frutos do mar",
-        "note": "Em Restaurant Row, vibe família grande — pros almoços de domingo."
+        "cuisine": "Mariscos",
+        "note": "En Restaurant Row, ambiente familia grande — para los almuerzos post-parque."
       },
       {
         "name": "Christner's Prime Steak & Lobster",
-        "cuisine": "Steakhouse clássica",
-        "note": "Steakhouse de Orlando há décadas — onde os locais celebram."
+        "cuisine": "Steakhouse clásica",
+        "note": "Steakhouse de Orlando hace décadas — donde los locales celebran aniversarios."
       }
     ],
     "groceries": [
       {
         "name": "Publix at The Marketplace at Dr. Phillips",
         "type": "Supermercado completo",
-        "note": "7524 Dr. Phillips Blvd — anchor de bairro, walking distance pra muitas casas."
+        "note": "7524 Dr. Phillips Blvd — ancla del barrio, walking distance."
       },
       {
         "name": "Whole Foods Market Sand Lake",
-        "type": "Orgânicos & gourmet",
-        "note": "Em Phillips Crossing, 8003 Turkey Lake Rd."
+        "type": "Orgánicos & gourmet",
+        "note": "En Phillips Crossing, 8003 Turkey Lake Rd."
       },
       {
         "name": "Trader Joe's Dr. Phillips",
-        "type": "Especialidades & vinhos",
-        "note": "8323 Sand Lake Rd — único Trader Joe's da região oeste de Orlando."
+        "type": "Especialidades & vinos",
+        "note": "8323 Sand Lake Rd — único Trader Joe's de la región, bien surtido."
       }
     ],
     "schools": [
       {
         "name": "Dr. Phillips Elementary",
         "type": "Pública K-5",
-        "rank": "A-rated · Escola âncora do bairro"
+        "rank": "A-rated · escuela ancla del barrio."
       },
       {
         "name": "Southwest Middle School",
         "type": "Pública 6-8",
-        "rank": "Consistentemente top do condado de Orange"
+        "rank": "Consistentemente top del condado de Orange."
       },
       {
         "name": "Dr. Phillips High School",
         "type": "Pública 9-12",
-        "rank": "A-/A rated · Reconhecida pelo programa de artes performáticas"
+        "rank": "A-/A rated · reconocida por programas de artes escénicas y académicos."
       }
     ],
     "lifestyle_moments": [
-      "15 minutos de carro pra entrar no Magic Kingdom com seus filhos",
-      "Aluguel de temporada gerando renda em dólar enquanto você está no Brasil",
-      "Jantar em Restaurant Row escolhendo entre 30 opções na mesma avenida",
-      "Sábado de golfe no Bay Hill — onde Tiger Woods joga",
-      "Brunch em Disney Springs com a família, sem fila pra estacionar"
+      "15 minutos en auto para entrar al Magic Kingdom con tus hijos",
+      "Renta vacacional generando USD mientras estás en México",
+      "Cena en Restaurant Row eligiendo entre 30 opciones en la misma avenida",
+      "Domingo en Disney Springs con la familia, sin pelea de estacionamiento",
+      "Tarde en la piscina de la gated community, los niños corriendo con vecinos"
     ],
     "buildings": [
       "Bay Hill (gated)",
       "Vizcaya at Dr. Phillips",
       "Phillips Landing"
-    ]
+    ],
+    "lifestyle_score": {
+      "urban": 2,
+      "beach": 1,
+      "family": 4,
+      "luxury": 2,
+      "calm": 4
+    },
+    "purpose_score": {
+      "live": 3,
+      "invest": 5,
+      "vacation": 5,
+      "protection": 3
+    }
   },
   {
     "id": "tampa",
     "name": "Tampa",
-    "state": "FL",
-    "tagline": "Cidade em ascensão na Flórida",
+    "state": "TAMPA, FL",
     "image": "/img/12_region_tampa.jpg",
-    "appreciation": "10,4% a.a.",
-    "rental_income": "US$ 1.800 a US$ 3.200/mês",
+    "tagline": "La ciudad floridana en ascenso",
+    "appreciation": "10.4% anual",
+    "rental_income": "US$ 1,800 a US$ 3,200/mes",
     "ticket_range": "US$ 280K — US$ 900K",
-    "investor_profile": "Investidor que busca valorização emergente + cap rate alto",
-    "family_profile": "Famílias em transição · qualidade de vida sem custo Miami",
+    "investor_profile": "Inversionista que busca plusvalía emergente + cap rate alto",
+    "family_profile": "Familias en transición · calidad de vida sin costo Miami",
     "highlights": [
-      "Maior valorização % FL nos últimos 4 anos",
-      "Custo de vida 30% menor que Miami",
-      "Crescente comunidade brasileira",
-      "Cap rate 5-7% (acima Miami)"
+      "Mayor plusvalía % de FL en los últimos 4 años",
+      "Costo de vida 30% menor que Miami",
+      "Comunidad latina creciente",
+      "Tampa Riverwalk + Bayshore Boulevard de 7 km"
     ],
-    "lifestyle_score": {
-      "urban": 3,
-      "beach": 3,
-      "family": 4,
-      "luxury": 3,
-      "calm": 5
-    },
-    "purpose_score": {
-      "live": 4,
-      "invest": 5,
-      "vacation": 3,
-      "protection": 4,
-      "family_move": 4
-    },
-    "identity": "Tampa é a cidade em ascensão da Flórida — preço de imóvel ainda 30-40% abaixo de Miami, qualidade de vida alta, e bairros como Hyde Park e Water Street atraindo o brasileiro que quer entrar no mercado americano sem pagar o prêmio Miami. É pra quem pensa em valorização nos próximos 5-10 anos, calçadão à beira-mar pra correr de manhã, e cidade que ainda tem alma de bairro — sem a multidão de Miami.",
-    "landmark": "Tampa Riverwalk · Bayshore Boulevard (7 km de calçadão linear)",
+    "identity": "Tampa es la ciudad floridana en ascenso — propiedad aún 30-40% abajo de Miami, calidad de vida comparable, diáspora creciente y plusvalía acelerada. El HNW mexicano que busca el próximo Florida 5-year play viene acá.",
+    "landmark": "Tampa Riverwalk · Bayshore Boulevard (7 km de calzada lineal frente al mar)",
     "dining": [
       {
         "name": "Bern's Steak House",
-        "cuisine": "Steakhouse icônica",
-        "note": "Carta de vinhos com 6.800+ rótulos — destino histórico fundado em 1956."
+        "cuisine": "Steakhouse icónica",
+        "note": "Carta de vinos con 6,800+ etiquetas — destino histórico de Tampa."
       },
       {
         "name": "Ulele",
         "cuisine": "Native Floridian",
-        "note": "Sobre o Riverwalk em Tampa Heights — cozinha que celebra ingredientes nativos."
+        "note": "Sobre el Riverwalk en Tampa Heights — cocina que celebra ingredientes nativos de Florida."
       },
       {
         "name": "Oxford Exchange",
         "cuisine": "Brunch & café",
-        "note": "Brunch icônico em ambiente livraria-café — point do brunch de domingo em Hyde Park."
+        "note": "Brunch icónico en ambiente librería-café — punto de reunión local."
       }
     ],
     "groceries": [
       {
         "name": "Publix at Hyde Park",
         "type": "Supermercado completo",
-        "note": "O staple do bairro, walking distance das casas históricas."
+        "note": "El staple del barrio, walking distance de las casas históricas de Hyde Park."
       },
       {
         "name": "Whole Foods Market South Tampa",
-        "type": "Orgânicos & gourmet",
-        "note": "Em Channelside / South Tampa — opção premium da rotina."
+        "type": "Orgánicos & gourmet",
+        "note": "En Channelside / South Tampa — opción premium de la rutina."
       },
       {
         "name": "Sprouts Farmers Market Tampa",
-        "type": "Naturais & orgânicos",
-        "note": "Alternativa mais acessível pra produtos naturais."
+        "type": "Naturales & orgánicos",
+        "note": "Alternativa más accesible para productos naturales."
       }
     ],
     "schools": [
       {
         "name": "Plant High School",
         "type": "Pública 9-12",
-        "rank": "#36 em Florida no U.S. News · Top 10% do estado, atende Hyde Park/South Tampa"
+        "rank": "#36 en Florida en U.S. News · Top 10% del estado, A-rated."
       },
       {
         "name": "Roosevelt Elementary",
         "type": "Pública K-5",
-        "rank": "#57 em Florida no U.S. News · Top 5% · Math e reading top 1%"
+        "rank": "#57 en Florida en U.S. News · Top 5% · Math y reading arriba del promedio."
       },
       {
         "name": "Berkeley Preparatory School",
         "type": "Privada PK-12",
-        "rank": "Uma das privadas mais prestigiadas da Flórida"
+        "rank": "Una de las privadas más prestigiadas de Florida."
       }
     ],
     "lifestyle_moments": [
-      "Caminhada matinal nos 7 km do Bayshore Boulevard — calçadão linear mais longo do mundo",
-      "Brunch no Oxford Exchange num sábado de outono",
-      "Jantar histórico no Bern's escolhendo vinho da safra do seu ano",
-      "Sábado de farmers market em Hyde Park Village a pé",
-      "Pôr do sol no Riverwalk com o downtown acendendo do outro lado do rio"
+      "Caminata matutina en los 7 km de Bayshore Boulevard — la calzada lineal frente al mar más larga del mundo",
+      "Brunch en Oxford Exchange un sábado de otoño",
+      "Cena histórica en Bern's eligiendo vino de la añada de tu nacimiento",
+      "Domingo en Hyde Park con los niños en bicicleta, arquitectura vintage alrededor",
+      "Café de la tarde en el Riverwalk viendo los veleros pasar"
     ],
     "buildings": [
       "The Pearl at Water Street",
       "Heron at Water Street",
       "Hyde Park House"
-    ]
+    ],
+    "lifestyle_score": {
+      "urban": 3,
+      "beach": 2,
+      "family": 4,
+      "luxury": 3,
+      "calm": 4
+    },
+    "purpose_score": {
+      "live": 4,
+      "invest": 5,
+      "vacation": 3,
+      "protection": 3
+    }
   }
 ]

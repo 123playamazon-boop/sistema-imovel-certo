@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
+<meta name="theme-color" content="#0a0a0a">
+<meta name="robots" content="index,follow">
+<title>Política de Privacidade · Sistema Imóvel Certo™</title>
+<meta name="description" content="Como a DBX LLC coleta, usa e protege os dados de brasileiros que usam o Sistema Imóvel Certo™. Compliance com LGPD (Brasil) e CCPA-aware (EUA).">
+<link rel="canonical" href="https://sistema-imovel-certo.vercel.app/privacidade.html">
+<meta name="author" content="Sistema Imóvel Certo">
+<meta property="og:title" content="Política de Privacidade · Sistema Imóvel Certo™">
+<meta property="og:description" content="Compliance LGPD + CCPA-aware. Transparência radical sobre coleta, uso e direitos do titular.">
+<meta property="og:url" content="https://sistema-imovel-certo.vercel.app/privacidade.html">
+<meta property="og:image" content="https://sistema-imovel-certo.vercel.app/img/og-card.jpg">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="img/logo_favicon.png">
+<link rel="apple-touch-icon" href="img/logo_favicon.png">
+<style>
+:root{
+  --black:#0a0a0a;--ink:#1a1a1a;--charcoal:#2a2a2a;--slate:#5a5a5a;--mute:#8a8a8a;
+  --line:rgba(0,0,0,.08);--cream:#fafaf8;--paper:#f4f2ed;--white:#ffffff;
+  --gold:#b89e68;--gold-soft:rgba(184,158,104,.14);--gold-line:rgba(184,158,104,.32);
+  --ease:cubic-bezier(.22,1,.36,1);--t-fast:.28s;--t-med:.5s;
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:var(--sans);font-size:16px;line-height:1.65;color:var(--ink);background:var(--cream);font-weight:400;letter-spacing:-.005em}
+a{color:var(--gold);text-decoration:none;transition:color var(--t-fast) var(--ease)}
+a:hover{color:var(--ink)}
+img{max-width:100%;display:block}
+::selection{background:var(--gold);color:#fff}
+
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(20px) saturate(180%);border-bottom:1px solid var(--line);padding:14px 40px;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{display:flex;align-items:center;gap:14px}
+.nav-brand img{height:44px;width:44px;border-radius:50%}
+.nav-brand-text{font-family:var(--serif);font-size:18px;font-weight:500;color:var(--ink);letter-spacing:-.01em}
+.nav-back{font-size:13px;color:var(--slate);font-weight:500;display:inline-flex;align-items:center;gap:8px;padding:9px 18px;border:1px solid var(--line);border-radius:100px;transition:all var(--t-fast) var(--ease)}
+.nav-back:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.nav-back svg{width:14px;height:14px}
+
+.hero{padding:80px 24px 48px;text-align:center;border-bottom:1px solid var(--line)}
+.hero-inner{max-width:780px;margin:0 auto}
+.hero .eyebrow{display:inline-block;font-size:12px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(36px,5vw,56px);line-height:1.1;letter-spacing:-.02em;color:var(--ink);margin-bottom:18px}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero-sub{font-size:17px;line-height:1.6;color:var(--slate);font-weight:300}
+.hero-meta{margin-top:24px;font-size:13px;color:var(--mute);font-weight:400}
+.hero-meta strong{color:var(--ink);font-weight:600}
+
+.doc{padding:64px 24px 96px}
+.doc-inner{max-width:780px;margin:0 auto}
+
+.toc{margin-bottom:56px;padding:28px 32px;background:var(--white);border:1px solid var(--line);border-radius:14px}
+.toc-label{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:block}
+.toc ol{list-style:none;counter-reset:toc;display:grid;grid-template-columns:repeat(2,1fr);gap:10px 24px}
+.toc li{counter-increment:toc;font-size:14px;line-height:1.4;color:var(--slate)}
+.toc li::before{content:counter(toc,decimal-leading-zero);font-family:var(--serif);font-style:italic;color:var(--gold);margin-right:10px;font-weight:500}
+.toc a{color:var(--ink);font-weight:400}
+.toc a:hover{color:var(--gold)}
+
+.section{margin-bottom:48px;scroll-margin-top:80px}
+.section h2{font-family:var(--serif);font-weight:500;font-size:clamp(22px,2.8vw,28px);line-height:1.25;color:var(--ink);margin-bottom:14px;letter-spacing:-.014em}
+.section h2 .num{font-family:var(--sans);font-size:13px;font-weight:600;color:var(--gold);letter-spacing:.16em;display:block;margin-bottom:8px;text-transform:uppercase}
+.section h3{font-family:var(--sans);font-weight:600;font-size:16px;line-height:1.4;color:var(--ink);margin:24px 0 10px}
+.section p{font-size:15.5px;line-height:1.72;color:var(--charcoal);margin-bottom:14px;font-weight:400}
+.section p strong{color:var(--ink);font-weight:600}
+.section p em{font-style:italic;color:var(--ink);font-weight:500}
+.section ul{margin:14px 0 18px;padding-left:0;list-style:none}
+.section ul li{padding-left:24px;position:relative;margin-bottom:10px;font-size:15.5px;line-height:1.72;color:var(--charcoal)}
+.section ul li::before{content:'';position:absolute;left:0;top:11px;width:8px;height:8px;border-radius:50%;background:var(--gold-soft);border:1px solid var(--gold-line)}
+.callout{margin:18px 0;padding:18px 22px;background:var(--paper);border-left:3px solid var(--gold);border-radius:8px;font-size:14.5px;line-height:1.65;color:var(--charcoal)}
+.callout strong{color:var(--ink)}
+.callout .callout-label{display:block;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:8px}
+
+.footer-mini{padding:48px 24px 36px;border-top:1px solid var(--line);background:var(--white);text-align:center;font-size:13px;color:var(--mute);line-height:1.6}
+.footer-mini a{color:var(--slate);font-weight:500;margin:0 12px}
+.footer-mini-copy{margin-top:18px;font-size:11.5px;color:var(--mute)}
+
+@media (max-width:640px){
+  .nav{padding:12px 20px}
+  .nav-brand-text{display:none}
+  .hero{padding:56px 20px 36px}
+  .doc{padding:40px 20px 64px}
+  .toc{padding:22px 24px}
+  .toc ol{grid-template-columns:1fr}
+  .section{margin-bottom:36px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-brand" href="/" aria-label="Sistema Imóvel Certo · home">
+    <img src="img/logo_nav.png?v=3" alt="Sistema Imóvel Certo">
+    <span class="nav-brand-text">Sistema Imóvel Certo™</span>
+  </a>
+  <a class="nav-back" href="/">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+    Voltar
+  </a>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">DBX LLC · Compliance</span>
+    <h1>Política de <em>Privacidade</em></h1>
+    <p class="hero-sub">Como a DBX LLC coleta, usa e protege seus dados. Sem juridiquês — escrito pra você entender, não pra te confundir.</p>
+    <p class="hero-meta">Última atualização: <strong>28 de maio de 2026</strong> · Versão 1.0 · Aplicável a residentes do Brasil (LGPD) e dos EUA (CCPA-aware)</p>
+  </div>
+</header>
+
+<main class="doc">
+  <div class="doc-inner">
+
+    <nav class="toc" aria-label="Sumário">
+      <span class="toc-label">Sumário</span>
+      <ol>
+        <li><a href="#s1">Quem somos</a></li>
+        <li><a href="#s2">Dados que coletamos</a></li>
+        <li><a href="#s3">Por que coletamos</a></li>
+        <li><a href="#s4">Base legal</a></li>
+        <li><a href="#s5">Cookies e tracking</a></li>
+        <li><a href="#s6">Com quem compartilhamos</a></li>
+        <li><a href="#s7">Transferência internacional</a></li>
+        <li><a href="#s8">Retenção</a></li>
+        <li><a href="#s9">Seus direitos (LGPD)</a></li>
+        <li><a href="#s10">Segurança</a></li>
+        <li><a href="#s11">Crianças</a></li>
+        <li><a href="#s12">Mudanças nesta política</a></li>
+        <li><a href="#s13">Como nos contatar</a></li>
+      </ol>
+    </nav>
+
+    <section class="section" id="s1">
+      <h2><span class="num">01 · Quem somos</span>Quem opera o Sistema Imóvel Certo™</h2>
+      <p>O Sistema Imóvel Certo™ é uma plataforma de educação e diagnóstico imobiliário operada pela <strong>DBX LLC</strong>, empresa registrada no estado da <strong>Flórida, Estados Unidos</strong>. Nesta Política, "nós", "Sistema" ou "Sistema Imóvel Certo" sempre significam a DBX LLC.</p>
+      <p>Para qualquer assunto relacionado a dados pessoais, o canal direto é <a href="mailto:contato@sistemaimovelcerto.com">contato@sistemaimovelcerto.com</a> ou WhatsApp <a href="https://wa.me/13056849224">+1 (305) 684-9224</a>.</p>
+    </section>
+
+    <section class="section" id="s2">
+      <h2><span class="num">02 · Dados</span>O que coletamos sobre você</h2>
+      <p>Coletamos apenas o que é necessário pra entregar o diagnóstico. Em ordem de quando:</p>
+
+      <h3>A. No quiz (antes de você dar email)</h3>
+      <ul>
+        <li><strong>Suas respostas às 5 perguntas</strong> (objetivo, lifestyle, ticket, perfil familiar, prazo). Ficam apenas no seu navegador até você submeter o form.</li>
+        <li><strong>Dados técnicos anônimos</strong> de sessão: tipo de dispositivo, sistema operacional, navegador, idioma, resolução de tela, país do IP — coletados via Microsoft Clarity pra entender comportamento agregado.</li>
+      </ul>
+
+      <h3>B. Quando você pede o resultado por email</h3>
+      <ul>
+        <li><strong>Nome completo</strong></li>
+        <li><strong>Email</strong></li>
+        <li><strong>WhatsApp</strong> (com DDI)</li>
+        <li>O perfil completo do quiz (respostas + 3 regiões com match)</li>
+      </ul>
+
+      <h3>C. Quando você nos escreve ou liga</h3>
+      <ul>
+        <li>Conteúdo da mensagem (email ou WhatsApp)</li>
+        <li>Horário e meio de contato</li>
+      </ul>
+
+      <div class="callout">
+        <span class="callout-label">O que NÃO coletamos</span>
+        <strong>Não coletamos CPF, RG, número de passaporte, dados bancários, número de cartão de crédito, score de crédito, salário, declaração de imposto, escritura de imóveis que você já tem no Brasil, nem qualquer documento de identificação.</strong> O matching usa apenas perfil psicográfico — não exigimos informação fiscal pra entregar o diagnóstico.
+      </div>
+    </section>
+
+    <section class="section" id="s3">
+      <h2><span class="num">03 · Uso</span>Pra que usamos seus dados</h2>
+      <ul>
+        <li><strong>Rodar o algoritmo de matching</strong> — cruzar suas respostas com 305 mil imóveis MLS e identificar as 3 regiões compatíveis.</li>
+        <li><strong>Enviar o resultado por email</strong> com as regiões, faixas de ticket e imóveis curados.</li>
+        <li><strong>Permitir contato do Realtor parceiro</strong> (André Cunha Lima ou Daniella) pelo WhatsApp em até 1 hora — sempre com seu perfil completo, pra não te perguntar tudo de novo.</li>
+        <li><strong>Melhorar a plataforma</strong> via análise agregada e anônima (Microsoft Clarity).</li>
+        <li><strong>Trackear conversões em mídia paga</strong>, caso você tenha chegado via anúncio (Meta Ads, Google Ads, TikTok Ads).</li>
+        <li><strong>Cumprir obrigações legais</strong> quando autoridades brasileiras ou americanas exigirem por ordem judicial.</li>
+      </ul>
+      <div class="callout">
+        <span class="callout-label">O que NUNCA fazemos com seus dados</span>
+        Não vendemos sua base de email. Não trocamos seus dados por listas de afiliados. Não compartilhamos com incorporadora, construtora, banco, seguradora ou portal imobiliário concorrente.
+      </div>
+    </section>
+
+    <section class="section" id="s4">
+      <h2><span class="num">04 · Base legal</span>Sob qual base legal tratamos seus dados</h2>
+      <p>Conforme o Art. 7º da LGPD (Lei 13.709/2018):</p>
+      <ul>
+        <li><strong>Consentimento</strong> (Art. 7º, I) — quando você submete o form pedindo o diagnóstico.</li>
+        <li><strong>Execução de contrato</strong> (Art. 7º, V) — entrega do resultado e contato do Realtor.</li>
+        <li><strong>Legítimo interesse</strong> (Art. 7º, IX) — análise agregada de comportamento pra melhorar o produto.</li>
+        <li><strong>Cumprimento de obrigação legal</strong> (Art. 7º, II) — resposta a autoridades quando exigido.</li>
+      </ul>
+    </section>
+
+    <section class="section" id="s5">
+      <h2><span class="num">05 · Cookies</span>Cookies, pixels e tracking</h2>
+      <p>Usamos as seguintes ferramentas, todas com finalidade legítima e em conformidade com a LGPD:</p>
+      <ul>
+        <li><strong>Microsoft Clarity</strong> — gravação de sessão anônima (sem captura de senhas ou dados sensíveis) e heatmaps. <a href="https://privacy.microsoft.com/pt-br/privacystatement" target="_blank" rel="noopener">Política da Microsoft</a>.</li>
+        <li><strong>Meta Pixel</strong> (Facebook e Instagram Ads) — tracking de conversões quando ativo. <a href="https://www.facebook.com/policy.php" target="_blank" rel="noopener">Política da Meta</a>.</li>
+        <li><strong>Google Analytics 4 e Google Ads</strong> — métricas de tráfego e conversões. <a href="https://policies.google.com/privacy?hl=pt-BR" target="_blank" rel="noopener">Política do Google</a>.</li>
+        <li><strong>TikTok Pixel</strong> — tracking de conversões quando ativo. <a href="https://www.tiktok.com/legal/page/row/privacy-policy/pt-BR" target="_blank" rel="noopener">Política do TikTok</a>.</li>
+        <li><strong>Vercel</strong> (hospedagem) — logs técnicos de servidor (IP, user agent) por até 30 dias. <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener">Política da Vercel</a>.</li>
+      </ul>
+      <p>Você pode desativar cookies de tracking diretamente no seu navegador ou usando extensões como <em>uBlock Origin</em> ou <em>Privacy Badger</em>. A funcionalidade essencial do diagnóstico continua funcionando.</p>
+    </section>
+
+    <section class="section" id="s6">
+      <h2><span class="num">06 · Compartilhamento</span>Com quem compartilhamos seus dados</h2>
+      <p>Compartilhamos seu nome, email, WhatsApp e perfil do quiz exclusivamente com:</p>
+      <ul>
+        <li><strong>Formspree</strong> (operador) — processa o envio do form pro nosso email. <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener">Política da Formspree</a>.</li>
+        <li><strong>André Cunha Lima (Realtor® licenciado FL)</strong> ou <strong>Daniella (Realtor® parceira)</strong> — única pessoa autorizada a te contatar como executor da transação. André opera em contrato separado com você, não recebemos comissão sobre essa relação (veja Termos de Uso).</li>
+        <li><strong>Provedores técnicos</strong> mencionados na Seção 5, sempre sob seus respectivos contratos de processamento de dados.</li>
+      </ul>
+      <p>Nunca vendemos sua base. Nunca trocamos dados com terceiros sem necessidade contratual.</p>
+    </section>
+
+    <section class="section" id="s7">
+      <h2><span class="num">07 · Internacional</span>Transferência internacional de dados</h2>
+      <p>Como a DBX LLC está sediada nos Estados Unidos e usa serviços americanos (Formspree, Vercel, Microsoft, Google, Meta, TikTok), seus dados são <strong>transferidos do Brasil pros EUA</strong>.</p>
+      <p>Cumprimos o Art. 33 da LGPD da seguinte forma:</p>
+      <ul>
+        <li>Os operadores acima possuem cláusulas contratuais de proteção de dados equivalentes ao padrão LGPD.</li>
+        <li>Você está explicitamente consentindo com essa transferência ao submeter o form (Art. 33, VIII).</li>
+        <li>A finalidade da transferência é exclusivamente a execução do serviço solicitado (resultado do diagnóstico + contato do Realtor).</li>
+      </ul>
+    </section>
+
+    <section class="section" id="s8">
+      <h2><span class="num">08 · Retenção</span>Por quanto tempo guardamos seus dados</h2>
+      <ul>
+        <li><strong>Perfil do quiz + nome + email + WhatsApp:</strong> 36 meses contados a partir do último contato seu conosco. Renovados se você responder a qualquer comunicação ou voltar a engajar com a plataforma.</li>
+        <li><strong>Logs de servidor (Vercel):</strong> 30 dias.</li>
+        <li><strong>Gravações Microsoft Clarity:</strong> 13 meses (configuração padrão da Microsoft).</li>
+        <li><strong>Tracking pixel (Meta/GA4/TikTok):</strong> seguem retenção padrão de cada plataforma.</li>
+      </ul>
+      <p>Após o prazo, dados são eliminados ou anonimizados de forma irreversível.</p>
+    </section>
+
+    <section class="section" id="s9">
+      <h2><span class="num">09 · Seus direitos</span>Seus direitos como titular dos dados</h2>
+      <p>Sob a LGPD você tem direito a:</p>
+      <ul>
+        <li><strong>Confirmação</strong> de que tratamos seus dados</li>
+        <li><strong>Acesso</strong> aos dados que temos sobre você</li>
+        <li><strong>Correção</strong> de dados incompletos, inexatos ou desatualizados</li>
+        <li><strong>Anonimização, bloqueio ou eliminação</strong> de dados desnecessários ou tratados em desconformidade</li>
+        <li><strong>Portabilidade</strong> dos dados a outro fornecedor</li>
+        <li><strong>Eliminação</strong> dos dados tratados com base no seu consentimento</li>
+        <li><strong>Informação</strong> sobre entidades com quem compartilhamos seus dados</li>
+        <li><strong>Revogação do consentimento</strong> a qualquer momento</li>
+        <li><strong>Oposição</strong> a tratamento realizado com fundamento numa das hipóteses de dispensa de consentimento</li>
+      </ul>
+      <p>Pra exercer qualquer um desses direitos, mande email pra <a href="mailto:contato@sistemaimovelcerto.com?subject=Solicita%C3%A7%C3%A3o%20LGPD%20-%20Direito%20do%20Titular">contato@sistemaimovelcerto.com</a> com o assunto <em>"Solicitação LGPD"</em>. Respondemos em até <strong>15 dias corridos</strong>.</p>
+    </section>
+
+    <section class="section" id="s10">
+      <h2><span class="num">10 · Segurança</span>Como protegemos seus dados</h2>
+      <ul>
+        <li>Conexão HTTPS obrigatória em toda a plataforma (TLS 1.3)</li>
+        <li>Dados em trânsito criptografados ponto-a-ponto</li>
+        <li>Acesso aos dados restrito a Bruno Silva (operador DBX LLC) e ao Realtor parceiro autorizado</li>
+        <li>Sem armazenamento de senhas — não há cadastro nem login na plataforma</li>
+        <li>Provedores selecionados com conformidade SOC 2 (Vercel, Formspree, Microsoft, Google)</li>
+      </ul>
+      <p>Em caso de incidente de segurança com risco aos titulares, comunicaremos a ANPD e os titulares afetados conforme exigido pelo Art. 48 da LGPD.</p>
+    </section>
+
+    <section class="section" id="s11">
+      <h2><span class="num">11 · Menores</span>Crianças e adolescentes</h2>
+      <p>A plataforma é destinada exclusivamente a maiores de 18 anos. Não coletamos intencionalmente dados de crianças ou adolescentes. Se você é responsável por um menor que submeteu dados sem autorização, escreva pra <a href="mailto:contato@sistemaimovelcerto.com">contato@sistemaimovelcerto.com</a> que eliminamos imediatamente.</p>
+    </section>
+
+    <section class="section" id="s12">
+      <h2><span class="num">12 · Mudanças</span>Atualizações desta política</h2>
+      <p>Esta política pode ser atualizada a qualquer momento. A data da última atualização está sempre no topo da página. Mudanças relevantes (que ampliem o uso dos seus dados além do consentido) serão comunicadas por email aos titulares com pelo menos <strong>15 dias de antecedência</strong>.</p>
+    </section>
+
+    <section class="section" id="s13">
+      <h2><span class="num">13 · Contato</span>Como falar conosco</h2>
+      <p>Pra qualquer assunto relacionado a dados pessoais, privacidade ou compliance LGPD:</p>
+      <ul>
+        <li><strong>Email:</strong> <a href="mailto:contato@sistemaimovelcerto.com">contato@sistemaimovelcerto.com</a></li>
+        <li><strong>WhatsApp:</strong> <a href="https://wa.me/13056849224">+1 (305) 684-9224</a></li>
+        <li><strong>Operador:</strong> DBX LLC · Flórida, EUA</li>
+      </ul>
+      <p>Você também pode reclamar diretamente à <a href="https://www.gov.br/anpd/" target="_blank" rel="noopener">Autoridade Nacional de Proteção de Dados (ANPD)</a> caso entenda que seus direitos não foram atendidos.</p>
+    </section>
+
+  </div>
+</main>
+
+<footer class="footer-mini">
+  <div>
+    <a href="/">Home</a> · <a href="termos.html">Termos de Uso</a> · <a href="mailto:contato@sistemaimovelcerto.com">Contato</a>
+  </div>
+  <div class="footer-mini-copy">
+    © 2026 DBX LLC · Sistema Imóvel Certo™ · Sediada na Flórida, EUA
+  </div>
+</footer>
+
+</body>
+</html>

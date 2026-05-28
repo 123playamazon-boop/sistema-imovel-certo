@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
+<meta name="theme-color" content="#0a0a0a">
+<meta name="robots" content="index,follow">
+<title>Termos de Uso · Sistema Imóvel Certo™</title>
+<meta name="description" content="Termos de uso da plataforma educacional Sistema Imóvel Certo™, operada pela DBX LLC. Escopo, limitações, propriedade intelectual e lei aplicável.">
+<link rel="canonical" href="https://sistema-imovel-certo.vercel.app/termos.html">
+<meta name="author" content="Sistema Imóvel Certo">
+<meta property="og:title" content="Termos de Uso · Sistema Imóvel Certo™">
+<meta property="og:description" content="Plataforma de educação e diagnóstico. Não somos brokerage. Decisão de compra é exclusivamente sua.">
+<meta property="og:url" content="https://sistema-imovel-certo.vercel.app/termos.html">
+<meta property="og:image" content="https://sistema-imovel-certo.vercel.app/img/og-card.jpg">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="img/logo_favicon.png">
+<link rel="apple-touch-icon" href="img/logo_favicon.png">
+<style>
+:root{
+  --black:#0a0a0a;--ink:#1a1a1a;--charcoal:#2a2a2a;--slate:#5a5a5a;--mute:#8a8a8a;
+  --line:rgba(0,0,0,.08);--cream:#fafaf8;--paper:#f4f2ed;--white:#ffffff;
+  --gold:#b89e68;--gold-soft:rgba(184,158,104,.14);--gold-line:rgba(184,158,104,.32);
+  --ease:cubic-bezier(.22,1,.36,1);--t-fast:.28s;--t-med:.5s;
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:var(--sans);font-size:16px;line-height:1.65;color:var(--ink);background:var(--cream);font-weight:400;letter-spacing:-.005em}
+a{color:var(--gold);text-decoration:none;transition:color var(--t-fast) var(--ease)}
+a:hover{color:var(--ink)}
+img{max-width:100%;display:block}
+::selection{background:var(--gold);color:#fff}
+
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(20px) saturate(180%);border-bottom:1px solid var(--line);padding:14px 40px;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{display:flex;align-items:center;gap:14px}
+.nav-brand img{height:44px;width:44px;border-radius:50%}
+.nav-brand-text{font-family:var(--serif);font-size:18px;font-weight:500;color:var(--ink);letter-spacing:-.01em}
+.nav-back{font-size:13px;color:var(--slate);font-weight:500;display:inline-flex;align-items:center;gap:8px;padding:9px 18px;border:1px solid var(--line);border-radius:100px;transition:all var(--t-fast) var(--ease)}
+.nav-back:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.nav-back svg{width:14px;height:14px}
+
+.hero{padding:80px 24px 48px;text-align:center;border-bottom:1px solid var(--line)}
+.hero-inner{max-width:780px;margin:0 auto}
+.hero .eyebrow{display:inline-block;font-size:12px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(36px,5vw,56px);line-height:1.1;letter-spacing:-.02em;color:var(--ink);margin-bottom:18px}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero-sub{font-size:17px;line-height:1.6;color:var(--slate);font-weight:300}
+.hero-meta{margin-top:24px;font-size:13px;color:var(--mute);font-weight:400}
+.hero-meta strong{color:var(--ink);font-weight:600}
+
+.doc{padding:64px 24px 96px}
+.doc-inner{max-width:780px;margin:0 auto}
+
+.toc{margin-bottom:56px;padding:28px 32px;background:var(--white);border:1px solid var(--line);border-radius:14px}
+.toc-label{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:block}
+.toc ol{list-style:none;counter-reset:toc;display:grid;grid-template-columns:repeat(2,1fr);gap:10px 24px}
+.toc li{counter-increment:toc;font-size:14px;line-height:1.4;color:var(--slate)}
+.toc li::before{content:counter(toc,decimal-leading-zero);font-family:var(--serif);font-style:italic;color:var(--gold);margin-right:10px;font-weight:500}
+.toc a{color:var(--ink);font-weight:400}
+.toc a:hover{color:var(--gold)}
+
+.section{margin-bottom:48px;scroll-margin-top:80px}
+.section h2{font-family:var(--serif);font-weight:500;font-size:clamp(22px,2.8vw,28px);line-height:1.25;color:var(--ink);margin-bottom:14px;letter-spacing:-.014em}
+.section h2 .num{font-family:var(--sans);font-size:13px;font-weight:600;color:var(--gold);letter-spacing:.16em;display:block;margin-bottom:8px;text-transform:uppercase}
+.section h3{font-family:var(--sans);font-weight:600;font-size:16px;line-height:1.4;color:var(--ink);margin:24px 0 10px}
+.section p{font-size:15.5px;line-height:1.72;color:var(--charcoal);margin-bottom:14px;font-weight:400}
+.section p strong{color:var(--ink);font-weight:600}
+.section p em{font-style:italic;color:var(--ink);font-weight:500}
+.section ul{margin:14px 0 18px;padding-left:0;list-style:none}
+.section ul li{padding-left:24px;position:relative;margin-bottom:10px;font-size:15.5px;line-height:1.72;color:var(--charcoal)}
+.section ul li::before{content:'';position:absolute;left:0;top:11px;width:8px;height:8px;border-radius:50%;background:var(--gold-soft);border:1px solid var(--gold-line)}
+.callout{margin:18px 0;padding:18px 22px;background:var(--paper);border-left:3px solid var(--gold);border-radius:8px;font-size:14.5px;line-height:1.65;color:var(--charcoal)}
+.callout strong{color:var(--ink)}
+.callout .callout-label{display:block;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:8px}
+.callout--warning{border-left-color:#c0392b;background:#fff5f3}
+.callout--warning .callout-label{color:#c0392b}
+
+.footer-mini{padding:48px 24px 36px;border-top:1px solid var(--line);background:var(--white);text-align:center;font-size:13px;color:var(--mute);line-height:1.6}
+.footer-mini a{color:var(--slate);font-weight:500;margin:0 12px}
+.footer-mini-copy{margin-top:18px;font-size:11.5px;color:var(--mute)}
+
+@media (max-width:640px){
+  .nav{padding:12px 20px}
+  .nav-brand-text{display:none}
+  .hero{padding:56px 20px 36px}
+  .doc{padding:40px 20px 64px}
+  .toc{padding:22px 24px}
+  .toc ol{grid-template-columns:1fr}
+  .section{margin-bottom:36px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="nav-brand" href="/" aria-label="Sistema Imóvel Certo · home">
+    <img src="img/logo_nav.png?v=3" alt="Sistema Imóvel Certo">
+    <span class="nav-brand-text">Sistema Imóvel Certo™</span>
+  </a>
+  <a class="nav-back" href="/">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+    Voltar
+  </a>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">DBX LLC · Termos</span>
+    <h1>Termos de <em>Uso</em></h1>
+    <p class="hero-sub">As regras do jogo entre você e a DBX LLC. Lê uma vez, vale pra sempre — atualizações sempre comunicadas com antecedência.</p>
+    <p class="hero-meta">Última atualização: <strong>28 de maio de 2026</strong> · Versão 1.0 · Aplicável a partir do primeiro acesso à plataforma</p>
+  </div>
+</header>
+
+<main class="doc">
+  <div class="doc-inner">
+
+    <nav class="toc" aria-label="Sumário">
+      <span class="toc-label">Sumário</span>
+      <ol>
+        <li><a href="#s1">Aceitação dos termos</a></li>
+        <li><a href="#s2">O que o Sistema é (e não é)</a></li>
+        <li><a href="#s3">Quem pode usar</a></li>
+        <li><a href="#s4">Conduta do usuário</a></li>
+        <li><a href="#s5">Conta e dados informados</a></li>
+        <li><a href="#s6">Realtor parceiro</a></li>
+        <li><a href="#s7">Consultoria 1:1 paga</a></li>
+        <li><a href="#s8">Propriedade intelectual</a></li>
+        <li><a href="#s9">Conteúdo de terceiros</a></li>
+        <li><a href="#s10">Disclaimers</a></li>
+        <li><a href="#s11">Limitação de responsabilidade</a></li>
+        <li><a href="#s12">Indemnização</a></li>
+        <li><a href="#s13">Modificações</a></li>
+        <li><a href="#s14">Suspensão e encerramento</a></li>
+        <li><a href="#s15">Lei aplicável e foro</a></li>
+        <li><a href="#s16">Contato</a></li>
+      </ol>
+    </nav>
+
+    <section class="section" id="s1">
+      <h2><span class="num">01 · Aceitação</span>Aceitação destes termos</h2>
+      <p>Ao acessar <a href="https://sistema-imovel-certo.vercel.app">sistema-imovel-certo.vercel.app</a>, responder ao diagnóstico, enviar dados pelo formulário ou se comunicar conosco por qualquer canal, você concorda com estes Termos de Uso e com a <a href="privacidade.html">Política de Privacidade</a>.</p>
+      <p>Se você não concorda com qualquer parte destes termos, <strong>não use a plataforma</strong>. Não há cadastro nem login — o uso por si só é seu aceite.</p>
+    </section>
+
+    <section class="section" id="s2">
+      <h2><span class="num">02 · Escopo</span>O que o Sistema Imóvel Certo™ é (e o que não é)</h2>
+      <p>O Sistema Imóvel Certo™ é uma <strong>plataforma de educação e diagnóstico imobiliário</strong> operada pela DBX LLC, sediada na Flórida, EUA.</p>
+
+      <h3>O que oferecemos:</h3>
+      <ul>
+        <li>Conteúdo educacional sobre o mercado imobiliário da Flórida (Brickell, Aventura, Sunny Isles, Orlando, Tampa e regiões secundárias)</li>
+        <li>Diagnóstico psicográfico de 47 segundos que cruza seu perfil com 305 mil imóveis MLS</li>
+        <li>Recomendação de 3 regiões compatíveis com seu perfil, com 6 imóveis curados por região</li>
+        <li>Encaminhamento pra Realtor® licenciado parceiro (André Cunha Lima ou Daniella)</li>
+        <li>Opcionalmente, consultoria 1:1 paga de 60 minutos (veja Seção 7)</li>
+      </ul>
+
+      <div class="callout callout--warning">
+        <span class="callout-label">Importante · Leia com atenção</span>
+        <strong>A DBX LLC NÃO é brokerage imobiliária, NÃO é corretora, NÃO é incorporadora e NÃO é instituição financeira.</strong> Não vendemos imóveis. Não intermediamos transações. Não recebemos comissão de incorporadora, construtora, banco ou seguradora sobre operações que você venha a fechar. Não emitimos parecer jurídico, fiscal ou de investimento.
+      </div>
+    </section>
+
+    <section class="section" id="s3">
+      <h2><span class="num">03 · Quem pode usar</span>Quem pode usar a plataforma</h2>
+      <ul>
+        <li>Maiores de <strong>18 anos</strong> com capacidade civil plena</li>
+        <li>Residentes do Brasil ou dos Estados Unidos</li>
+        <li>Pessoas físicas (a plataforma não atende pessoa jurídica nesta versão)</li>
+        <li>Quem fornece dados verdadeiros, atuais e completos no formulário</li>
+      </ul>
+      <p>Se você não atende a um desses requisitos, não está autorizado a usar a plataforma.</p>
+    </section>
+
+    <section class="section" id="s4">
+      <h2><span class="num">04 · Conduta</span>Conduta do usuário</h2>
+      <p>Ao usar a plataforma, você se compromete a NÃO:</p>
+      <ul>
+        <li>Fornecer informações falsas, fraudulentas ou de terceiros sem autorização</li>
+        <li>Tentar acessar áreas restritas, fazer engenharia reversa do código ou do algoritmo de matching</li>
+        <li>Copiar, reproduzir ou redistribuir conteúdo da plataforma sem autorização escrita</li>
+        <li>Usar a plataforma pra spam, scraping automatizado ou qualquer atividade que comprometa a infraestrutura</li>
+        <li>Se passar pelo Sistema Imóvel Certo™, pela DBX LLC, pelo André ou pela Daniella em qualquer canal</li>
+        <li>Usar dados obtidos via plataforma pra propósito diferente do seu próprio uso pessoal de avaliação imobiliária</li>
+      </ul>
+    </section>
+
+    <section class="section" id="s5">
+      <h2><span class="num">05 · Dados</span>Dados que você fornece</h2>
+      <p>Você é o único responsável pela veracidade dos dados informados. Dados falsos ou desatualizados podem invalidar o diagnóstico e impossibilitar o contato do Realtor parceiro — sem direito a reembolso de eventuais serviços pagos.</p>
+      <p>O tratamento dos seus dados pessoais é regido pela nossa <a href="privacidade.html">Política de Privacidade</a>.</p>
+    </section>
+
+    <section class="section" id="s6">
+      <h2><span class="num">06 · Realtor parceiro</span>Sobre o Realtor® parceiro</h2>
+      <p>Após o diagnóstico, encaminhamos seu perfil pra <strong>André Cunha Lima</strong> ou <strong>Daniella</strong>, ambos Realtors® licenciados na Flórida (com licença ativa junto à Florida Real Estate Commission).</p>
+      <p>Qualquer transação imobiliária — visita a imóvel, due diligence, oferta, negociação, financiamento e closing — é executada <strong>diretamente entre você e o Realtor</strong>, em contrato separado, sob as regras da Flórida e da NAR (National Association of Realtors).</p>
+      <p>A DBX LLC <strong>não é parte</strong> dessa relação. Não recebemos comissão sobre o closing. Não somos responsáveis por:</p>
+      <ul>
+        <li>Negociações conduzidas pelo Realtor</li>
+        <li>Cumprimento dos prazos de fechamento</li>
+        <li>Qualidade ou características dos imóveis</li>
+        <li>Conduta profissional do Realtor (sujeita às regras de licenciamento da Flórida)</li>
+        <li>Operações de financiamento, seguro ou estruturação fiscal</li>
+      </ul>
+      <p>Reclamações sobre conduta de Realtor podem ser direcionadas à <a href="https://www.myfloridalicense.com/DBPR/real-estate-commission/" target="_blank" rel="noopener">Florida Real Estate Commission</a>.</p>
+    </section>
+
+    <section class="section" id="s7">
+      <h2><span class="num">07 · Consultoria</span>Consultoria 1:1 paga (opcional)</h2>
+      <p>A consultoria de <strong>US$ 500 por 60 minutos</strong> com André Cunha Lima é um serviço opcional, contratado e pago diretamente com o profissional via plataforma de checkout segura (Stripe).</p>
+      <ul>
+        <li>O serviço inclui: chamada de 60 minutos, análise personalizada do seu perfil, plano de execução de 90-120 dias, indicação de contadores e advogados de imigração</li>
+        <li><strong>Reembolso integral</strong> ocorre se você fechar imóvel com o André (a comissão recebida no closing cobre o reembolso)</li>
+        <li>Caso opte por não fechar com o André, o valor da consultoria <strong>não é reembolsável</strong> — foi a remuneração pelo tempo profissional dedicado</li>
+        <li>A consultoria é prestada pelo André enquanto Realtor® licenciado, não pela DBX LLC</li>
+      </ul>
+    </section>
+
+    <section class="section" id="s8">
+      <h2><span class="num">08 · IP</span>Propriedade intelectual</h2>
+      <p>Todo o conteúdo da plataforma é de propriedade exclusiva da DBX LLC ou licenciado a ela, incluindo:</p>
+      <ul>
+        <li><strong>Marca</strong> "Sistema Imóvel Certo™"</li>
+        <li><strong>Algoritmo proprietário</strong> de matching psicográfico (5 variáveis × 35 micro-perfis brasileiros)</li>
+        <li>Identidade visual, logos, ilustrações, fotografias originais e copy</li>
+        <li>Base de dados de 142 famílias brasileiras estruturadas (anonimizada) que treinou o algoritmo</li>
+        <li>Conteúdo educacional sobre regiões, financiamento e estruturação patrimonial</li>
+      </ul>
+      <p>É vedado reproduzir, distribuir, criar trabalhos derivados ou comercializar qualquer parte desse conteúdo sem autorização escrita da DBX LLC.</p>
+    </section>
+
+    <section class="section" id="s9">
+      <h2><span class="num">09 · Terceiros</span>Conteúdo e dados de terceiros</h2>
+      <p>A plataforma exibe dados oriundos de fontes públicas, em especial:</p>
+      <ul>
+        <li><strong>MLS (Multiple Listing Service)</strong> via Miami Realtors, Stellar MLS e Panda IDX — dados de imóveis disponíveis</li>
+        <li><strong>U.S. News & World Report</strong> — ranking de escolas públicas</li>
+        <li><strong>IRS, Florida DBPR, NAR</strong> — informações fiscais e regulatórias</li>
+        <li><strong>Dados históricos de valorização</strong> compilados de fontes públicas</li>
+      </ul>
+      <p>Esses dados são exibidos com fins educacionais. A precisão é por melhor esforço — informações podem variar entre a consulta e a transação efetiva. Sempre confirme com o Realtor parceiro ou diretamente nas fontes antes de decidir.</p>
+    </section>
+
+    <section class="section" id="s10">
+      <h2><span class="num">10 · Disclaimers</span>Disclaimers obrigatórios</h2>
+
+      <div class="callout callout--warning">
+        <span class="callout-label">Não constituem aconselhamento profissional</span>
+        Nenhum conteúdo da plataforma constitui:
+        <ul style="margin-top:10px">
+          <li>Aconselhamento jurídico (não somos escritório de advocacia)</li>
+          <li>Aconselhamento fiscal ou tributário (não somos contadores licenciados)</li>
+          <li>Aconselhamento de investimento (não somos consultores financeiros credenciados)</li>
+          <li>Garantia de valorização ou retorno sobre imóveis</li>
+          <li>Recomendação personalizada de produto financeiro</li>
+        </ul>
+      </div>
+
+      <p>Sempre busque profissional licenciado nas áreas relevantes (advogado, contador especialista em compliance internacional, consultor financeiro CFP/CFA) antes de tomar qualquer decisão. <em>A decisão final é exclusivamente sua e sob sua responsabilidade.</em></p>
+    </section>
+
+    <section class="section" id="s11">
+      <h2><span class="num">11 · Responsabilidade</span>Limitação de responsabilidade</h2>
+      <p>Na máxima extensão permitida pela lei, a DBX LLC não será responsável por:</p>
+      <ul>
+        <li>Decisões de compra, financiamento, locação ou estruturação patrimonial tomadas com base no conteúdo da plataforma</li>
+        <li>Variações de mercado, perda de valorização, vacância ou inadimplência de inquilinos</li>
+        <li>Conduta do Realtor parceiro ou de qualquer profissional indicado</li>
+        <li>Falhas técnicas, indisponibilidade da plataforma ou perda de dados causadas por terceiros (Vercel, Formspree, etc.)</li>
+        <li>Danos indiretos, lucros cessantes ou perdas financeiras decorrentes do uso da plataforma</li>
+        <li>Mudanças regulatórias (Lei 14.754, FATCA, IRS) que afetem o cenário tributário ou patrimonial</li>
+      </ul>
+      <p>O limite máximo de responsabilidade da DBX LLC, em qualquer hipótese, é o valor que você efetivamente pagou pela consultoria opcional (US$ 500), se aplicável. Pra usuários que apenas usaram a plataforma sem contratar consultoria, esse limite é <strong>zero</strong>.</p>
+    </section>
+
+    <section class="section" id="s12">
+      <h2><span class="num">12 · Indemnização</span>Indemnização</h2>
+      <p>Você concorda em indemnizar e isentar a DBX LLC, seus diretores, funcionários e parceiros de qualquer reclamação, dano, perda ou despesa (incluindo honorários advocatícios razoáveis) decorrentes de:</p>
+      <ul>
+        <li>Sua violação destes Termos</li>
+        <li>Sua violação de direitos de terceiros</li>
+        <li>Sua utilização indevida da plataforma</li>
+        <li>Informações falsas fornecidas no formulário</li>
+      </ul>
+    </section>
+
+    <section class="section" id="s13">
+      <h2><span class="num">13 · Mudanças</span>Modificações destes Termos</h2>
+      <p>Podemos atualizar estes Termos a qualquer momento. A data da última atualização aparece sempre no topo da página. Mudanças relevantes serão comunicadas por email aos usuários cadastrados com <strong>15 dias de antecedência</strong>. O uso continuado da plataforma após o prazo equivale a aceite dos novos termos.</p>
+    </section>
+
+    <section class="section" id="s14">
+      <h2><span class="num">14 · Encerramento</span>Suspensão e encerramento</h2>
+      <p>Podemos suspender ou encerrar seu acesso à plataforma, sem aviso prévio, em caso de:</p>
+      <ul>
+        <li>Violação destes Termos</li>
+        <li>Fornecimento de dados falsos</li>
+        <li>Conduta abusiva contra a DBX LLC, contra o Realtor parceiro ou contra outros usuários</li>
+        <li>Tentativa de uso fraudulento da plataforma</li>
+      </ul>
+      <p>Você também pode encerrar o uso a qualquer momento solicitando a eliminação dos seus dados conforme a <a href="privacidade.html#s9">Política de Privacidade, Seção 9</a>.</p>
+    </section>
+
+    <section class="section" id="s15">
+      <h2><span class="num">15 · Lei aplicável</span>Lei aplicável e foro</h2>
+      <p>Estes Termos são regidos pelas leis do <strong>Estado da Flórida, Estados Unidos</strong>, e — quando aplicável a usuários residentes no Brasil — em conjunto com a Lei Geral de Proteção de Dados (LGPD, Lei 13.709/2018) e o Código de Defesa do Consumidor brasileiro (Lei 8.078/1990).</p>
+      <p>Disputas serão resolvidas preferencialmente por <strong>mediação ou arbitragem</strong>. Persistindo a disputa, fica eleito o foro do Estado da Flórida, EUA, sem prejuízo do direito do consumidor brasileiro de demandar no seu domicílio quando aplicável a legislação consumerista.</p>
+    </section>
+
+    <section class="section" id="s16">
+      <h2><span class="num">16 · Contato</span>Como falar conosco</h2>
+      <ul>
+        <li><strong>Email:</strong> <a href="mailto:contato@sistemaimovelcerto.com">contato@sistemaimovelcerto.com</a></li>
+        <li><strong>WhatsApp:</strong> <a href="https://wa.me/13056849224">+1 (305) 684-9224</a></li>
+        <li><strong>Operador:</strong> DBX LLC · Flórida, EUA</li>
+      </ul>
+    </section>
+
+  </div>
+</main>
+
+<footer class="footer-mini">
+  <div>
+    <a href="/">Home</a> · <a href="privacidade.html">Política de Privacidade</a> · <a href="mailto:contato@sistemaimovelcerto.com">Contato</a>
+  </div>
+  <div class="footer-mini-copy">
+    © 2026 DBX LLC · Sistema Imóvel Certo™ · Sediada na Flórida, EUA
+  </div>
+</footer>
+
+</body>
+</html>

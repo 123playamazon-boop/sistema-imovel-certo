@@ -1,0 +1,116 @@
+{
+  "brickell": {
+    "total_available": 1148,
+    "see_all_url": "https://www.andrecunhalima.com/for-sale/brickell",
+    "samples": {
+      "entry": [
+        {"mls":"A11892198","price":"$800K","condo":"Brickell Ten Condo, Unit 603","address":"1010 SW 2nd Ave, Miami FL, 33130","beds":3,"baths":3,"sqft":"1,273","img":"https://dvvjkgh94f2v6.cloudfront.net/523fa3e6/421560279/83dcefb7.jpeg"},
+        {"mls":"A11919482","price":"$800K","condo":"Brickell Key One Condo, Unit A1207","address":"520 Brickell Key Dr, Miami FL, 33131","beds":2,"baths":2,"sqft":"1,137","img":"https://dvvjkgh94f2v6.cloudfront.net/523fa3e6/423590019/83dcefb7.jpeg"},
+        {"mls":"A11965732","price":"$800K","condo":"Icon Brickell Condo No 1, Unit 1715","address":"475 Brickell Ave, Miami FL, 33131","beds":2,"baths":2,"sqft":"1,168","img":"https://dvvjkgh94f2v6.cloudfront.net/523fa3e6/426833102/83dcefb7.jpeg"},
+        {"mls":"A11955771","price":"$800K","condo":"Le Parc At Brickell Condo, Unit 707","address":"1600 SW 1st Ave, Miami FL, 33129","beds":2,"baths":3,"sqft":"1,119","img":"https://dvvjkgh94f2v6.cloudfront.net/523fa3e6/426116063/83dcefb7.jpeg"}
+      ],
+      "mid": [
+        {"mls":"A11852370","price":"$2M","condo":"Three Tequesta Point Condo, Unit 1906","address":"848 Brickell Key Dr, Miami FL, 33131","beds":3,"baths":4,"sqft":"2,293","img":"https://dvvjkgh94f2v6.cloudfront.net/523fa3e6/418827848/83dcefb7.jpeg"},
+        {"mls":"A12012658","price":"$1,995,000","condo":"Four Seasons Brickell, Unit 3107","address":"1435 Brickell Ave, Miami FL, 33131","beds":2,"baths":3,"sqft":"1,801","img":"https://dvvjkgh94f2v6.cloudfront.net/523fa3e6/462007874/83dcefb7.jpeg"},
+        {"mls":"A11926480","price":"$1,995,000","condo":"Brickell Bayfront, Unit PH303","address":"1155 Brickell Bay Dr, Miami FL, 33131","beds":3,"baths":3,"sqft":"1,940","img":"https://dvvjkgh94f2v6.cloudfront.net/523fa3e6/424027732/83dcefb7.jpeg"},
+        {"mls":"A11865305","price":"$1.99M","condo":"Icon Brickell Condo No 1, Unit 712-714","address":"475 Brickell Ave, Miami FL, 33131","beds":2,"baths":2,"sqft":"1,800","img":"https://dvvjkgh94f2v6.cloudfront.net/523fa3e6/419719352/83dcefb7.jpeg"}
+      ],
+      "premium": [
+        {"mls":"A11917230","price":"$31.76M","condo":"Baccarat Residences, Unit UPH7201","address":"99 SE 5th St, Miami FL, 33131","beds":5,"baths":10,"sqft":"9,074","img":"https://dvvjkgh94f2v6.cloudfront.net/523fa3e6/423418291/83dcefb7.jpeg"},
+        {"mls":"A11996392","price":"$20M","condo":"Asia Condo, Unit PH3403","address":"900 Brickell Key Blvd, Miami FL, 33131","beds":4,"baths":6,"sqft":"4,515","img":"https://dvvjkgh94f2v6.cloudfront.net/523fa3e6/451093298/83dcefb7.jpeg"},
+        {"mls":"A11991526","price":"$16.5M","condo":"Millennium Tower Residences, Unit PH2ABCD","address":"1425 Brickell Ave, Miami FL, 33131","beds":4,"baths":6,"sqft":"6,671","img":"https://dvvjkgh94f2v6.cloudfront.net/523fa3e6/447806246/83dcefb7.jpeg"},
+        {"mls":"A11993789","price":"$12.89M","condo":"Una Residences, Unit 2101","address":"175 SE 25th Rd, Miami FL, 33129","beds":5,"baths":7,"sqft":"5,489","img":"https://dvvjkgh94f2v6.cloudfront.net/523fa3e6/448847360/83dcefb7.jpeg"},
+        {"mls":"A11995998","price":"$7.89M","condo":"Echo Brickell Condo, Unit 4301","address":"1451 Brickell Ave, Miami FL, 33131","beds":2,"baths":3,"sqft":"3,256","img":"https://dvvjkgh94f2v6.cloudfront.net/523fa3e6/450820474/83dcefb7.jpeg"}
+      ]
+    }
+  },
+  "aventura": {
+    "total_available": 1136,
+    "see_all_url": "https://www.andrecunhalima.com/for-sale/aventura",
+    "samples": {
+      "entry": [
+        {"mls":"A11955503","price":"$700K","condo":"North Tower At The Point, Unit 3103","address":"21205 Yacht Club Dr, Aventura FL, 33180","beds":3,"baths":2,"sqft":"1,870","img":"https://dvvjkgh94f2v6.cloudfront.net/523fa3e6/426092151/83dcefb7.jpeg"},
+        {"mls":"A11934862","price":"$700K","condo":"Hamptons West Condo, Unit 501","address":"20281 E Country Club Dr, Aventura FL, 33180","beds":3,"baths":2,"sqft":"1,800","img":"https://dvvjkgh94f2v6.cloudfront.net/523fa3e6/424607862/83dcefb7.jpeg"},
+        {"mls":"A11863983","price":"$700K","condo":"Mystic Pointe Tower 500, Unit 3014","address":"3530 Mystic Pointe Dr, Aventura FL, 33180","beds":2,"baths":3,"sqft":"1,365","img":"https://dvvjkgh94f2v6.cloudfront.net/523fa3e6/419623965/83dcefb7.jpeg"},
+        {"mls":"A12002213","price":"$699,990","condo":"Turnberry Village North Tower, Unit 906","address":"20000 E Country Club Dr, Aventura FL, 33180","beds":3,"baths":3,"sqft":"1,580","img":"https://dvvjkgh94f2v6.cloudfront.net/523fa3e6/455389596/83dcefb7.jpeg"}
+      ],
+      "mid": [
+        {"mls":"A11370841","price":"$2M","condo":"2600 Island Blvd Williams Island, Unit 101","address":"2600 Island Blvd, Aventura FL, 33160","beds":3,"baths":3,"sqft":"2,450","img":"https://dvvjkgh94f2v6.cloudfront.net/523fa3e6/380852074/83dcefb7.jpeg"},
+        {"mls":"A11963780","price":"$2M","condo":"Artech Residences At Aventura, Unit 349","address":"2950 NE 188th St, Aventura FL, 33180","beds":4,"baths":6,"sqft":"3,381","img":"https://dvvjkgh94f2v6.cloudfront.net/523fa3e6/426686059/83dcefb7.jpeg"},
+        {"mls":"A11947356","price":"$1,999,000","condo":"Aventura Lakes Phase 1","address":"20920 NE 32nd Ave, Aventura FL, 33180","beds":4,"baths":5,"sqft":"3,176","img":"https://dvvjkgh94f2v6.cloudfront.net/523fa3e6/425488266/83dcefb7.jpeg"},
+        {"mls":"A11897369","price":"$1,995,000","condo":"Island Way","address":"3699 NE 208th Ter, Aventura FL, 33180","beds":3,"baths":3,"sqft":"2,740","img":"https://dvvjkgh94f2v6.cloudfront.net/523fa3e6/421943732/83dcefb7.jpeg"}
+      ],
+      "premium": [
+        {"mls":"A12001330","price":"$19.99M","condo":"Island Estates","address":"3916 Island Estates Dr, Aventura FL, 33160","beds":6,"baths":7,"sqft":"6,932","img":"https://dvvjkgh94f2v6.cloudfront.net/523fa3e6/454907853/83dcefb7.jpeg"},
+        {"mls":"A11981891","price":"$13.75M","condo":"Villa Flora At Williams Island","address":"1522 Island Blvd, Aventura FL, 33160","beds":6,"baths":8,"sqft":"6,430","img":"https://dvvjkgh94f2v6.cloudfront.net/523fa3e6/440907573/83dcefb7.jpeg"},
+        {"mls":"A12021503","price":"$9.9M","condo":"Prive Condo, Unit 1404 & 1405N","address":"5500 Island Estates Dr, Aventura FL, 33160","beds":7,"baths":6,"sqft":"0","img":"https://dvvjkgh94f2v6.cloudfront.net/523fa3e6/481610824/83dcefb7.jpeg"},
+        {"mls":"A11966766","price":"$7.95M","condo":"Bella Vista Mid Rise North, Unit 1103&1104","address":"20165 NE 39th Pl, Aventura FL, 33180","beds":6,"baths":6,"sqft":"7,270","img":"https://dvvjkgh94f2v6.cloudfront.net/523fa3e6/426911792/83dcefb7.jpeg"},
+        {"mls":"A11822074","price":"$6.5M","condo":"Towers Of Porto Vita North, Unit 2201","address":"20155 NE 38th Ct, Aventura FL, 33180","beds":4,"baths":7,"sqft":"5,141","img":"https://dvvjkgh94f2v6.cloudfront.net/523fa3e6/412851082/83dcefb7.jpeg"}
+      ]
+    }
+  },
+  "sunny-isles": {
+    "total_available": 1061,
+    "see_all_url": "https://www.andrecunhalima.com/for-sale/sunny-isles-beach",
+    "samples": {
+      "entry": [
+        {"mls":"A11958062","price":"$800K","condo":"King David Of Sunny Isles, Unit UPH3","address":"17555 Atlantic Blvd, Sunny Isles Beach FL, 33160","beds":2,"baths":2,"sqft":"1,200","img":"https://dvvjkgh94f2v6.cloudfront.net/523fa3e6/426288171/83dcefb7.jpeg"},
+        {"mls":"A11947946","price":"$800K","condo":"St Tropez On The Bay II, Unit 2-602","address":"Sunny Isles Beach FL, 33160","beds":3,"baths":2,"sqft":"1,461","img":"https://dvvjkgh94f2v6.cloudfront.net/523fa3e6/425541843/83dcefb7.jpeg"},
+        {"mls":"A11979778","price":"$799K","condo":"La Perla Condo, Unit 2710","address":"16699 Collins Ave, Sunny Isles Beach FL, 33160","beds":1,"baths":2,"sqft":"1,000","img":"https://dvvjkgh94f2v6.cloudfront.net/523fa3e6/438809560/83dcefb7.jpeg"},
+        {"mls":"A11820707","price":"$799K","condo":"Winston Tower 300 Condo, Unit 1119","address":"230 174th St, Sunny Isles Beach FL, 33160","beds":3,"baths":2,"sqft":"1,525","img":"https://dvvjkgh94f2v6.cloudfront.net/523fa3e6/412750545/83dcefb7.jpeg"}
+      ],
+      "mid": [
+        {"mls":"A12004786","price":"$2M","condo":"Jade Signature Condo, Unit 1404","address":"16901 Collins Ave, Sunny Isles Beach FL, 33160","beds":1,"baths":2,"sqft":"1,125","img":"https://dvvjkgh94f2v6.cloudfront.net/523fa3e6/457256965/83dcefb7.jpeg"},
+        {"mls":"A12011248","price":"$1,999,990","condo":"Trump Tower II Condo, Unit 1206","address":"15901 Collins Ave, Sunny Isles Beach FL, 33160","beds":3,"baths":4,"sqft":"2,327","img":"https://dvvjkgh94f2v6.cloudfront.net/523fa3e6/460900448/83dcefb7.jpeg"},
+        {"mls":"A11780797","price":"$1,999,900","condo":"Poinciana Island Yacht Racquet Club, Unit 801","address":"311 Poinciana Dr, Sunny Isles Beach FL, 33160","beds":4,"baths":3,"sqft":"2,425","img":"https://dvvjkgh94f2v6.cloudfront.net/523fa3e6/409829165/83dcefb7.jpeg"},
+        {"mls":"A12002954","price":"$1,999,888","condo":"Tdr Tower II Trump Towers II, Unit 4302","address":"15901 Collins Ave, Sunny Isles Beach FL, 33160","beds":3,"baths":4,"sqft":"1,979","img":"https://dvvjkgh94f2v6.cloudfront.net/523fa3e6/454827712/83dcefb7.jpeg"}
+      ],
+      "premium": [
+        {"mls":"A11883561","price":"$47.5M","condo":"18555 Collins Avenue Condo, Unit PH-1","address":"18555 Collins Ave, Sunny Isles Beach FL, 33160","beds":4,"baths":7,"sqft":"9,560","img":"https://dvvjkgh94f2v6.cloudfront.net/523fa3e6/420936284/83dcefb7.jpeg"},
+        {"mls":"A12016528","price":"$25.9M","condo":"Turnberry Ocean Club, Unit PH5204","address":"18501 Collins Ave, Sunny Isles Beach FL, 33160","beds":6,"baths":10,"sqft":"10,750","img":"https://dvvjkgh94f2v6.cloudfront.net/523fa3e6/472400829/83dcefb7.jpeg"},
+        {"mls":"A11885247","price":"$19.45M","condo":"Porsche Design Tower, Unit 4405","address":"18555 Collins Ave, Sunny Isles Beach FL, 33160","beds":4,"baths":5,"sqft":"6,121","img":"https://dvvjkgh94f2v6.cloudfront.net/523fa3e6/421054401/83dcefb7.jpeg"},
+        {"mls":"A11931079","price":"$17.5M","condo":"Acqualina Ocean Residence, Unit PH5002","address":"17875 Collins Ave, Sunny Isles Beach FL, 33160","beds":5,"baths":6,"sqft":"8,081","img":"https://dvvjkgh94f2v6.cloudfront.net/523fa3e6/424345136/83dcefb7.jpeg"},
+        {"mls":"A11971864","price":"$15.9M","condo":"Regalia Condo, Unit 30","address":"19575 Collins Ave, Sunny Isles Beach FL, 33160","beds":4,"baths":6,"sqft":"4,992","img":"https://dvvjkgh94f2v6.cloudfront.net/523fa3e6/429186888/83dcefb7.jpeg"}
+      ]
+    }
+  },
+  "orlando": {
+    "total_available": 1464,
+    "see_all_url": "https://www.andrecunhalima.com/for-sale/orlando",
+    "samples": {
+      "entry": [
+        {"mls":"O6405280","price":"$799K","condo":"Pepper Plantation","address":"2738 PEPPER LN, ORLANDO FL, 32812","beds":3,"baths":4,"sqft":"1,970","img":"https://dvvjkgh94f2v6.cloudfront.net/735d922b/789751180/83dcefb7.jpeg"},
+        {"mls":"G5111639","price":"$794,990","condo":"Laureate Park At Lake Nona","address":"9878 PEEBLES, ORLANDO FL, 32827","beds":4,"baths":3,"sqft":"2,176","img":"https://dvvjkgh94f2v6.cloudfront.net/735d922b/788915370/83dcefb7.jpeg"},
+        {"mls":"O6384095","price":"$785K","condo":"Laureate Park","address":"13833 BEHRING, ORLANDO FL, 32827","beds":4,"baths":4,"sqft":"3,003","img":"https://dvvjkgh94f2v6.cloudfront.net/735d922b/782573818/83dcefb7.jpeg"},
+        {"mls":"S5147291","price":"$785K","condo":"Randal Park Ph 5","address":"8042 CORKFIELD, ORLANDO FL, 32832","beds":4,"baths":3,"sqft":"2,418","img":"https://dvvjkgh94f2v6.cloudfront.net/735d922b/786867898/83dcefb7.jpeg"}
+      ],
+      "mid": [
+        {"mls":"O6366664","price":"$6,019,000","condo":"Lake Nona Estates","address":"10481 CROMWELL GROVE, ORLANDO FL, 32827","beds":6,"baths":7,"sqft":"6,019","img":"https://dvvjkgh94f2v6.cloudfront.net/735d922b/777015209/83dcefb7.jpeg"},
+        {"mls":"O6359516","price":"$5,995,000","condo":"Lake Nona Estates","address":"11035 CROMWELL GROVE, ORLANDO FL, 32827","beds":5,"baths":7,"sqft":"5,995","img":"https://dvvjkgh94f2v6.cloudfront.net/735d922b/775914123/83dcefb7.jpeg"}
+      ],
+      "premium": [
+        {"mls":"O6392916","price":"$9,495,000","condo":"Lake Nona Estates","address":"8506 LAKE NONA SHORE DR, ORLANDO FL, 32827","beds":6,"baths":8,"sqft":"8,257","img":"https://dvvjkgh94f2v6.cloudfront.net/735d922b/785522314/83dcefb7.jpeg"},
+        {"mls":"O6366659","price":"$6.75M","condo":"Lake Nona Estates","address":"9700 BLANDFORD, ORLANDO FL, 32827","beds":5,"baths":7,"sqft":"6,732","img":"https://dvvjkgh94f2v6.cloudfront.net/735d922b/777014353/83dcefb7.jpeg"},
+        {"mls":"O6366663","price":"$6.1M","condo":"Lake Nona Estates","address":"9671 BLANDFORD, ORLANDO FL, 32827","beds":5,"baths":5,"sqft":"5,969","img":"https://dvvjkgh94f2v6.cloudfront.net/735d922b/777015011/83dcefb7.jpeg"}
+      ]
+    }
+  },
+  "tampa": {
+    "total_available": 1863,
+    "see_all_url": "https://www.andrecunhalima.com/for-sale/tampa",
+    "samples": {
+      "entry": [
+        {"mls":"TB8508431","price":"$45.5M","condo":"Pendry Residences Tampa, Unit PH SOUTH","address":"111 S ASHLEY, TAMPA FL, 33602","beds":6,"baths":9,"sqft":"10,072","img":"https://dvvjkgh94f2v6.cloudfront.net/735d922b/790495874/83dcefb7.jpeg"},
+        {"mls":"TB8497912","price":"$21,999,000","condo":"Davis Islands Pb10 Pg52 To 57","address":"52 LADOGA, TAMPA FL, 33606","beds":8,"baths":15,"sqft":"18,568","img":"https://dvvjkgh94f2v6.cloudfront.net/735d922b/787676647/83dcefb7.jpeg"}
+      ],
+      "mid": [
+        {"mls":"TB8490217","price":"$17M","condo":"Davis Islands Pb10 Pg52 To 57","address":"214 BLANCA, TAMPA FL, 33606","beds":6,"baths":6,"sqft":"7,400","img":"https://dvvjkgh94f2v6.cloudfront.net/735d922b/785645571/83dcefb7.jpeg"},
+        {"mls":"TB8446032","price":"$14.75M","condo":"Davis Islands Rep Of Pt O","address":"82 MARTINIQUE, TAMPA FL, 33606","beds":5,"baths":10,"sqft":"9,646","img":"https://dvvjkgh94f2v6.cloudfront.net/735d922b/774568695/83dcefb7.jpeg"}
+      ],
+      "premium": [
+        {"mls":"TB8508431","price":"$45.5M","condo":"Pendry Residences Tampa, Unit PH SOUTH","address":"111 S ASHLEY, TAMPA FL, 33602","beds":6,"baths":9,"sqft":"10,072","img":"https://dvvjkgh94f2v6.cloudfront.net/735d922b/790495874/83dcefb7.jpeg"},
+        {"mls":"TB8490217","price":"$17M","condo":"Davis Islands Pb10 Pg52 To 57","address":"214 BLANCA, TAMPA FL, 33606","beds":6,"baths":6,"sqft":"7,400","img":"https://dvvjkgh94f2v6.cloudfront.net/735d922b/785645571/83dcefb7.jpeg"}
+      ]
+    }
+  }
+}

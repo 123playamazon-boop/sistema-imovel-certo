@@ -61,10 +61,10 @@ const ANSWER_LABELS = {
 
 function buildLeadSummary(specificRegion = null) {
   if (!answers || !Object.keys(answers).length) {
-    return 'Olá André! Vi o Sistema Imóvel Certo™ e gostaria de tirar algumas dúvidas sobre imóveis em Miami — sem compromisso.';
+    return '¡Hola André! Vi El Sistema Inmueble Correcto y quisiera hacer algunas preguntas sobre propiedades en Florida — sin compromiso.';
   }
 
-  const lines = ['Olá André! Acabei de fazer o diagnóstico no Sistema Imóvel Certo™.', ''];
+  const lines = ['¡Hola André! Acabo de completar el diagnóstico en El Siema Imóvel Certo™.', ''];
   lines.push('📋 *MEU PERFIL:*');
   ['purpose', 'lifestyle', 'budget', 'kids', 'timeline'].forEach(key => {
     const val = answers[key];
@@ -75,7 +75,7 @@ function buildLeadSummary(specificRegion = null) {
     lines.push(`• ${spec.label}: ${display}`);
   });
 
-  // Match das 3 regiões (calcula no momento da chamada pra refletir state atual)
+  // Match de las 3 regiones (calcula al momento del llamado para reflejar estado actual)
   const matches = getMatchedRegions();
   if (matches && matches.length) {
     lines.push('');
@@ -104,8 +104,8 @@ let currentQ = 0;
 let answers = {};
 let bodyScrollY = 0;
 
-// Load regions + listings (imóveis reais do site do André).
-// Cache-bust com versão — bump quando trocar estrutura do JSON pra invalidar cache do browser.
+// Carga regions + listings (propiedades reales).
+// Cache-bust con versión — sube cuando cambies la estructura del JSON para invalidar cache do browser.
 const DATA_VERSION = '2026052301';
 fetch('regions.json?v=' + DATA_VERSION, { cache: 'no-cache' })
   .then(r => r.json())
@@ -115,10 +115,10 @@ fetch('regions.json?v=' + DATA_VERSION, { cache: 'no-cache' })
 fetch('listings.json?v=' + DATA_VERSION, { cache: 'no-cache' })
   .then(r => r.json())
   .then(data => { LISTINGS = data; console.log('[Sistema] listings carregados:', Object.keys(LISTINGS)); })
-  .catch(err => console.warn('[Sistema] listings.json não carregou:', err));
+  .catch(err => console.warn('[El Sistema Inmueble Correcto] listings.json falló:', err));
 
-// Pega 6 imóveis (2 entry + 2 mid + 2 premium) — escala de preço completa pra cada user.
-// Combinação única (até C(4,2)×C(4,2)×C(5,2) = 6×6×10 = 360 combinações por região).
+// Toma 6 propiedades (2 entry + 2 mid + 2 premium) — escala de precio completa por usuario.
+// Combinación única (hasta C(4,2)×C(4,2)×C(5,2) = 6×6×10 = 360 combinaciones por región).
 function getRandomListings(regionId) {
   const region = LISTINGS[regionId];
   if (!region || !region.samples) return [];
@@ -225,72 +225,72 @@ const ICONS = {
 const QUESTIONS = [
   {
     key: 'purpose',
-    msg: 'Estamos entendendo seu objetivo',
-    title: 'Por que você quer um imóvel nos EUA?',
-    sub: 'A resposta certa muda tudo no resto do diagnóstico.',
+    msg: 'Entendiendo tu objetivo',
+    title: '¿Por qué quieres una propiedad en EE. UU.?',
+    sub: 'La respuesta correcta cambia todo el resto del diagnóstico.',
     type: 'options',
     cols: 2,
     options: [
-      { value: 'live', icon: ICONS.live, text: 'Morar com a família', sub: 'Mudança definitiva ou parcial' },
-      { value: 'invest', icon: ICONS.invest, text: 'Investir e gerar renda', sub: 'Renda passiva em dólar' },
-      { value: 'vacation', icon: ICONS.vacation, text: 'Casa de férias', sub: 'Usar por temporada' },
-      { value: 'protection', icon: ICONS.protection, text: 'Proteger patrimônio', sub: 'Blindagem em moeda forte' }
+      { value: 'live', icon: ICONS.live, text: 'Vivir con la familia', sub: 'Mudanza definitiva o parcial' },
+      { value: 'invest', icon: ICONS.invest, text: 'Invertir y generar renta', sub: 'Renta pasiva en USD' },
+      { value: 'vacation', icon: ICONS.vacation, text: 'Casa de vacaciones', sub: 'Usar por temporada' },
+      { value: 'protection', icon: ICONS.protection, text: 'Proteger patrimonio', sub: 'Blindaje en moneda fuerte' }
     ]
   },
   {
     key: 'lifestyle',
-    msg: 'Analisando seu estilo de vida',
-    title: 'Qual lugar você se imagina acordando?',
-    sub: 'Escolha o cenário que mais ressoa com a vida que você quer construir.',
+    msg: 'Analizando tu estilo de vida',
+    title: '¿En qué lugar te imaginas despertando?',
+    sub: 'Elige el escenario que más resuena con la vida que quieres construir.',
     type: 'lifestyle',
     options: [
       { value: 'urban', bg: 'urban', text: 'Urbano vibrante', sub: 'Brickell, downtown' },
-      { value: 'beach', bg: 'beach', text: 'Pé na areia', sub: 'Sunny Isles, Surfside' },
-      { value: 'family', bg: 'family', text: 'Família calma', sub: 'Aventura, Coral Gables' },
-      { value: 'luxury', bg: 'luxury', text: 'Luxo discreto', sub: 'Bal Harbour, Pinecrest' },
+      { value: 'beach', bg: 'beach', text: 'En la playa', sub: 'Sunny Isles, Surfside' },
+      { value: 'family', bg: 'family', text: 'Familia tranquila', sub: 'Aventura, Coral Gables' },
+      { value: 'luxury', bg: 'luxury', text: 'Lujo discreto', sub: 'Bal Harbour, Pinecrest' },
       { value: 'calm', bg: 'calm', text: 'Vida tranquila', sub: 'Tampa, Doral' }
     ]
   },
   {
     key: 'budget',
-    msg: 'Calculando faixas compatíveis',
-    title: 'Quanto você tem disponível pra entrar?',
-    sub: 'Preço total do imóvel em dólar. Banco americano financia até 70%, então cash de entrada é o que define seu ticket real.',
+    msg: 'Calculando rangos compatibles',
+    title: '¿Cuánto cash tienes disponible para entrar?',
+    sub: 'Precio total de la propiedad en USD. Banco estadounidense financia hasta 70%, entonces el cash inicial define tu ticket real.',
     type: 'options',
     cols: 2,
     options: [
-      { value: '150-300', icon: ICONS.budgetLow, text: 'US$ 150-300 mil', sub: 'Studios e 1 quarto Edgewater, Aventura outskirts' },
-      { value: '300-500', icon: ICONS.budgetMid, text: 'US$ 300-500 mil', sub: '1 quarto Aventura, Sunny Isles, Brickell' },
-      { value: '500-1000', icon: ICONS.budgetHigh, text: 'US$ 500K-1M', sub: '2 quartos prime, Brickell vista, Sunny Isles' },
-      { value: '1000+', icon: ICONS.budgetPremium, text: 'Acima de US$ 1M', sub: 'Luxury alto padrão · Bal Harbour, penthouse' }
+      { value: '150-300', icon: ICONS.budgetLow, text: 'US$ 150-300K', sub: 'Studios + 1 recámara Edgewater, Aventura outskirts' },
+      { value: '300-500', icon: ICONS.budgetMid, text: 'US$ 300-500K', sub: '1 recámara Aventura, Sunny Isles, Brickell' },
+      { value: '500-1000', icon: ICONS.budgetHigh, text: 'US$ 500K-1M', sub: '2 recámaras prime, Brickell vista, Sunny Isles' },
+      { value: '1000+', icon: ICONS.budgetPremium, text: 'Arriba de US$ 1M', sub: 'Luxury alto nivel · Bal Harbour, penthouse' }
     ]
   },
   {
     key: 'kids',
-    msg: 'Avaliando perfil familiar',
-    title: 'Quem vai morar ou usar o imóvel com você?',
-    sub: 'Isso muda completamente qual school zone e qual perímetro de segurança importam.',
+    msg: 'Evaluando composición familiar',
+    title: '¿Quién vivirá o usará la propiedad contigo?',
+    sub: 'Esto cambia completamente qué school zone y qué perímetro de seguridad importan.',
     type: 'options',
     cols: 2,
     options: [
-      { value: 'yes_small', icon: ICONS.kidsSmall, text: 'Tenho filhos pequenos', sub: '0-12 anos · school zone importa' },
-      { value: 'yes_teen', icon: ICONS.kidsTeen, text: 'Tenho filhos adolescentes', sub: '13-18 anos · ensino médio top' },
-      { value: 'no', icon: ICONS.kidsNone, text: 'Sem filhos em casa', sub: 'Casal, single ou filhos adultos' },
-      { value: 'planning', icon: ICONS.kidsPlanning, text: 'Planejando ter', sub: 'Pensando no futuro família' }
+      { value: 'yes_small', icon: ICONS.kidsSmall, text: 'Tengo hijos pequeños', sub: '0-12 años · school zone importa' },
+      { value: 'yes_teen', icon: ICONS.kidsTeen, text: 'Tengo hijos adolescentes', sub: '13-18 años · high school top' },
+      { value: 'no', icon: ICONS.kidsNone, text: 'Sin hijos en casa', sub: 'Pareja, single o hijos adultos' },
+      { value: 'planning', icon: ICONS.kidsPlanning, text: 'Planeando tener', sub: 'Pensando en el futuro familiar' }
     ]
   },
   {
     key: 'timeline',
-    msg: 'Cruzando regiões compatíveis',
-    title: 'Quando essa decisão tem que estar fechada?',
-    sub: 'Última pergunta. A janela da Lei 14.754 fecha em setembro de 2026 — quem decide antes pega regime atual.',
+    msg: 'Cruzando regiones compatibles',
+    title: '¿Cuándo necesitas tener cerrada esta decisión?',
+    sub: 'Última pregunta. La ventana de 18 meses antes del próximo ciclo electoral mexicano — quien decide primero asegura el régimen actual y los precios de hoy.',
     type: 'options',
     cols: 2,
     options: [
-      { value: 'now', icon: ICONS.timelineNow, text: 'Estou pronto agora', sub: 'Decisão nos próximos 90 dias' },
-      { value: '6mo', icon: ICONS.timeline6mo, text: 'Próximos 6 meses', sub: 'Organizando estrutura financeira' },
-      { value: '12mo', icon: ICONS.timeline12mo, text: 'Próximos 12 meses', sub: 'Planejando com calma' },
-      { value: 'research', icon: ICONS.timelineResearch, text: 'Apenas pesquisando', sub: 'Quero entender opções' }
+      { value: 'now', icon: ICONS.timelineNow, text: 'Estoy listo ahora', sub: 'Decisión en los próximos 90 días' },
+      { value: '6mo', icon: ICONS.timeline6mo, text: 'Próximos 6 meses', sub: 'Organizando estructura financiera' },
+      { value: '12mo', icon: ICONS.timeline12mo, text: 'Próximos 12 meses', sub: 'Planeando con calma' },
+      { value: 'research', icon: ICONS.timelineResearch, text: 'Solo investigando', sub: 'Quiero entender opciones' }
     ]
   }
 ];
@@ -569,10 +569,10 @@ function showResults() {
           <p class="region-tagline">"${r.tagline}"</p>
 
           <div class="region-stats">
-            <div class="region-stat"><div class="region-stat-label">Valorização</div><div class="region-stat-value">${r.appreciation}</div></div>
+            <div class="region-stat"><div class="region-stat-label">Plusvalía</div><div class="region-stat-value">${r.appreciation}</div></div>
             <div class="region-stat"><div class="region-stat-label">Ticket típico</div><div class="region-stat-value">${r.ticket_range}</div></div>
-            <div class="region-stat"><div class="region-stat-label">Renda mensal</div><div class="region-stat-value">${r.rental_income}</div></div>
-            <div class="region-stat"><div class="region-stat-label">Compatibilidade</div><div class="region-stat-value">${r.matchScore}%</div></div>
+            <div class="region-stat"><div class="region-stat-label">Renta mensual</div><div class="region-stat-value">${r.rental_income}</div></div>
+            <div class="region-stat"><div class="region-stat-label">Compatibilidad</div><div class="region-stat-value">${r.matchScore}%</div></div>
           </div>
         </div>
 
@@ -586,42 +586,42 @@ function showResults() {
 
         ${momentsHTML ? `
         <div class="region-block">
-          <div class="region-block-label">Um dia típico aqui</div>
+          <div class="region-block-label">Un día típico aquí</div>
           <ul class="region-moments">${momentsHTML}</ul>
         </div>
         ` : ''}
 
         ${diningHTML ? `
         <div class="region-block">
-          <div class="region-block-label">Onde se come</div>
+          <div class="region-block-label">Dónde se come</div>
           <div class="region-pois">${diningHTML}</div>
         </div>
         ` : ''}
 
         ${groceriesHTML ? `
         <div class="region-block">
-          <div class="region-block-label">Mercados da rotina</div>
+          <div class="region-block-label">Mercados de la rutina</div>
           <div class="region-pois">${groceriesHTML}</div>
         </div>
         ` : ''}
 
         ${schoolsHTML ? `
         <div class="region-block">
-          <div class="region-block-label">Escolas que importam</div>
+          <div class="region-block-label">Escuelas que importan</div>
           <div class="region-pois">${schoolsHTML}</div>
         </div>
         ` : ''}
 
         ${buildingsHTML ? `
         <div class="region-block">
-          <div class="region-block-label">Prédios de referência</div>
+          <div class="region-block-label">Edificios de referencia</div>
           <div class="region-buildings">${buildingsHTML}</div>
         </div>
         ` : ''}
 
         <div class="region-profile">
-          <strong>Perfil investidor:</strong> ${r.investor_profile}<br>
-          <strong>Perfil família:</strong> ${r.family_profile}
+          <strong>Perfil inversionista:</strong> ${r.investor_profile}<br>
+          <strong>Perfil familiar:</strong> ${r.family_profile}
         </div>
 
         ${(() => {
@@ -631,23 +631,23 @@ function showResults() {
             if (listingsMeta && listingsMeta.see_all_url) {
               return `
               <div class="region-block">
-                <div class="region-block-label">Imóveis disponíveis agora</div>
+                <div class="region-block-label">Propiedades disponibles ahora</div>
                 <a class="region-listings-cta-empty" href="${listingsMeta.see_all_url}" target="_blank" rel="noopener" onclick="fbqTrack('SeeAllListings',{region:'${r.id}'})">
-                  Ver imóveis em ${r.name} no site oficial do André
+                  Ver propiedades en ${r.name} en el sitio oficial
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                 </a>
               </div>`;
             }
             return '';
           }
-          const total = listingsMeta && listingsMeta.total_available ? listingsMeta.total_available.toLocaleString('pt-BR') : '';
+          const total = listingsMeta && listingsMeta.total_available ? listingsMeta.total_available.toLocaleString('es-MX') : '';
           const seeAllUrl = listingsMeta && listingsMeta.see_all_url ? listingsMeta.see_all_url : '#';
           // 6 cards: [0,1]=entry · [2,3]=mid · [4,5]=premium
-          const tierByIdx = ['Acessível','Acessível','Meio termo','Meio termo','Premium','Premium'];
+          const tierByIdx = ['Accesible','Accesible','Intermedio','Intermedio','Premium','Premium'];
           const tierClassByIdx = ['entry','entry','mid','mid','premium','premium'];
           return `
           <div class="region-block">
-            <div class="region-block-label">${listings.length} imóveis ideais para você · entre ${total} disponíveis em ${r.name}</div>
+            <div class="region-block-label">${listings.length} propiedades ideales para ti · entre ${total} disponibles en ${r.name}</div>
             <div class="region-listings">
               ${listings.map((l, idx) => {
                 const tier = tierByIdx[idx] || '';
@@ -662,8 +662,8 @@ function showResults() {
                     <div class="region-listing-price">${l.price}</div>
                     <div class="region-listing-condo">${l.condo}</div>
                     <div class="region-listing-meta">
-                      ${l.beds ? `<span>${l.beds} quartos</span>` : ''}
-                      ${l.baths ? `<span>${l.baths} banheiros</span>` : ''}
+                      ${l.beds ? `<span>${l.beds} recámaras</span>` : ''}
+                      ${l.baths ? `<span>${l.baths} baños</span>` : ''}
                       ${l.sqft && l.sqft !== '0' ? `<span>${l.sqft} ft²</span>` : ''}
                     </div>
                   </div>
@@ -671,7 +671,7 @@ function showResults() {
               }).join('')}
             </div>
             <a class="region-listings-cta" href="${seeAllUrl}" target="_blank" rel="noopener" onclick="fbqTrack('SeeAllListings',{region:'${r.id}'})">
-              Ver todos os ${total} imóveis em ${r.name} →
+              Ver todas las ${total} propiedades en ${r.name} →
             </a>
           </div>`;
         })()}
@@ -681,8 +681,8 @@ function showResults() {
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
           </span>
           <span class="region-wa-text">
-            <span class="region-wa-title">Falar com André sobre ${r.name}</span>
-            <span class="region-wa-sub">Orientação sem compromisso · resposta em até 1 hora</span>
+            <span class="region-wa-title">Hablar con André sobre ${r.name}</span>
+            <span class="region-wa-sub">Orientación sin compromiso · respuesta en hasta 1 hora</span>
           </span>
           <span class="region-wa-arrow">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
@@ -695,14 +695,14 @@ function showResults() {
 
   fbqTrack('ResultsShown', { matchCount: matches.length });
 
-  // Lazy load das imagens de fundo (regiões + listings) — só carrega
+  // Lazy load das imagens de fundo (regiones + listings) — só carrega
   // o que entra no viewport. Mobile economiza ~80% de bandwidth na 1ª tela.
   hydrateLazyBackgrounds();
 }
 
 // =============================================================
-// LAZY BACKGROUNDS — IntersectionObserver pras imagens de fundo
-// (CSS background-image não tem loading=lazy nativo)
+// LAZY BACKGROUNDS — IntersectionObserver para imágenes de fondo
+// (CSS background-image no tiene loading=lazy nativo)
 // =============================================================
 let _bgObserver = null;
 function hydrateLazyBackgrounds() {
@@ -762,7 +762,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const whatsapp = (fd.get('whatsapp') || '').toString().trim();
     if (!name || !email.includes('@') || whatsapp.replace(/\D/g, '').length < 8) {
       if (errEl) {
-        errEl.textContent = 'Confere se nome, email e WhatsApp estão completos.';
+        errEl.textContent = 'Revisa que nombre, email y teléfono estén completos.';
         errEl.classList.add('show');
       }
       return;
@@ -780,7 +780,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Subject custom (Formspree usa _subject como assunto do email)
     const firstName = name.split(' ')[0] || name;
     const top1 = matches[0] ? matches[0].name : '';
-    const subject = `LEAD QUENTE - ${firstName} (${top1}) - Sistema Imovel Certo`;
+    const subject = `LEAD CALIENTE - ${firstName} (${top1}) - El Sistema Inmueble Correcto`;
     const subjEl = document.getElementById('formSubject');
     if (subjEl) subjEl.value = subject;
     fd.set('_subject', subject);
@@ -793,15 +793,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // Lead summary formatado bonito pro corpo do email
     const summaryLines = [
       '====================================',
-      `NOVO LEAD: ${name}`,
+      `NUEVO LEAD: ${name}`,
       '====================================',
       '',
-      `Nome:     ${name}`,
+      `Nombre:   ${name}`,
       `Email:    ${email}`,
-      `WhatsApp: ${whatsapp}`,
-      `Data:     ${new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' })} (Brasilia)`,
+      `Teléfono: ${whatsapp}`,
+      `Data:     ${new Date().toLocaleString('es-MX', { timeZone: 'America/Mexico_City' })} (CDMX)`,
       '',
-      '--- PERFIL DO QUIZ ---',
+      '--- PERFIL DEL QUIZ ---',
     ];
     Object.entries(answers || {}).forEach(([key, val]) => {
       const spec = ANSWER_LABELS[key];
@@ -810,16 +810,16 @@ document.addEventListener('DOMContentLoaded', () => {
       summaryLines.push(`${spec.label}: ${labelVal}`);
     });
     summaryLines.push('');
-    summaryLines.push('--- 3 REGIOES COM MATCH ---');
+    summaryLines.push('--- 3 REGIONES CON MATCH ---');
     matches.slice(0, 3).forEach((m, i) => {
       summaryLines.push(`${i + 1}. ${m.name} - ${m.matchScore}% match`);
     });
     summaryLines.push('');
-    summaryLines.push('--- ACAO RECOMENDADA ---');
-    summaryLines.push(`WhatsApp direto: https://wa.me/${whatsapp.replace(/\D/g, '')}`);
+    summaryLines.push('--- ACCION RECOMENDADA ---');
+    summaryLines.push(`WhatsApp directo: https://wa.me/${whatsapp.replace(/\D/g, '')}`);
     summaryLines.push(`Responder email: ${email}`);
     summaryLines.push('');
-    summaryLines.push('Sistema Imovel Certo - sistema-imovel-certo.vercel.app');
+    summaryLines.push('El Sistema Inmueble Correcto - sistema-imovel-certo.vercel.app/mx/');
     const leadSummary = summaryLines.join('\n');
     const summaryEl = document.getElementById('leadSummary');
     if (summaryEl) summaryEl.value = leadSummary;
@@ -838,9 +838,9 @@ document.addEventListener('DOMContentLoaded', () => {
       headers: { 'Accept': 'application/json' }
     }).then(r => {
       if (r.ok) fbqTrack('Lead', { name, email });
-      else console.warn('[Sistema] Formspree retornou erro:', r.status);
+      else console.warn('[El Sistema Inmueble Correcto] Error Formspree:', r.status);
     }).catch(err => {
-      console.warn('[Sistema] Falha de rede ao enviar lead:', err);
+      console.warn('[El Sistema Inmueble Correcto] Error de red al enviar lead:', err);
     });
 
     // Lead capturado — agora SIM libera o WhatsApp FAB (com perfil completo do quiz).
@@ -862,7 +862,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // TRACKING
 // =============================================================
 // Mapeia eventos custom do funnel pros eventos padrão de cada plataforma.
-// Eventos padrão são otimizáveis em Ads Manager / GA4 — eventos custom não são.
+// Los eventos estándar son optimizables en Ads Manager / GA4 — los custom no.
 const STANDARD_EVENT_MAP = {
   StartFlow:            { meta: 'InitiateCheckout', ga4: 'begin_checkout',  tiktok: 'InitiateCheckout' },
   QuestionAnswered:     { meta: 'AddToCart',        ga4: 'add_to_cart',     tiktok: 'AddToCart' },
@@ -899,7 +899,7 @@ function fbqTrack(eventName, params = {}) {
   // Microsoft Clarity
   if (window.clarity) clarity('event', eventName);
 
-  console.log('[Sistema Imóvel Certo]', eventName, params);
+  console.log('[El Sistema Inmueble Correcto]', eventName, params);
 }
 
 // =============================================================
@@ -916,7 +916,7 @@ document.addEventListener('keydown', (e) => {
 //
 // Decisão estratégica: FAB invisível na landing/quiz protege o André de leads
 // que clicam WhatsApp sem ter o perfil do quiz preenchido. Todo lead que chega
-// no WhatsApp dele agora vem com match_data completo (3 regiões + ticket + objetivo).
+// no WhatsApp dele agora vem com match_data completo (3 regiones + ticket + objetivo).
 // Liberação acontece em revealWhatsAppFab(), chamado após fetch(formspree) iniciado.
 // =============================================================
 function revealWhatsAppFab() {
@@ -965,90 +965,90 @@ document.addEventListener('DOMContentLoaded', bindThanksConsultoriaLink);
 function renderConsultoria(matches) {
   const target = document.getElementById('consultoriaSlot');
   if (!target) return;
-  const topRegion = matches[0] ? matches[0].name : 'sua região #1';
+  const topRegion = matches[0] ? matches[0].name : 'tu región #1';
   target.innerHTML = `
     <div class="consultoria-card">
       <div class="consultoria-tag">
         <span class="consultoria-tag-dot"></span>
-        Mapa da Compra Certa™ · 1:1 com André
+        El Mapa de Compra Correcta™ · 1:1 con André
       </div>
 
       <h3 class="consultoria-title">
         60 minutos com André Cunha Lima.<br>
-        <em>O preço de não perder US$ 80 mil</em><br>
-        comprando a região errada.
+        <em>El precio de no perder US$ 80,000</em><br>
+        comprando en el condado equivocado.
       </h3>
 
       <p class="consultoria-lead">
-        Você acabou de ver suas 3 regiões. Agora vem a parte que destrói brasileiro: <strong>escolher o prédio errado dentro da região certa</strong>, abrir <strong>LLC errada</strong>, pegar <strong>financiamento com taxa 1,5% acima do mercado</strong>, ou descobrir 6 meses depois que <strong>o condomínio proíbe short-term rental</strong> — exatamente o que você comprou pra fazer.
+        Acabas de ver tus 3 regiones. Ahora viene la parte que destruye al HNW mexicano: <strong>elegir el edificio equivocado dentro de la región correcta</strong>, abrir <strong>LLC equivocada</strong>, conseguir <strong>financiamiento con tasa 1.5% arriba del mercado</strong>, o descubrir 6 meses después que <strong>el condominio prohíbe short-term rental</strong> — exactamente lo que compraste para hacer.
       </p>
       <p class="consultoria-lead">
-        Cada um desses erros custa entre <strong>US$ 80 mil e US$ 880 mil</strong>. Eu vi acontecer 17 vezes nos últimos 4 anos com brasileiros que decidiram sozinhos. <strong>1 hora comigo no Zoom evita os 5 erros de uma vez.</strong>
+        Cada uno de estos errores cuesta entre <strong>US$ 80,000 y US$ 880,000</strong>. Lo vi pasar 17 veces en los últimos 4 años con compradores que decidieron solos. <strong>1 hora conmigo en Zoom evita los 5 errores de una vez.</strong>
       </p>
 
-      <div class="consultoria-includes-label">O que sai dessa 1 hora</div>
+      <div class="consultoria-includes-label">Lo que sale de esta 1 hora</div>
 
       <div class="consultoria-grid">
         <div class="consultoria-cell">
           <span class="consultoria-cell-num">01</span>
           <div>
-            <div class="consultoria-cell-title">Auditoria das suas 3 regiões aplicada AO VIVO</div>
-            <div class="consultoria-cell-sub">Olho seu ticket, sua família, seu objetivo, e te aponto QUAL das três é a sua jogada definitiva (com números aplicados, não vago) — começando por ${topRegion}.</div>
+            <div class="consultoria-cell-title">Auditoría EN VIVO de tus 3 regiones match</div>
+            <div class="consultoria-cell-sub">Miro tu ticket, tu familia, tu objetivo, y te indico CUÁL de las tres es tu jugada definitiva (con números aplicados, no vago) — empezando por ${topRegion}.</div>
           </div>
         </div>
 
         <div class="consultoria-cell">
           <span class="consultoria-cell-num">02</span>
           <div>
-            <div class="consultoria-cell-title">Estratégia tributária + sucessória</div>
-            <div class="consultoria-cell-sub">LLC ou CPF pro seu caso. Florida vs Delaware. Como blindar pros seus filhos pagando quase zero de inventário americano. Calculado, não genérico.</div>
+            <div class="consultoria-cell-title">Estrategia fiscal + sucesoria</div>
+            <div class="consultoria-cell-sub">LLC o título personal para tu caso. Florida vs Delaware. Cómo blindar para tus hijos pagando casi cero de inventario americano. Calculado, no genérico.</div>
           </div>
         </div>
 
         <div class="consultoria-cell">
           <span class="consultoria-cell-num">03</span>
           <div>
-            <div class="consultoria-cell-title">Financiamento Foreign National real</div>
-            <div class="consultoria-cell-sub">Wells Fargo, City National, Truist — qual banco aprova pro seu perfil, em quantos dias, taxa esperada hoje, parcela mensal aplicada ao seu ticket. Apresentação direta a 1-2 bankers parceiros.</div>
+            <div class="consultoria-cell-title">Financiamiento Foreign National real</div>
+            <div class="consultoria-cell-sub">Wells Fargo, City National, Truist — qué banco aprueba tu perfil, en cuántos días, tasa esperada hoy, mensualidad aplicada a tu ticket. Presentación directa a 1-2 bankers partners.</div>
           </div>
         </div>
 
         <div class="consultoria-cell">
           <span class="consultoria-cell-num">04</span>
           <div>
-            <div class="consultoria-cell-title">5 a 8 prédios curados, na sua região-match</div>
-            <div class="consultoria-cell-sub">Não MLS scrape. Curadoria pessoal: short-term rental liberado, school zone certa, comissão de developer, valorização histórica. Com link, planta e preço.</div>
+            <div class="consultoria-cell-title">5 a 8 edificios curados, en tu región-match</div>
+            <div class="consultoria-cell-sub">No MLS scrape. Curaduría personal: short-term rental permitido, school zone correcta, comisión de developer, plusvalía histórica. Con link, planos y precio.</div>
           </div>
         </div>
 
         <div class="consultoria-cell">
           <span class="consultoria-cell-num">05</span>
           <div>
-            <div class="consultoria-cell-title">Os 5 erros que custam US$ 200K-880K</div>
-            <div class="consultoria-cell-sub">CPF próprio em vez de LLC. Prédio que proíbe rental. Delaware sem foreign LLC em FL. Zoning futuro negativo. Developer que atrasa 14 meses. Você sai sabendo o nome de cada armadilha — e como evitar.</div>
+            <div class="consultoria-cell-title">Los 5 errores que cuestan US$ 200K-880K</div>
+            <div class="consultoria-cell-sub">Título personal en lugar de LLC. Edificio que prohíbe rental. Delaware sin foreign LLC en FL. Zoning futuro negativo. Developer que se atrasa 14 meses. Sales sabiendo el nombre de cada trampa — y cómo evitarla.</div>
           </div>
         </div>
 
         <div class="consultoria-cell">
           <span class="consultoria-cell-num">06</span>
           <div>
-            <div class="consultoria-cell-title">Plano de 90 dias até closing</div>
-            <div class="consultoria-cell-sub">Cronograma impresso no seu email no fim da call. Dia 1 → closing. Documentos, prazos, contas pra abrir, ITIN, mortgage application. Sem "depois eu mando".</div>
+            <div class="consultoria-cell-title">Plan de 90 días hasta closing</div>
+            <div class="consultoria-cell-sub">Cronograma impreso en tu email al final del call. Día 1 → closing. Documentos, plazos, cuentas que abrir, ITIN, mortgage application. Sin "después te mando".</div>
           </div>
         </div>
 
         <div class="consultoria-cell">
           <span class="consultoria-cell-num">07</span>
           <div>
-            <div class="consultoria-cell-title">Acesso à esteira completa</div>
-            <div class="consultoria-cell-sub">Contador americano especialista em non-resident alien. Advogado tributário BR-EUA. Gestor brasileiro de short-term rental. Concierge de escola. Decorador. Você não vai construir essa rede sozinho.</div>
+            <div class="consultoria-cell-title">Acceso al pipeline completo</div>
+            <div class="consultoria-cell-sub">CPA americano especialista en non-resident alien. Abogado fiscal cross-border. Gestor de short-term rental. Concierge escolar. Decorador. No vas a construir esta red solo.</div>
           </div>
         </div>
       </div>
 
       <div class="consultoria-promise">
-        <span class="consultoria-promise-label">Promessa direta:</span>
-        Você sai da call de 1 hora sabendo <strong>exatamente</strong>: qual região vai comprar, qual ticket cabe no seu cash, qual banco vai te financiar, qual LLC abrir, e em quantos dias você fecha. Plano impresso no email no fim da call. <em>Sem "vou pensar". Sem "depois eu mando".</em>
+        <span class="consultoria-promise-label">Promesa directa:</span>
+        Sales del call de 1 hora sabiendo <strong>exactamente</strong>: en qué condado vas a comprar, qué ticket cabe en tu cash, qué banco te va a financiar, qué LLC abrir, y en cuántos días cierras. Plan impreso en el email al final del call. <em>Sin "voy a pensarlo". Sin "después te mando".</em>
       </div>
 
       <div class="consultoria-price-row">
@@ -1059,60 +1059,60 @@ function renderConsultoria(matches) {
         </div>
         <div class="consultoria-anchor">
           <strong>Crédito 100% reembolsado</strong> no closing<br>
-          se você fechar imóvel comigo nos próximos 12 meses.
+          si cierras propiedad conmigo en los próximos 12 meses.
         </div>
       </div>
 
       <div class="consultoria-roi">
         <span class="consultoria-roi-strike">US$ 80.000 a US$ 880.000</span>
-        <span class="consultoria-roi-text">é o prejuízo médio documentado de brasileiros que decidiram sozinhos. <strong>US$ 500 é o preço de evitar esse erro.</strong> ROI mínimo: <strong>160×</strong>. Real.</span>
+        <span class="consultoria-roi-text">es la pérdida promedio documentada de compradores que decidieron solos. <strong>US$ 500 es el precio de evitar ese error.</strong> ROI mínimo: <strong>160×</strong>. Real.</span>
       </div>
 
       <a class="consultoria-cta" href="${STRIPE_CONSULTORIA_URL}" target="_blank" rel="noopener" onclick="fbqTrack('ConsultoriaCheckout',{region:'${matches[0] ? matches[0].id : 'unknown'}',price:500})">
-        Reservar minha consultoria · US$ 500
+        Reservar mi consultoría · US$ 500
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
       </a>
 
       <div class="consultoria-trust">
         <div class="consultoria-trust-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          Após pagamento, email automático com link de agendamento (escolhe seu horário)
+          Después del pago, email automático con link de agendamiento (eliges tu horario)
         </div>
         <div class="consultoria-trust-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          Stripe seguro · cartão internacional ok · pagamento único
+          Stripe seguro · tarjeta internacional ok · pago único
         </div>
         <div class="consultoria-trust-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          Zoom 1:1 em PT-BR · 9 anos Miami-Dade · 142 famílias fechadas
+          Zoom 1:1 en ES/EN/PT · 9 años Miami-Dade · 142 familias cerradas
         </div>
         <div class="consultoria-trust-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          Reembolso total se você não sair da call com plano executável
+          Reembolso total si no sales del call con plan ejecutable
         </div>
       </div>
 
       <div class="consultoria-disqualifier">
-        <strong>Aviso direto, sem rodeio:</strong> essa consultoria é pra quem tem cash mínimo de US$ 300 mil disponível e seriamente vai decidir nos próximos 12 meses. <strong>Se você ainda está só pesquisando ou cash abaixo disso — não compra agora. Sério.</strong> US$ 500 vira justo quando vira jogada real, não estudo. Fica com o resultado grátis aí em cima. Sem ressentimento.
+        <strong>Aviso directo, sin rodeo:</strong> esta consultoría es para quien tiene mínimo US$ 300K cash disponible y seriamente va a decidir en los próximos 12 meses. <strong>Si aún estás solo investigando o cash abajo de eso — no compres ahora. En serio.</strong> US$ 500 tiene sentido solo cuando se vuelve jugada real, no estudio. Quédate con el resultado gratis de arriba. Sin resentimientos.
       </div>
     </div>
   `;
 }
 
 // =============================================================
-// LIVE COUNTER — social proof "X brasileiros online agora"
+// LIVE COUNTER — social proof "X compradores online ahora"
 // =============================================================
 (function liveCounter(){
   const el = document.getElementById('liveCounterNum');
   if (!el) return;
-  // Base baseado na hora do dia — pico 12-14h e 19-22h horário BR
+  // Base anclado en la hora del día — pico 12-14 + 19-22 hora CDMX
   const h = new Date().getHours();
   const peak = (h >= 11 && h <= 14) || (h >= 18 && h <= 23);
   const baseMin = peak ? 240 : 160;
   const baseMax = peak ? 340 : 230;
   let current = Math.floor(baseMin + Math.random() * (baseMax - baseMin));
   el.textContent = current;
-  // Oscila +/-3 a cada 6-10s
+  // Oscila +/-3 cada 6-10s
   setInterval(() => {
     const delta = Math.floor(Math.random() * 7) - 3; // -3 a +3
     current = Math.max(baseMin, Math.min(baseMax, current + delta));

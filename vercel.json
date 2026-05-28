@@ -1,5 +1,6 @@
 {
   "cleanUrls": true,
+  "trailingSlash": false,
   "headers": [
     {
       "source": "/(.*)",
@@ -9,14 +10,14 @@
       ]
     },
     {
-      "source": "/listings.json",
+      "source": "/:lang(br|us|mx)/listings.json",
       "headers": [
         {"key": "Cache-Control", "value": "public, max-age=0, must-revalidate"},
         {"key": "Access-Control-Allow-Origin", "value": "*"}
       ]
     },
     {
-      "source": "/regions.json",
+      "source": "/:lang(br|us|mx)/regions.json",
       "headers": [
         {"key": "Cache-Control", "value": "public, max-age=0, must-revalidate"},
         {"key": "Access-Control-Allow-Origin", "value": "*"}

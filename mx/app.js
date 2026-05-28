@@ -8,7 +8,7 @@ const WHATSAPP_PHONE = '13056849224';
 const WHATSAPP_URL = (msg) => `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(msg)}`;
 
 // =============================================================
-// LEAD SUMMARY — formata respostas do quiz pra WhatsApp do André
+// LEAD SUMMARY — formats quiz answers for the agent WhatsApp
 // =============================================================
 const ANSWER_LABELS = {
   purpose: {
@@ -299,8 +299,8 @@ const QUESTIONS = [
 // FLOW CONTROL
 // =============================================================
 function lockBody() {
-  // overflow:hidden é mais seguro que position:fixed pra mobile/iOS Safari
-  // (position:fixed quebra inputs dentro de fullscreen overlays)
+  // overflow:hidden is safer than position:fixed for mobile/iOS Safari
+  // (position:fixed breaks inputs inside fullscreen overlays)
   bodyScrollY = window.scrollY;
   document.body.style.overflow = 'hidden';
   document.documentElement.style.overflow = 'hidden';
@@ -383,7 +383,7 @@ function renderQuestion() {
     ${optionsHTML}
   `;
 
-  // Reset scroll do quiz container
+  // Reset quiz container scroll
   const quizSection = document.querySelector('.quiz-section');
   if (quizSection) quizSection.scrollTop = 0;
 }
@@ -393,7 +393,7 @@ function selectOption(key, value) {
   fbqTrack('QuestionAnswered', { question: key, answer: value });
   currentQ++;
   if (currentQ < QUESTIONS.length) {
-    // Pequeno delay pra dar feedback de seleção
+    // Small delay to give selection feedback
     setTimeout(renderQuestion, 280);
   } else {
     finishFlow();
@@ -404,7 +404,7 @@ function selectOption(key, value) {
 // CAPTURE GATE — pre-results
 // =============================================================
 function finishFlow() {
-  // Vai do quiz pra captura ANTES do loading/results
+  // Goes from quiz to capture BEFORE loading/results
   document.querySelector('.quiz-section').classList.remove('active');
   document.getElementById('quiz').setAttribute('aria-hidden', 'true');
   document.getElementById('capture').setAttribute('aria-hidden', 'false');
@@ -412,7 +412,7 @@ function finishFlow() {
   setTimeout(() => {
     const cs = document.querySelector('.capture-section');
     if (cs) cs.scrollTop = 0;
-    // Auto-focus no primeiro campo
+    // Auto-focus on first field
     const firstInput = document.querySelector('#capture input[name="name"]');
     if (firstInput) firstInput.focus();
   }, 60);
@@ -725,7 +725,7 @@ function hydrateLazyBackgrounds() {
         const el = entry.target;
         const url = el.dataset.bg;
         if (!url) return;
-        // Pre-load via Image() pra disparar fade-in só quando download terminar
+        // Pre-load via Image() to trigger fade-in only when download finishes
         const img = new Image();
         img.onload = () => {
           el.style.backgroundImage = `url('${url}')`;
@@ -755,7 +755,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const errEl = document.getElementById('captureError');
     if (errEl) errEl.classList.remove('show');
 
-    // Validação básica
+    // Basic validation
     const fd = new FormData(form);
     const name = (fd.get('name') || '').toString().trim();
     const email = (fd.get('email') || '').toString().trim();
@@ -768,7 +768,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
-    // Calcula match ANTES de submit pra incluir no payload
+    // Compute match BEFORE submit to include in payload
     const matches = getMatchedRegions();
     const matchData = JSON.stringify({
       answers: answers,
@@ -777,7 +777,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('matchData').value = matchData;
     fd.set('match_data', matchData);
 
-    // Subject custom (Formspree usa _subject como assunto do email)
+    // Custom subject (Formspree uses _subject as email subject)
     const firstName = name.split(' ')[0] || name;
     const top1 = matches[0] ? matches[0].name : '';
     const subject = `LEAD CALIENTE - ${firstName} (${top1}) - El Sistema Inmueble Correcto`;
@@ -785,12 +785,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (subjEl) subjEl.value = subject;
     fd.set('_subject', subject);
 
-    // Reply-to = email do lead (pra responder direto do Gmail)
+    // Reply-to = lead email (so you can reply directly from Gmail)
     const replyEl = document.getElementById('formReplyTo');
     if (replyEl) replyEl.value = email;
     fd.set('_replyto', email);
 
-    // Lead summary formatado bonito pro corpo do email
+    // Lead summary nicely formatted for the email body
     const summaryLines = [
       '====================================',
       `NUEVO LEAD: ${name}`,
@@ -830,8 +830,8 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.innerHTML = 'Enviando…';
     btn.disabled = true;
 
-    // Dispara loading IMEDIATAMENTE (UX percebe instantâneo)
-    // E envia pro Formspree em paralelo (background)
+    // Fire loading IMMEDIATELY (UX feels instant)
+    // And submits to Formspree in parallel (background)
     fetch(form.action, {
       method: 'POST',
       body: fd,
@@ -843,14 +843,14 @@ document.addEventListener('DOMContentLoaded', () => {
       console.warn('[El Sistema Inmueble Correcto] Error de red al enviar lead:', err);
     });
 
-    // Lead capturado — agora SIM libera o WhatsApp FAB (com perfil completo do quiz).
-    // Antes disso, FAB fica escondido pra todo lead chegar pro André já qualificado.
+    // Lead captured — NOW release the WhatsApp FAB (with full quiz profile).
+    // Before that, FAB stays hidden so every lead reaches the agent fully qualified.
     revealWhatsAppFab();
 
     // UX: loading + results
     runLoadingAndShowResults();
 
-    // Restaura botão (caso usuário volte de alguma forma)
+    // Restore button (in case user comes back somehow)
     setTimeout(() => {
       btn.innerHTML = originalHTML;
       btn.disabled = false;
@@ -861,7 +861,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // =============================================================
 // TRACKING
 // =============================================================
-// Mapeia eventos custom do funnel pros eventos padrão de cada plataforma.
+// Maps custom funnel events to each platform's standard events.
 // Los eventos estándar son optimizables en Ads Manager / GA4 — los custom no.
 const STANDARD_EVENT_MAP = {
   StartFlow:            { meta: 'InitiateCheckout', ga4: 'begin_checkout',  tiktok: 'InitiateCheckout' },
@@ -879,7 +879,7 @@ const STANDARD_EVENT_MAP = {
 function fbqTrack(eventName, params = {}) {
   const mapping = STANDARD_EVENT_MAP[eventName];
 
-  // Meta Pixel — dispara evento padrão (rastreável em Ads Manager) + custom (mantém granularidade)
+  // Meta Pixel — fires standard event (trackable in Ads Manager) + custom (keeps granularity)
   if (typeof fbq === 'function') {
     if (mapping) fbq('track', mapping.meta, params);
     fbq('trackCustom', eventName, params);
@@ -888,7 +888,7 @@ function fbqTrack(eventName, params = {}) {
   // Google Analytics 4 / Google Ads
   if (typeof gtag === 'function') {
     if (mapping) gtag('event', mapping.ga4, params);
-    gtag('event', eventName, params); // custom name pra GA4 explore reports
+    gtag('event', eventName, params); // custom name for GA4 explore reports
   }
 
   // TikTok Pixel
@@ -914,10 +914,10 @@ document.addEventListener('keydown', (e) => {
 // =============================================================
 // WHATSAPP FAB — escondido até lead submeter form
 //
-// Decisão estratégica: FAB invisível na landing/quiz protege o André de leads
-// que clicam WhatsApp sem ter o perfil do quiz preenchido. Todo lead que chega
+// Strategic decision: FAB invisible on landing/quiz protects the agent from leads
+// who click WhatsApp without filling the quiz. Every lead arriving
 // no WhatsApp dele agora vem com match_data completo (3 regiones + ticket + objetivo).
-// Liberação acontece em revealWhatsAppFab(), chamado após fetch(formspree) iniciado.
+// Release happens in revealWhatsAppFab(), called after fetch(formspree) initiated.
 // =============================================================
 function revealWhatsAppFab() {
   const fab = document.getElementById('waFab');
@@ -926,9 +926,9 @@ function revealWhatsAppFab() {
 }
 
 // =============================================================
-// CONSULTORIA LINK — fonte única (Stripe → fallback mailto se placeholder)
-// Hierarquia consolidada: Results + Thanks apontam pro MESMO destino
-// e disparam o MESMO evento de tracking (ConsultoriaCheckout)
+// CONSULTATION LINK — single source (Stripe → fallback mailto if placeholder)
+// Consolidated hierarchy: Results + Thanks point to the SAME destination
+// and fire the SAME tracking event (ConsultoriaCheckout)
 // =============================================================
 function getConsultoriaCheckoutUrl() {
   const isPlaceholder = !STRIPE_CONSULTORIA_URL || STRIPE_CONSULTORIA_URL.includes('REPLACE_WITH') || STRIPE_CONSULTORIA_URL.includes('TODO');
@@ -951,7 +951,7 @@ document.addEventListener('DOMContentLoaded', bindThanksConsultoriaLink);
 (function setupFab(){
   const fab = document.getElementById('waFab');
   if (!fab) return;
-  // href inicial vazio — só configura quando user clica (já com quiz preenchido)
+  // initial empty href — configured only when user clicks (with quiz filled)
   fab.href = '#';
   fab.addEventListener('click', (e) => {
     fab.href = WHATSAPP_URL(buildLeadSummary());
@@ -960,7 +960,7 @@ document.addEventListener('DOMContentLoaded', bindThanksConsultoriaLink);
 })();
 
 // =============================================================
-// CONSULTORIA $500 / 1h — Mapa da Compra Certa™ (Amanda copy)
+// CONSULTATION $500 / 1h — The Right Closing Map™ (Amanda copy)
 // =============================================================
 function renderConsultoria(matches) {
   const target = document.getElementById('consultoriaSlot');

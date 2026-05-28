@@ -524,7 +524,17 @@ a{color:inherit;text-decoration:none}
 .footer-links{display:flex;gap:32px;flex-wrap:wrap}
 .footer-links a{font-size:13px;color:var(--slate);transition:color var(--t-fast) var(--ease);font-weight:400}
 .footer-links a:hover{color:var(--ink)}
-.footer-copy{max-width:1240px;margin:32px auto 0;padding-top:24px;border-top:1px solid var(--line);font-size:12px;color:var(--mute);text-align:center;line-height:1.6;font-weight:300}
+.footer-corporate{max-width:1240px;margin:36px auto 0;padding-top:28px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:18px 36px;font-size:12px;color:var(--slate);font-weight:400}
+.footer-corporate strong{color:var(--ink);font-weight:600;letter-spacing:.01em}
+.footer-corporate a{color:var(--slate);transition:color var(--t-fast) var(--ease)}
+.footer-corporate a:hover{color:var(--ink)}
+.footer-corporate-item{display:flex;align-items:center;gap:8px}
+.footer-corporate-item svg{width:14px;height:14px;color:var(--gold);flex-shrink:0}
+.footer-disclaimer{max-width:1240px;margin:28px auto 0;padding:22px 26px;background:var(--paper);border:1px solid var(--line);border-radius:12px;font-size:12.5px;line-height:1.65;color:var(--slate);font-weight:400}
+.footer-disclaimer strong{color:var(--ink);font-weight:600}
+.footer-disclaimer em{font-style:italic;color:var(--ink);font-weight:500}
+.footer-disclaimer .disclaimer-label{display:inline-block;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:10px}
+.footer-copy{max-width:1240px;margin:24px auto 0;padding-top:20px;border-top:1px solid var(--line);font-size:12px;color:var(--mute);text-align:center;line-height:1.6;font-weight:300}
 
 /* ============================
    MOBILE — App-like, thumb-friendly
@@ -791,19 +801,29 @@ a{color:inherit;text-decoration:none}
       "@type": "Organization",
       "@id": "https://sistema-imovel-certo.vercel.app/#organization",
       "name": "Sistema Imóvel Certo",
-      "alternateName": "Sistema Imóvel Certo™",
+      "alternateName": ["Sistema Imóvel Certo™", "DBX LLC"],
+      "legalName": "DBX LLC",
       "url": "https://sistema-imovel-certo.vercel.app/",
       "logo": "https://sistema-imovel-certo.vercel.app/img/logo_favicon.png",
-      "description": "Tecnologia brasileira de matching imobiliário que cruza perfil de brasileiros com 305 mil imóveis em 5 regiões da Flórida.",
+      "description": "Plataforma de educação e diagnóstico imobiliário, operada pela DBX LLC, sediada na Flórida, EUA. Tecnologia brasileira de matching que cruza perfil de brasileiros com 305 mil imóveis em 5 regiões da Flórida.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "FL",
+        "addressCountry": "US"
+      },
       "sameAs": [
         "https://www.instagram.com/sistemaimovelcerto/"
       ],
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "customer service",
-        "availableLanguage": ["Portuguese", "English"],
-        "areaServed": ["BR", "US"]
-      }
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "telephone": "+1-305-684-9224",
+          "email": "contato@sistemaimovelcerto.com",
+          "availableLanguage": ["Portuguese", "English"],
+          "areaServed": ["BR", "US"]
+        }
+      ]
     },
     {
       "@type": "WebSite",
@@ -1347,8 +1367,28 @@ a{color:inherit;text-decoration:none}
       <a href="#">Termos</a>
     </div>
   </div>
+  <div class="footer-corporate">
+    <div class="footer-corporate-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span><strong>DBX LLC</strong> · Sediada na Flórida, EUA</span>
+    </div>
+    <div class="footer-corporate-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <a href="https://wa.me/13056849224" target="_blank" rel="noopener">+1 (305) 684-9224</a>
+    </div>
+    <div class="footer-corporate-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      <a href="mailto:contato@sistemaimovelcerto.com">contato@sistemaimovelcerto.com</a>
+    </div>
+  </div>
+
+  <div class="footer-disclaimer">
+    <span class="disclaimer-label">Importante · Leia antes de qualquer decisão</span>
+    <p>Sistema Imóvel Certo™ é uma <strong>plataforma de educação e diagnóstico imobiliário</strong>, operada pela DBX LLC, com sede na Flórida, EUA. <strong>Não somos brokerage. Não vendemos imóveis. Não recebemos comissão de incorporadora, construtora, banco ou seguradora.</strong> Toda transação imobiliária — visita, oferta, due diligence, financiamento e closing — é executada por Realtor® licenciado na Flórida em contrato separado, firmado diretamente entre você e o profissional. <em>A decisão final de comprar, financiar, alugar ou estruturar patrimônio é exclusivamente sua</em>, depois de assessoria jurídica, tributária e financeira individualizada com profissionais licenciados de sua escolha. Conteúdo educacional e diagnóstico de matching <strong>não constituem aconselhamento de investimento, garantia de valorização, recomendação fiscal ou promessa de retorno</strong>. Dados de mercado citados são públicos (MLS, U.S. News, IRS) e podem variar — fontes verificáveis disponíveis sob pedido.</p>
+  </div>
+
   <div class="footer-copy">
-    © 2026 Sistema Imóvel Certo™ · Tecnologia brasileira de matching imobiliário · 305K imóveis MLS ativos · 5 regiões da Flórida · Atendimento em português brasileiro
+    © 2026 <strong style="color:var(--slate);font-weight:500">DBX LLC</strong> · Sistema Imóvel Certo™ · Tecnologia brasileira de matching imobiliário · 305K imóveis MLS ativos · 5 regiões da Flórida · Atendimento em português brasileiro
   </div>
 </footer>
 

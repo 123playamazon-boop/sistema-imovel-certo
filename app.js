@@ -809,9 +809,44 @@ document.addEventListener('DOMContentLoaded', () => {
 // =============================================================
 // TRACKING
 // =============================================================
+// Mapeia eventos custom do funnel pros eventos padrão de cada plataforma.
+// Eventos padrão são otimizáveis em Ads Manager / GA4 — eventos custom não são.
+const STANDARD_EVENT_MAP = {
+  StartFlow:            { meta: 'InitiateCheckout', ga4: 'begin_checkout',  tiktok: 'InitiateCheckout' },
+  QuestionAnswered:     { meta: 'AddToCart',        ga4: 'add_to_cart',     tiktok: 'AddToCart' },
+  FlowCompleted:        { meta: 'AddPaymentInfo',   ga4: 'add_payment_info',tiktok: 'AddPaymentInfo' },
+  ResultsShown:         { meta: 'ViewContent',      ga4: 'view_item',       tiktok: 'ViewContent' },
+  Lead:                 { meta: 'Lead',             ga4: 'generate_lead',   tiktok: 'CompleteRegistration' },
+  ListingClick:         { meta: 'ViewContent',      ga4: 'select_item',     tiktok: 'ViewContent' },
+  SeeAllListings:       { meta: 'ViewContent',      ga4: 'view_item_list',  tiktok: 'ViewContent' },
+  RegionWhatsApp:       { meta: 'Contact',          ga4: 'contact',         tiktok: 'Contact' },
+  WhatsAppFAB:          { meta: 'Contact',          ga4: 'contact',         tiktok: 'Contact' },
+  ConsultoriaCheckout:  { meta: 'InitiateCheckout', ga4: 'begin_checkout',  tiktok: 'InitiateCheckout' }
+};
+
 function fbqTrack(eventName, params = {}) {
-  if (typeof fbq === 'function') fbq('trackCustom', eventName, params);
+  const mapping = STANDARD_EVENT_MAP[eventName];
+
+  // Meta Pixel — dispara evento padrão (rastreável em Ads Manager) + custom (mantém granularidade)
+  if (typeof fbq === 'function') {
+    if (mapping) fbq('track', mapping.meta, params);
+    fbq('trackCustom', eventName, params);
+  }
+
+  // Google Analytics 4 / Google Ads
+  if (typeof gtag === 'function') {
+    if (mapping) gtag('event', mapping.ga4, params);
+    gtag('event', eventName, params); // custom name pra GA4 explore reports
+  }
+
+  // TikTok Pixel
+  if (typeof ttq !== 'undefined' && ttq && typeof ttq.track === 'function') {
+    if (mapping) ttq.track(mapping.tiktok, params);
+  }
+
+  // Microsoft Clarity
   if (window.clarity) clarity('event', eventName);
+
   console.log('[Sistema Imóvel Certo]', eventName, params);
 }
 

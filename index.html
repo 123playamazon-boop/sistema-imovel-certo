@@ -6,15 +6,28 @@
 <meta name="theme-color" content="#0a0a0a">
 <title>Sistema Imóvel Certo™ · 7 em 10 brasileiros compram a região errada em Miami</title>
 <meta name="description" content="Brasileiros perdem entre US$ 80 mil e US$ 880 mil escolhendo a região errada em Miami. Esse diagnóstico de 47 segundos cruza seu perfil com 305 mil imóveis e te entrega as 3 regiões que combinam com você — antes de qualquer corretor.">
+<link rel="canonical" href="https://sistema-imovel-certo.vercel.app/">
+<meta name="author" content="Sistema Imóvel Certo">
+<meta property="og:url" content="https://sistema-imovel-certo.vercel.app/">
+<meta property="og:site_name" content="Sistema Imóvel Certo™">
+<meta property="og:locale" content="pt_BR">
 <meta property="og:title" content="7 em 10 brasileiros compram a região errada em Miami — descubra a sua em 47 segundos">
 <meta property="og:description" content="Sem cadastro. Sem ligação de corretor. Resultado personalizado pra cash de US$ 300K-3M.">
-<meta property="og:image" content="img/01_hero.jpg">
+<meta property="og:image" content="https://sistema-imovel-certo.vercel.app/img/01_hero.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Sistema Imóvel Certo — diagnóstico de 47 segundos pra brasileiros comprando em Miami">
 <meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="7 em 10 brasileiros compram a região errada em Miami">
+<meta name="twitter:description" content="Diagnóstico de 47 segundos cruza seu perfil com 305 mil imóveis em 5 regiões.">
+<meta name="twitter:image" content="https://sistema-imovel-certo.vercel.app/img/01_hero.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="img/01_hero.jpg">
 <link rel="icon" type="image/png" href="img/logo_favicon.png">
+<link rel="apple-touch-icon" href="img/logo_favicon.png">
 
 <style>
 /* =========================================================
@@ -302,8 +315,8 @@ a{color:inherit;text-decoration:none}
 .results-section.active{display:block}
 .results-hero{padding:140px 40px 80px;text-align:center;max-width:880px;margin:0 auto}
 .results-hero .eyebrow{display:inline-block;margin-bottom:18px}
-.results-hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(32px,4.8vw,56px);line-height:1.12;letter-spacing:-.018em;color:var(--ink);margin-bottom:18px}
-.results-hero h1 em{font-style:italic;color:var(--gold)}
+.results-hero h1,.results-hero h2{font-family:var(--serif);font-weight:400;font-size:clamp(32px,4.8vw,56px);line-height:1.12;letter-spacing:-.018em;color:var(--ink);margin-bottom:18px}
+.results-hero h1 em,.results-hero h2 em{font-style:italic;color:var(--gold)}
 .results-hero p{font-size:17px;line-height:1.65;color:var(--slate);font-weight:300}
 
 .results-list{max-width:1240px;margin:0 auto;padding:0 40px;display:flex;flex-direction:column;gap:48px}
@@ -577,7 +590,7 @@ a{color:inherit;text-decoration:none}
   .loading-step-text{font-size:13px}
 
   .results-hero{padding:100px 20px 48px}
-  .results-hero h1{font-size:clamp(28px,7vw,38px)}
+  .results-hero h1,.results-hero h2{font-size:clamp(28px,7vw,38px)}
   .results-hero p{font-size:15px}
   .results-list{padding:0 20px;gap:32px}
   .region-img{min-height:240px;aspect-ratio:16/10}
@@ -660,6 +673,65 @@ a{color:inherit;text-decoration:none}
 .reveal.in{opacity:1;transform:translateY(0)}
 </style>
 
+<!-- ========================================================================
+     TRACKING CONFIG — substitua os 3 placeholders TODO_ pelos IDs reais.
+     Sem isso, os pixels ficam dormindo e nada é enviado (mas o site não quebra).
+     - Meta Pixel ID:    Business Suite > Events Manager > Data sources > Pixel
+     - GA4 Measurement:  GA4 admin > Data streams > Web > Measurement ID (G-XXXX)
+     - TikTok Pixel ID:  TikTok Ads > Assets > Events > Web Events
+     ======================================================================== -->
+<script>
+  window.TRACKING_IDS = {
+    metaPixel: 'TODO_META_PIXEL_ID',     // exemplo: '1234567890123456'
+    ga4:       'TODO_GA4_MEASUREMENT_ID', // exemplo: 'G-XXXXXXXXXX'
+    tiktok:    'TODO_TIKTOK_PIXEL_ID'     // exemplo: 'C9XXXXXXXXXXXXXXXX'
+  };
+  window.TRACKING_READY = (id) => typeof id === 'string' && id.length > 5 && !id.startsWith('TODO_');
+</script>
+
+<!-- Meta Pixel (Facebook + Instagram Ads) -->
+<script>
+  (function() {
+    if (!window.TRACKING_READY(window.TRACKING_IDS.metaPixel)) return;
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', window.TRACKING_IDS.metaPixel);
+    fbq('track', 'PageView');
+  })();
+</script>
+<noscript><img height="1" width="1" style="display:none" alt=""
+  src="https://www.facebook.com/tr?id=TODO_META_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
+
+<!-- Google Analytics 4 + Google Ads conversion linker -->
+<script>
+  (function() {
+    if (!window.TRACKING_READY(window.TRACKING_IDS.ga4)) return;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.TRACKING_IDS.ga4;
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(){dataLayer.push(arguments);};
+    gtag('js', new Date());
+    gtag('config', window.TRACKING_IDS.ga4, { send_page_view: true });
+  })();
+</script>
+
+<!-- TikTok Pixel -->
+<script>
+  (function() {
+    if (!window.TRACKING_READY(window.TRACKING_IDS.tiktok)) return;
+    !function (w, d, t) {
+      w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+      ttq.load(window.TRACKING_IDS.tiktok);
+      ttq.page();
+    }(window, document, 'ttq');
+  })();
+</script>
+
 <!-- Microsoft Clarity tracking -->
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
@@ -667,6 +739,99 @@ a{color:inherit;text-decoration:none}
         t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "wvdajqnmwb");
+</script>
+
+<!-- ========================================================================
+     JSON-LD SCHEMA — Organization + WebSite + FAQPage
+     Faz Google rankear pra "imóvel Miami brasileiro", "Lei 14.754 EUA", etc.
+     ======================================================================== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://sistema-imovel-certo.vercel.app/#organization",
+      "name": "Sistema Imóvel Certo",
+      "alternateName": "Sistema Imóvel Certo™",
+      "url": "https://sistema-imovel-certo.vercel.app/",
+      "logo": "https://sistema-imovel-certo.vercel.app/img/logo_favicon.png",
+      "description": "Tecnologia brasileira de matching imobiliário que cruza perfil de brasileiros com 305 mil imóveis em 5 regiões da Flórida.",
+      "sameAs": [
+        "https://www.instagram.com/sistemaimovelcerto/"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "availableLanguage": ["Portuguese", "English"],
+        "areaServed": ["BR", "US"]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://sistema-imovel-certo.vercel.app/#website",
+      "url": "https://sistema-imovel-certo.vercel.app/",
+      "name": "Sistema Imóvel Certo™",
+      "description": "Diagnóstico de 47 segundos pra brasileiros comprarem na região certa em Miami, Orlando e Tampa.",
+      "publisher": { "@id": "https://sistema-imovel-certo.vercel.app/#organization" },
+      "inLanguage": "pt-BR"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://sistema-imovel-certo.vercel.app/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Posso comprar imóvel nos EUA sem cidadania ou green card?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. Brasileiros compram imóveis nos EUA com passaporte, ITIN e um Foreign National Loan que financia até 70% do valor. Não é necessário ter visto de residência nem credit score americano pra fechar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O que é a Lei 14.754 e por que ela importa pra brasileiros comprando em Miami?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A Lei 14.754 muda o regime de tributação de bens no exterior. Brasileiros que estruturarem patrimônio em imóvel nos EUA antes de setembro de 2026 pegam grandfathered no regime atual — economizam até 12 pontos de IR em todo o histórico futuro. Quem deixa pra 2027 paga mais pra sempre."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como funciona o financiamento Foreign National Loan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Brasileiros podem financiar até 70% do imóvel sem credit score americano. Bancos como Inter&Co, City National, e Ocean Bank trabalham com perfil internacional. Taxas variam de 7% a 8.5% ao ano em 2026, prazos de 15 a 30 anos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qual é a melhor região da Flórida pra família brasileira com filhos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depende do perfil. Aventura tem 12 mil famílias brasileiras e top schools americanas. Coral Gables e Pinecrest oferecem lotes maiores e escolas privadas. Brickell é ideal pra jovem profissional. O diagnóstico de 47 segundos cruza seu perfil específico com 305 mil imóveis pra entregar as 3 regiões que combinam com você."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Preciso pagar imposto no Brasil sobre o imóvel comprado nos EUA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O imóvel precisa ser declarado no IR brasileiro. Aluguéis recebidos em dólar são tributados, mas há tratado Brasil-EUA que evita bitributação. A partir de 2027 (Lei 14.754) o regime muda significativamente — por isso a janela atual é estratégica. Sempre consulte contador especializado em compliance internacional."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quanto custa a consultoria 1:1 e como funciona?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A consultoria 1:1 de 60 minutos com André Cunha Lima (Realtor® licenciado na Flórida) custa US$ 500 e é reembolsada integralmente no closing se você fechar imóvel com ele. Saída com plano executável pra fechamento em 90-120 dias."
+          }
+        }
+      ]
+    }
+  ]
+}
 </script>
 </head>
 <body>
@@ -676,7 +841,7 @@ a{color:inherit;text-decoration:none}
      ============================ -->
 <nav class="nav" id="nav">
   <a class="nav-brand" href="/" aria-label="Sistema Imóvel Certo · Intelligent Real Estate">
-    <img src="img/logo_nav.png?v=3" alt="Sistema Imóvel Certo · Intelligent Real Estate">
+    <img src="img/logo_nav.png?v=3" alt="Sistema Imóvel Certo · Intelligent Real Estate" loading="eager" decoding="async" width="54" height="54">
   </a>
   <button class="nav-cta" onclick="startFlow()">Começar</button>
 </nav>
@@ -777,7 +942,7 @@ a{color:inherit;text-decoration:none}
       <div class="tech-badge">
         <div class="tech-badge-card">
           <div class="tech-badge-icon">
-            <img src="img/logo_mark.png?v=3" alt="Sistema Imóvel Certo · Intelligent Real Estate">
+            <img src="img/logo_mark.png?v=3" alt="Sistema Imóvel Certo · Intelligent Real Estate" loading="lazy" decoding="async">
           </div>
           <h3>Algoritmo proprietário</h3>
           <p>Treinado com 142 famílias brasileiras</p>
@@ -1029,7 +1194,7 @@ a{color:inherit;text-decoration:none}
 <section class="results-section" id="results" aria-hidden="true">
   <div class="results-hero">
     <span class="eyebrow">Seu resultado personalizado</span>
-    <h1>Cruzamos seu perfil com 305 mil imóveis. Aqui estão suas <em>3 regiões + 18 imóveis</em> que cabem no seu cash hoje.</h1>
+    <h2>Cruzamos seu perfil com 305 mil imóveis. Aqui estão suas <em>3 regiões + 18 imóveis</em> que cabem no seu cash hoje.</h2>
     <p>Cada região com % de compatibilidade real, valorização anual, ticket por faixa, renda mensal projetada em dólar e o "Por dentro" do bairro. 6 imóveis reais por região (2 acessíveis + 2 meio termo + 2 premium) — atualizados em tempo real direto do MLS.</p>
   </div>
   <div class="results-list" id="regionsGrid"></div>
@@ -1078,7 +1243,7 @@ a{color:inherit;text-decoration:none}
 <footer class="footer">
   <div class="footer-inner">
     <div class="footer-brand">
-      <img src="img/logo_nav.png?v=3" alt="Sistema Imóvel Certo · Intelligent Real Estate">
+      <img src="img/logo_nav.png?v=3" alt="Sistema Imóvel Certo · Intelligent Real Estate" loading="lazy" decoding="async">
     </div>
     <div class="footer-links">
       <a href="#" onclick="startFlow();return false">Fazer diagnóstico</a>

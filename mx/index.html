@@ -818,21 +818,39 @@ a{color:inherit;text-decoration:none}
       "@type": "Organization",
       "@id": "https://sistema-imovel-certo.vercel.app/mx/#organization",
       "name": "El Sistema Inmueble Correcto",
-      "alternateName": ["El Sistema Inmueble Correcto™", "DBX LLC"],
+      "alternateName": [
+        "El Sistema Inmueble Correcto™",
+        "DBX LLC"
+      ],
       "legalName": "DBX LLC",
       "url": "https://sistema-imovel-certo.vercel.app/mx/",
       "logo": "https://sistema-imovel-certo.vercel.app/img/logo_favicon.png",
       "description": "Plataforma educativa y de matching inmobiliario, operada por DBX LLC con sede en Florida, EE. UU. Diagnóstico de 47 segundos que cruza el perfil del HNW mexicano con 305 mil propiedades MLS de Florida antes de cualquier contacto con agente.",
-      "address": {"@type": "PostalAddress", "addressRegion": "FL", "addressCountry": "US"},
-      "sameAs": ["https://www.instagram.com/sistemaimovelcerto/"],
-      "contactPoint": [{
-        "@type": "ContactPoint",
-        "contactType": "customer service",
-        "telephone": "+1-305-684-9224",
-        "email": "contato@sistemaimovelcerto.com",
-        "availableLanguage": ["Spanish", "English", "Portuguese"],
-        "areaServed": ["MX", "US"]
-      }]
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "FL",
+        "addressCountry": "US"
+      },
+      "sameAs": [
+        "https://www.instagram.com/sistemaimovelcerto/"
+      ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "telephone": "+1-305-684-9224",
+          "email": "contato@sistemaimovelcerto.com",
+          "availableLanguage": [
+            "Spanish",
+            "English",
+            "Portuguese"
+          ],
+          "areaServed": [
+            "MX",
+            "US"
+          ]
+        }
+      ]
     },
     {
       "@type": "WebSite",
@@ -840,7 +858,9 @@ a{color:inherit;text-decoration:none}
       "url": "https://sistema-imovel-certo.vercel.app/mx/",
       "name": "El Sistema Inmueble Correcto™",
       "description": "Diagnóstico de 47 segundos para mexicanos HNW que estructuran patrimonio en Florida.",
-      "publisher": {"@id": "https://sistema-imovel-certo.vercel.app/mx/#organization"},
+      "publisher": {
+        "@id": "https://sistema-imovel-certo.vercel.app/mx/#organization"
+      },
       "inLanguage": "es-MX"
     },
     {
@@ -885,14 +905,6 @@ a{color:inherit;text-decoration:none}
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "La propiedad debe declararse al SAT como activo en el extranjero. Rentas recibidas en USD son tributables, pero hay tratado México-EE. UU. que evita doble tributación. Vehículos como LLC bien estructurados pueden optimizar la carga fiscal. Siempre consulta contador especializado en compliance cross-border."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Cuánto cuesta la consultoría 1:1 y cómo funciona?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "La consultoría 1:1 de 60 minutos con André Cunha Lima (Realtor® licenciado en Florida, trilingüe en español/inglés/portugués) cuesta US$ 500 — reembolsado íntegramente al closing si cierras propiedad con él. Sales del call con plan ejecutable para closing en 90-120 días: 3 regiones filtradas, 6 propiedades curadas, proyección de cap rate, contadores cross-border y abogados de inmigración ya recomendados."
           }
         }
       ]
@@ -1197,11 +1209,6 @@ a{color:inherit;text-decoration:none}
         <h3 class="faq-q"><span class="faq-q-mark">05</span>¿Necesito pagar impuestos en México por la propiedad en EE. UU.?</h3>
         <p class="faq-a">La propiedad debe declararse al <strong>SAT como activo en el extranjero</strong>. Rentas en USD son tributables, pero el <strong>tratado México-EE. UU.</strong> evita doble tributación: lo que pagues en EE. UU. se acredita contra ISR mexicano. Vehículos como LLC bien estructurados pueden optimizar la carga fiscal. <em>Siempre consulta contador cross-border — no es tema para el contador general que te lleva la nómina, es planeación específica que cobra MX$ 60-120K/año con un despacho serio.</em></p>
       </article>
-
-      <article class="faq-item reveal">
-        <h3 class="faq-q"><span class="faq-q-mark">06</span>¿Cuánto cuesta la consultoría 1:1 y cómo funciona?</h3>
-        <p class="faq-a">La consultoría 1:1 de <strong>60 minutos con André Cunha Lima (Realtor® licenciado en Florida, trilingüe ES/EN/PT)</strong> cuesta US$ 500. Sales del call con plan ejecutable para cierre en 90-120 días: 3 regiones filtradas, 6 propiedades curadas, proyección de cap rate, contadores cross-border y abogados de inmigración ya recomendados. <strong>US$ 500 reembolsado al cierre</strong> si firmas con él. <em>Filtro de seriedad — no entra el que solo quería "ver qué hay".</em></p>
-      </article>
     </div>
 
     <div class="faq-cta-strip reveal">
@@ -1325,7 +1332,7 @@ a{color:inherit;text-decoration:none}
   </div>
   <div class="results-list" id="regionsGrid"></div>
 
-  <div class="results-consultoria" id="consultoriaSlot"></div>
+  <!-- consultoria removida -->
 
   <p class="results-disclaimer">El Sistema Inmueble Correcto™ é uma ferramenta de orientação preliminar. Decisões de compra envolvem análise jurídica, tributária e financeira individualizada com profissionais licenciados.</p>
 </section>
@@ -1340,10 +1347,6 @@ a{color:inherit;text-decoration:none}
     </div>
     <h2>Recibido. Eres el <em>312° mexicano HNW</em> en completar el diagnóstico esta semana.</h2>
     <p>El análisis completo llega a tu inbox en 30 segundos <span style="opacity:.7">(revisa bandeja de entrada y promociones)</span>. André o Daniella te contactan por WhatsApp en hasta 1 hora — sin presión, sin empuje.</p>
-    <p style="margin-top:32px;padding:22px 24px;background:rgba(184,158,104,.08);border:1px solid rgba(184,158,104,.32);border-radius:14px;font-size:14px;line-height:1.6;color:rgba(255,255,255,.85);text-align:left;max-width:520px;margin-left:auto;margin-right:auto">
-      <strong style="color:var(--gold);font-size:11px;letter-spacing:.16em;text-transform:uppercase;display:block;margin-bottom:8px">Siguiente paso opcional</strong>
-      Si quieres acelerar y salir con plan ejecutable <em>mañana mismo</em>, la consultoría 1:1 de 60 minutos con André cuesta <strong style="color:#fff">US$ 500</strong> — reembolsado íntegro al cierre si firmas con él. <a id="thanksConsultoriaLink" href="#" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:underline;font-weight:600">Reservar ahora →</a>
-    </p>
   </div>
 </section>
 

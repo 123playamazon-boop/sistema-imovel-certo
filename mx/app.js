@@ -520,8 +520,8 @@ function showResults() {
 
   const matches = getMatchedRegions();
 
-  // Renderiza oferta de assessoria DEPOIS dos region cards
-  setTimeout(() => renderConsultoria(matches), 0);
+  // Consultoria removida a pedido do Bruno — desativada em todos os idiomas
+  // setTimeout(() => renderConsultoria(matches), 0);
 
   document.getElementById('regionsGrid').innerHTML = matches.map((r, idx) => {
     const waMsg = buildLeadSummary(r.name);
